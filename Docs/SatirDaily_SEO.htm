@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SatirDaily SEO 現況與諮詢簡報</title>
+<style>
+  :root{
+    --ink:#1f302d; --ink-soft:#5d6f6b; --ink-faint:#7c8a86;
+    --bg:#f1f7f4; --surface:#ffffff; --line:#dde8e3;
+    --accent:#1f6f68; --accent-2:#2c8c84; --warm:#c08552;
+    --ok:#2c8c84; --todo:#c08552; --na:#a0aba7;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans TC","Segoe UI",system-ui,sans-serif;line-height:1.75;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  header{background:linear-gradient(135deg,#e6f0ec,#f1f7f4);border-bottom:1px solid var(--line);
+    padding:44px 0 34px;}
+  header .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;
+    color:var(--accent);font-weight:600;letter-spacing:.04em;}
+  header .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent-2);}
+  h1{font-family:"Noto Serif TC",serif;font-size:1.9rem;margin:10px 0 6px;}
+  header p.sub{color:var(--ink-soft);margin:0;font-size:.96rem;}
+  header .meta{margin-top:16px;font-size:.84rem;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:6px 18px;}
+  header .meta b{color:var(--ink-soft);font-weight:600;}
+  header .meta a{color:var(--accent);}
+
+  section{padding:30px 0;border-bottom:1px solid var(--line);}
+  h2{font-family:"Noto Serif TC",serif;font-size:1.32rem;margin:0 0 4px;
+    display:flex;align-items:center;gap:10px;}
+  h2 .num{display:inline-flex;align-items:center;justify-content:center;
+    width:30px;height:30px;border-radius:9px;background:var(--accent);color:#fff;
+    font-size:.92rem;font-family:"Noto Sans TC",sans-serif;flex:none;}
+  h2.plain{display:block;}
+  .lede{color:var(--ink-soft);margin:2px 0 18px;font-size:.95rem;}
+  h3{font-size:1.04rem;margin:22px 0 8px;color:var(--ink);}
+  p{margin:0 0 12px;}
+  ul,ol{margin:0 0 12px;padding-left:22px;}
+  li{margin:5px 0;}
+  code{background:#eaf2ee;border:1px solid var(--line);border-radius:5px;
+    padding:1px 6px;font-size:.86em;font-family:"Cascadia Code",Consolas,monospace;color:#15534d;}
+  a{color:var(--accent-2);}
+
+  table{width:100%;border-collapse:collapse;margin:6px 0 16px;font-size:.9rem;}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:#eaf2ee;color:var(--ink-soft);font-weight:600;font-size:.82rem;}
+  td.c,th.c{text-align:center;white-space:nowrap;}
+  .pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.78rem;font-weight:600;}
+  .pill.ok{background:#dff0ec;color:var(--ok);}
+  .pill.todo{background:#f6e9dc;color:var(--todo);}
+  .pill.na{background:#eef1f0;color:var(--na);}
+
+  .callout{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:10px;padding:16px 18px;margin:16px 0;}
+  .callout.warm{border-left-color:var(--warm);}
+  .callout h3{margin-top:0;}
+
+  .ask{background:#0f2e2a;color:#dcebe6;border-radius:14px;padding:24px 26px;margin:8px 0;}
+  .ask h2{color:#fff;}
+  .ask h2 .num{background:#2c8c84;}
+  .ask code{background:#1c403a;border-color:#26534c;color:#bfe5dd;}
+  .ask .prompt{background:#0a221f;border:1px dashed #2c8c84;border-radius:10px;
+    padding:18px 20px;margin-top:14px;font-size:.92rem;line-height:1.85;white-space:pre-wrap;}
+  .ask .hint{color:#8fb8b0;font-size:.84rem;margin-top:10px;}
+
+  footer{padding:26px 0 60px;color:var(--ink-faint);font-size:.82rem;}
+  @media print{body{background:#fff;}header,section{break-inside:avoid;}.ask{background:#f3f7f5;color:#1f302d;}.ask h2{color:#15534d;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">SEO 現況與諮詢簡報</span>
+    <h1>SatirDaily — SEO 優化彙整</h1>
+    <p class="sub">給其他 AI / 顧問檢視，徵求進一步可行的改善方向。</p>
+    <div class="meta">
+      <span><b>網站</b> <a href="https://guru4tw.github.io/SatirDaily/">guru4tw.github.io/SatirDaily</a></span>
+      <span><b>原始碼</b> <a href="https://github.com/guru4tw/SatirDaily">github.com/guru4tw/SatirDaily</a></span>
+      <span><b>類型</b> 全靜態 GitHub Pages（前端 SPA）</span>
+      <span><b>更新日</b> 2026-06-23</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="plain">摘要（TL;DR）</h2>
+    <p>SatirDaily 是「<b>全台薩提爾活動／課程／工作坊每日自動匯整清單</b>」，全靜態託管於 GitHub Pages，由 GitHub Actions 每日爬取各機構公開活動、寫入 <code>events.json</code>，前端純瀏覽器端排序／搜尋／篩選。使用者意圖屬<b>交易型</b>（找工作坊、要報名）。</p>
+    <p>基礎與技術型 SEO 已大致到位：<b>已解決 SPA「原始 HTML 空白」這個最致命的問題</b>（活動清單與結構化資料皆伺服器端預渲染進原始 HTML）、robots/sitemap/GSC 驗證／Event JSON-LD／意圖化 metadata 皆完成。<b>目前瓶頸轉為「站外權重」與「單頁 SPA 的長尾覆蓋上限」</b>，這正是想徵求其他 AI 進一步建議之處（見 §5）。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="num">1</span>網站定位與目標</h2>
+    <table>
+      <tr><th style="width:24%">項目</th><th>內容</th></tr>
+      <tr><td>產品本質</td><td>薩提爾相關<b>活動／課程匯整目錄</b>（非金句站、非部落格）。每日主動爬取，依日期遠近排序。</td></tr>
+      <tr><td>目標受眾</td><td>對薩提爾模式有興趣、<b>想報名工作坊／課程</b>的台灣使用者（家長、伴侶、助人工作者、自我成長者）。</td></tr>
+      <tr><td>搜尋意圖</td><td><b>交易型 / 導航型</b>：薩提爾工作坊、薩提爾課程、〔講師〕工作坊、〔地區〕薩提爾課程、薩提爾 報名。</td></tr>
+      <tr><td>商業模式</td><td>非營利資訊匯整，零成本（全免費靜態架構）。目標是<b>自然流量 + 被薩提爾社群信任引用</b>。</td></tr>
+      <tr><td>內容宗旨</td><td>資料正確、可溯源（每筆連回原始活動頁並驗證連結）；正面回饋畫龍點睛，不弱化成冷條列。</td></tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="num">2</span>技術架構（與 SEO 的關係）</h2>
+    <table>
+      <tr><th style="width:24%">層</th><th>角色</th><th>SEO 影響</th></tr>
+      <tr><td>GitHub Actions</td><td>每日 cron（台北 05:00）爬蟲 → 更新 JSON → 自動 commit</td><td>內容每日更新（Google 偏好「活著」的站）</td></tr>
+      <tr><td>Python 爬蟲 + build</td><td>抓 5 來源活動 → <code>events.json</code>；<code>build_site_json.py</code> 正規化並<b>把清單＋JSON-LD 預渲染進 index.html</b></td><td>原始 HTML 含可索引內容＋結構化資料</td></tr>
+      <tr><td>GitHub Pages</td><td>純靜態 HTML/JS，瀏覽器端排序／搜尋／篩選</td><td>載入快、自帶 CDN/HTTPS；但本質是<b>單一 URL 的 SPA</b></td></tr>
+    </table>
+    <div class="callout">
+      <h3>關鍵限制：單頁 SPA</h3>
+      <p>所有活動都渲染在<b>同一個首頁 URL</b>，沒有「每場活動／每位講師獨立網址」。預渲染讓 Google 看得到內容，但長尾關鍵字（特定講師、特定主題、特定地區）缺乏專屬落地頁可排名 —— 這是目前架構的 SEO 上限之一（見 §5 待解）。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="num">3</span>已完成的 SEO 優化</h2>
+    <p class="lede">截至 2026-06-23，以下皆已實作並<b>線上驗證上線</b>（main 部署版實測）。</p>
+    <table>
+      <tr><th style="width:30%">項目</th><th class="c" style="width:12%">類別</th><th>實作細節</th><th class="c" style="width:12%">狀態</th></tr>
+      <tr><td><code>&lt;title&gt;</code> / meta description</td><td class="c">On-page</td><td>對準交易型意圖：「薩提爾工作坊・課程・活動總覽 ｜ SatirDaily 全台每日更新」</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td>meta keywords</td><td class="c">On-page</td><td>薩提爾／工作坊／課程／冰山理論／親子／伴侶…</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td>canonical</td><td class="c">技術</td><td><code>rel="canonical"</code> 指向首頁正規網址</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td>Open Graph</td><td class="c">社群</td><td>og:type/title/description/url（LINE/FB 分享預覽）</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td><b>內容預渲染</b></td><td class="c">技術★</td><td>build 時把 <b>77 場活動</b>寫進原始 HTML（<code>&lt;article class="card"&gt;</code>），解決 SPA 空白 HTML；JS 載入後以互動版覆寫（漸進增強）</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td><b>Event 結構化資料</b></td><td class="c">技術★</td><td><b>伺服器端</b>注入 schema.org <code>ItemList&lt;Event&gt;</code>，<b>72 筆</b>有日期活動（name/startDate/location/organizer/offers）</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td>robots.txt</td><td class="c">技術</td><td>根目錄，未擋 Googlebot，指向 sitemap</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td>sitemap.xml</td><td class="c">技術</td><td>build 每日自動產，<code>lastmod</code>=資料更新日、<code>changefreq=daily</code></td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td>GSC 擁有權驗證</td><td class="c">工具</td><td>HTML 檔法（<code>googlede28061b78c7b0f2.html</code>）已上線通過</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td>h1 語意強化</td><td class="c">On-page</td><td>單一 h1，視覺「薩提爾」+ <code>sr-only</code> 完整描述供爬蟲</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td>長文字內容（抗 thin content）</td><td class="c">內容</td><td>「關於薩提爾模式與本站」+「如何挑選工作坊／多久更新」FAQ，覆蓋核心關鍵字</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td>LINE / Facebook 分享鈕</td><td class="c">社群</td><td>頁尾一鍵分享，引導自然擴散</td><td class="c"><span class="pill ok">完成</span></td></tr>
+      <tr><td>每日自動化</td><td class="c">維運</td><td>workflow 把更新後的 <code>index.html</code> / <code>sitemap.xml</code> 納入每日 commit，新活動自動進原始 HTML</td><td class="c"><span class="pill ok">完成</span></td></tr>
+    </table>
+    <p class="lede">★ = 本輪最關鍵的兩項，決定「Google 看不看得到你的內容」。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="num">4</span>現況數據與已知弱點</h2>
+    <h3>現況數據</h3>
+    <ul>
+      <li>活動筆數：<b>77</b>（lopwilldo 26、satir_org 28、shiuhli 18、comflow 3、omia 2）；其中 <b>72</b> 筆有固定日期，已進 Event JSON-LD。</li>
+      <li>更新頻率：每日 1 次（台北 05:00，GitHub Actions 自動）。</li>
+      <li>連結品質：每筆 build 時 <code>verify_links.py</code> 驗證原始活動頁有效性。</li>
+      <li>收錄狀態：GSC 已驗證；<b>sitemap 尚待在 GSC 提交</b>（這是目前最即時待辦）。</li>
+    </ul>
+    <h3>已知弱點（徵求改善的重點）</h3>
+    <table>
+      <tr><th style="width:30%">弱點</th><th>說明 / 影響</th></tr>
+      <tr><td>單頁 SPA、單一 URL</td><td>所有活動同一頁，無法為「特定講師／主題／地區」提供專屬落地頁，<b>長尾關鍵字覆蓋受限</b>。</td></tr>
+      <tr><td>子網域、無自訂網域</td><td><code>guru4tw.github.io/SatirDaily</code> 品牌性與信任度低於獨立網域，且與 github.io 共享網域權重。</td></tr>
+      <tr><td>新站、零反向連結</td><td>網域權重低，無外部引用，初期排名難起。</td></tr>
+      <tr><td>無 og:image / 圖片素材</td><td>社群分享無縮圖，CTR 受限；圖片搜尋無曝光。</td></tr>
+      <tr><td>內容深度仍偏薄</td><td>除活動清單外，主題知識內容少（僅一段介紹＋2 FAQ），主題權威性不足。</td></tr>
+      <tr><td>過期活動混入</td><td>清單含已過去活動，可能稀釋「即將舉行」的相關性訊號。</td></tr>
+      <tr><td>JSON-LD 為 ItemList 非獨立 Event 頁</td><td>Google 對 Event rich result 偏好「一活動一頁」，ItemList 取得完整活動卡片結果的機率較低。</td></tr>
+    </table>
+  </div>
+</section>
+
+<section class="ask">
+  <div class="wrap">
+    <h2><span class="num">5</span>給其他 AI 的諮詢提示（可整段複製）</h2>
+    <p>把以下整段貼給另一個 AI（連同本檔前述脈絡），請它在<b>「維持全免費、純靜態 GitHub Pages、無後端」</b>的硬限制下，提出可落地的進一步 SEO 改善。</p>
+    <div class="prompt">我有一個全靜態網站 SatirDaily（https://guru4tw.github.io/SatirDaily/），是「全台薩提爾活動／課程每日自動匯整清單」，託管於 GitHub Pages，由 GitHub Actions 每日爬取活動寫入 events.json，前端是單頁 SPA。使用者意圖是交易型（找薩提爾工作坊、要報名）。
+
+【已完成的 SEO】意圖化 title/description/keywords、canonical、Open Graph、robots.txt、自動產生的 sitemap.xml、Google Search Console 擁有權驗證、伺服器端預渲染 77 場活動進原始 HTML、Event JSON-LD（ItemList，72 筆）、h1 sr-only 描述、關於薩提爾長文＋FAQ、LINE/FB 分享鈕、每日自動把更新寫進 index.html。
+
+【硬限制】必須維持：全免費、純靜態（GitHub Pages，無伺服器/資料庫/付費服務）、繁體中文台灣市場、薩提爾利基。可改前端 HTML/JS 與 Python build 腳本（Actions 每日跑）。
+
+【已知弱點】1) 單頁 SPA、單一 URL，長尾關鍵字無專屬落地頁；2) 子網域無自訂網域；3) 新站零反向連結；4) 無 og:image；5) 內容深度偏薄；6) 過期活動混入；7) JSON-LD 是 ItemList 而非一活動一頁。
+
+【請提供】針對上述，列出「投入產出比最高」的進一步 SEO 改善清單，每項請含：(a) 預期效益與原理、(b) 在純靜態/GitHub Pages 下的具體實作方式（可用 build 腳本生成）、(c) 風險或維護成本、(d) 優先級。特別想知道：是否值得在 build 時為每場活動／每位講師／每個地區「靜態生成獨立 HTML 頁」以擴張長尾與 Event rich result？若值得，請給出資料夾結構、URL 規劃、sitemap 與內部連結策略；若不值得，請說明替代方案。</div>
+    <p class="hint">提示：不同 AI 會給出不同切角，建議至少問 2～3 家並交叉比對；落地前再回到本專案做可行性與成本評估。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="num">6</span>待辦清單（依效益排序）</h2>
+    <table>
+      <tr><th>項目</th><th class="c" style="width:16%">負責</th><th class="c" style="width:14%">優先級</th><th class="c" style="width:12%">狀態</th></tr>
+      <tr><td>在 GSC 提交 <code>sitemap.xml</code>（注意：別誤交驗證檔）</td><td class="c">人工</td><td class="c">高</td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>GSC「網址審查」要求建立索引</td><td class="c">人工</td><td class="c">高</td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>向清單機構爭取「活動總覽」反向連結</td><td class="c">人工</td><td class="c">高</td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>評估「每活動/講師/地區靜態頁」（見 §5 諮詢）</td><td class="c">技術</td><td class="c">中高</td><td class="c"><span class="pill todo">評估中</span></td></tr>
+      <tr><td>加 og:image（可 build 自動產活動卡圖）</td><td class="c">技術</td><td class="c">中</td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>擴充主題知識內容（薩提爾觀念、講師介紹）</td><td class="c">內容</td><td class="c">中</td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>到 Matters/方格子/FB 社團分享</td><td class="c">人工</td><td class="c">中</td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>持續監看 Core Web Vitals</td><td class="c">維運</td><td class="c">低</td><td class="c"><span class="pill na">長期</span></td></tr>
+    </table>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    SatirDaily SEO 簡報 · 產生於 2026-06-23 · 詳細策略另見 <code>Docs/SatirDaily_SEO_Strategy.md</code>。本檔為唯讀彙整，內容隨專案演進更新。
+  </div>
+</footer>
+
+</body>
+</html>
