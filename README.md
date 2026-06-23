@@ -1,5 +1,7 @@
 # SatirDaily
 
+網站:https://guru4tw.github.io/SatirDaily/
+
 全台薩提爾活動每日自動匯整網站。每天主動搜尋各來源活動,依日期遠近排序,提供自訂排序與多關鍵字搜尋。
 
 **架構**:GitHub Pages(顯示)+ GitHub Actions(每日排程)+ `events.json`(資料)。全部免費,前端純靜態。
@@ -36,6 +38,6 @@ python -m http.server 8000
 - [x] `discover_sources.py` 來源探索
 - [ ] 第一支爬蟲 `crawlers/shiuhli.py`(旭立)
 - [ ] GitHub Actions 每日排程
-- [ ] 部署 GitHub Pages
+- [x] 部署 GitHub Pages
 
 成本:免費。詳見計畫書。
