@@ -53,16 +53,23 @@ jobs:
         run: python Py/crawlers/omia.py --out
         continue-on-error: true
 
-      # 步驟 3：正規化 Docs/events.json → 根 events.json（前端契約 + price_min）
+      # 步驟 3：驗證每筆原始活動連結，把 link_ok 寫回 Docs/events.json
+      #         broken 連結會 exit 2，但不擋 pipeline（continue-on-error）：
+      #         前端以「⚠ 連結待確認」標示，仍照常上線，由報告追蹤。
+      - name: Verify source links
+        run: python Py/verify_links.py
+        continue-on-error: true
+
+      # 步驟 4：正規化 Docs/events.json → 根 events.json（前端契約 + price_min + 連結狀態）
       - name: Build site events.json
         run: python Py/build_site_json.py
 
-      # 步驟 4：有變動才 commit + push
+      # 步驟 5：有變動才 commit + push
       - name: Commit changes
         run: |
           git config user.name  "satir-bot"
           git config user.email "satir-bot@users.noreply.github.com"
-          git add Docs/events.json Docs/Satir_source.md events.json
+          git add Docs/events.json Docs/Satir_source.md Docs/link_report.json events.json
           if git diff --cached --quiet; then
             echo "無變動，略過 commit"
           else

@@ -169,6 +169,12 @@
   }
   .btn:hover{background:var(--water-600);transform:translateY(-1px);box-shadow:0 12px 22px -10px rgba(31,111,104,.95);}
   .fetched{font-size:.72rem;color:var(--ink-faint);}
+  .src-link{color:var(--water-600);font-weight:600;text-decoration:none;}
+  .src-link:hover{text-decoration:underline;}
+  .lk{display:inline-block;margin-left:8px;font-size:.68rem;font-weight:600;
+    padding:1px 8px;border-radius:999px;vertical-align:1px;}
+  .lk-ok{color:var(--water-600);background:var(--water-wash);}
+  .lk-bad{color:#a8552f;background:#f7e6dc;}
   .empty{text-align:center;color:var(--ink-soft);padding:72px 24px;font-size:.95rem;
     background:var(--surface);border:1px dashed var(--line);border-radius:var(--radius);}
   .empty .em-mark{width:56px;height:56px;margin:0 auto 16px;opacity:.55;display:block;}
@@ -403,13 +409,27 @@ function render(){
       </div>
       <div class="foot">
         ${ev.signup_url?`<a class="btn" href="${esc(ev.signup_url)}" target="_blank" rel="noopener">我要報名 →</a>`:"<span></span>"}
-        <span class="fetched">資料更新日 ${esc(ev.fetched_at||"—")}　·　來源 ${esc(ev.source||"—")}</span>
+        <span class="fetched">資料更新日 ${esc(ev.fetched_at||"—")}　·　來源 ${srcLink(ev)}${linkBadge(ev)}</span>
       </div>
     </article>`;
   }).join("");
 }
 
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+// 來源 → 連回原始活動頁(source_url,build 時由 signup_url 推導);無連結則純文字
+function srcLink(ev){
+  const name = esc(ev.source_name || ev.source || "—");
+  return ev.source_url
+    ? `<a class="src-link" href="${esc(ev.source_url)}" target="_blank" rel="noopener">${name} ↗</a>`
+    : name;
+}
+// 連結驗證徽章:link_ok 由 verify_links.py 寫入(true=已驗證可連 / false=連結異常 / 無=未驗證)
+function linkBadge(ev){
+  if(ev.link_ok===true)  return `<span class="lk lk-ok" title="原始連結已於 ${esc(ev.link_checked_at||"")} 驗證可連">✓ 連結已驗證</span>`;
+  if(ev.link_ok===false) return `<span class="lk lk-bad" title="最近一次驗證連結異常,請以原網站為準">⚠ 連結待確認</span>`;
+  return "";
+}
 
 ["q","sort","region"].forEach(id=>{
   document.getElementById(id).addEventListener("input",render);

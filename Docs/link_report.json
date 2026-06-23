@@ -1,0 +1,703 @@
+{
+  "checked_at": "2026-06-23",
+  "total": 77,
+  "ok": 77,
+  "broken": 0,
+  "skipped": 0,
+  "broken_list": [],
+  "results": [
+    {
+      "id": "comflow-satir_intermediate",
+      "title": "家庭心工廠‧薩提爾進階工作坊",
+      "source": "comflow",
+      "url": "https://comflow.tw/satir_intermediate/",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "comflow-satir_advanced",
+      "title": "生命心燈塔‧薩提爾高階工作坊",
+      "source": "comflow",
+      "url": "https://comflow.tw/satir_advanced/",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "comflow-satir_basic",
+      "title": "美好心關係‧薩提爾初階工作坊",
+      "source": "comflow",
+      "url": "https://comflow.tw/satir_basic/",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "omia-1800",
+      "title": "薩提爾的對話練習補充課程：好奇與情緒關係",
+      "source": "omia",
+      "url": "https://www.omia.com.tw/project/1800",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "omia-1791",
+      "title": "薩提爾的對話練習：從「好奇心」出發建立深度溝通",
+      "source": "omia",
+      "url": "https://www.omia.com.tw/project/1791",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "lopwilldo-15827",
+      "title": "陳桂芳老師工作坊",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e9%99%b3%e6%a1%82%e8%8a%b3%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E9%99%B3%E6%A1%82%E8%8A%B3%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A/"
+    },
+    {
+      "id": "lopwilldo-15836",
+      "title": "張天安老師工作坊",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%bc%b5%e5%a4%a9%e5%ae%89%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%BC%B5%E5%A4%A9%E5%AE%89%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A/"
+    },
+    {
+      "id": "lopwilldo-15838",
+      "title": "張天安老師進階工作坊",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%bc%b5%e5%a4%a9%e5%ae%89%e8%80%81%e5%b8%ab%e9%80%b2%e9%9a%8e%e5%b7%a5%e4%bd%9c%e5%9d%8a/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%BC%B5%E5%A4%A9%E5%AE%89%E8%80%81%E5%B8%AB%E9%80%B2%E9%9A%8E%E5%B7%A5%E4%BD%9C%E5%9D%8A/"
+    },
+    {
+      "id": "lopwilldo-16474",
+      "title": "李崇建老師工作坊—嘉義場",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e6%9d%8e%e5%b4%87%e5%bb%ba%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a-%e5%98%89%e7%be%a9%e5%a0%b4/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E6%9D%8E%E5%B4%87%E5%BB%BA%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A-%E5%98%89%E7%BE%A9%E5%A0%B4/"
+    },
+    {
+      "id": "lopwilldo-15861",
+      "title": "程馨慧&林良晉老師薩提爾對話練習讀書會",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e7%a8%8b%e9%a6%a8%e6%85%a7%e6%9e%97%e8%89%af%e6%99%89%e8%80%81%e5%b8%ab%e8%96%a9%e6%8f%90%e7%88%be%e5%b0%8d%e8%a9%b1%e7%b7%b4%e7%bf%92%e8%ae%80%e6%9b%b8%e6%9c%83/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E7%A8%8B%E9%A6%A8%E6%85%A7%E6%9E%97%E8%89%AF%E6%99%89%E8%80%81%E5%B8%AB%E8%96%A9%E6%8F%90%E7%88%BE%E5%B0%8D%E8%A9%B1%E7%B7%B4%E7%BF%92%E8%AE%80%E6%9B%B8%E6%9C%83/"
+    },
+    {
+      "id": "lopwilldo-16467",
+      "title": "李崇建老師工作坊–新竹場",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e6%9d%8e%e5%b4%87%e5%bb%ba%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a-%e6%96%b0%e7%ab%b9%e5%a0%b4/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E6%9D%8E%E5%B4%87%E5%BB%BA%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A-%E6%96%B0%E7%AB%B9%E5%A0%B4/"
+    },
+    {
+      "id": "lopwilldo-16263",
+      "title": "張天安老師工作坊",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%bc%b5%e5%a4%a9%e5%ae%89%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a-2/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%BC%B5%E5%A4%A9%E5%AE%89%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A-2/"
+    },
+    {
+      "id": "lopwilldo-16470",
+      "title": "李崇建老師工作坊—台中場",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e6%9d%8e%e5%b4%87%e5%bb%ba%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a-%e5%8f%b0%e4%b8%ad%e5%a0%b4/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E6%9D%8E%E5%B4%87%E5%BB%BA%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A-%E5%8F%B0%E4%B8%AD%E5%A0%B4/"
+    },
+    {
+      "id": "lopwilldo-16606",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e9%99%b3%e6%a1%82%e8%8a%b3%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a-2/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E9%99%B3%E6%A1%82%E8%8A%B3%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A-2/"
+    },
+    {
+      "id": "lopwilldo-16477",
+      "title": "李崇建老師工作坊—高雄市",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e6%9d%8e%e5%b4%87%e5%bb%ba%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a-%e9%ab%98%e9%9b%84%e5%b8%82/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E6%9D%8E%E5%B4%87%E5%BB%BA%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A-%E9%AB%98%E9%9B%84%E5%B8%82/"
+    },
+    {
+      "id": "lopwilldo-17492",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e6%9d%8e%e5%b4%87%e5%bb%ba%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a-1/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E6%9D%8E%E5%B4%87%E5%BB%BA%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A-1/"
+    },
+    {
+      "id": "lopwilldo-17497",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e6%9d%8e%e5%b4%87%e5%bb%ba%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a-2/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E6%9D%8E%E5%B4%87%E5%BB%BA%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A-2/"
+    },
+    {
+      "id": "lopwilldo-17352",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%bc%b5%e5%a4%a9%e5%ae%89%e8%80%81%e5%b8%ab%e3%80%8c%e5%9c%a8%e6%84%9b%e4%b8%ad%e6%88%90%e9%95%b7%e3%80%8d-%e8%96%a9%e6%8f%90%e7%88%be%e6%a8%a1%e5%bc%8f%e5%b7%a5%e4%bd%9c%e5%9d%8a/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%BC%B5%E5%A4%A9%E5%AE%89%E8%80%81%E5%B8%AB%E3%80%8C%E5%9C%A8%E6%84%9B%E4%B8%AD%E6%88%90%E9%95%B7%E3%80%8D-%E8%96%A9%E6%8F%90%E7%88%BE%E6%A8%A1%E5%BC%8F%E5%B7%A5%E4%BD%9C%E5%9D%8A/"
+    },
+    {
+      "id": "lopwilldo-18093",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e9%99%b3%e6%a1%82%e8%8a%b3%e8%80%81%e5%b8%ab%e5%b7%a5%e4%bd%9c%e5%9d%8a-3/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E9%99%B3%E6%A1%82%E8%8A%B3%E8%80%81%E5%B8%AB%E5%B7%A5%E4%BD%9C%E5%9D%8A-3/"
+    },
+    {
+      "id": "lopwilldo-18221",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%b4%87%e5%bb%ba%e6%96%b0%e7%ab%b9/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%B4%87%E5%BB%BA%E6%96%B0%E7%AB%B9/"
+    },
+    {
+      "id": "lopwilldo-18225",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%b4%87%e5%bb%ba-%e5%8f%b0%e4%b8%ad/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%B4%87%E5%BB%BA-%E5%8F%B0%E4%B8%AD/"
+    },
+    {
+      "id": "lopwilldo-18871",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%b4%87%e5%bb%ba%e8%80%81%e5%b8%ab-%e9%ab%98%e9%9b%84/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%B4%87%E5%BB%BA%E8%80%81%E5%B8%AB-%E9%AB%98%E9%9B%84/"
+    },
+    {
+      "id": "lopwilldo-18539",
+      "title": "洪善榛老師讀書會",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%96%84%e6%a6%9b%e8%ae%80%e6%9b%b8%e6%9c%83/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%96%84%E6%A6%9B%E8%AE%80%E6%9B%B8%E6%9C%83/"
+    },
+    {
+      "id": "lopwilldo-18507",
+      "title": "成蒂老師工作坊",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e6%88%90%e8%92%82%e8%80%81%e5%b8%ab/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E6%88%90%E8%92%82%E8%80%81%E5%B8%AB/"
+    },
+    {
+      "id": "lopwilldo-19518",
+      "title": "-台中早場",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%a7%b5%e7%a9%8e-%e5%8f%b0%e4%b8%ad%e6%97%a9/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%A7%B5%E7%A9%8E-%E5%8F%B0%E4%B8%AD%E6%97%A9/"
+    },
+    {
+      "id": "lopwilldo-18876",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%b4%87%e5%bb%ba%e8%80%81%e5%b8%ab-%e5%8f%b0%e5%8c%97/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%B4%87%E5%BB%BA%E8%80%81%E5%B8%AB-%E5%8F%B0%E5%8C%97/"
+    },
+    {
+      "id": "lopwilldo-19528",
+      "title": "-台北早場",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%a7%b5%e7%a9%8e-%e5%8f%b0%e5%8c%97%e6%97%a9/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%A7%B5%E7%A9%8E-%E5%8F%B0%E5%8C%97%E6%97%A9/"
+    },
+    {
+      "id": "lopwilldo-19526",
+      "title": "-台中晚場",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%a7%b5%e7%a9%8e-%e5%8f%b0%e4%b8%ad%e6%99%9a/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%A7%B5%E7%A9%8E-%E5%8F%B0%E4%B8%AD%E6%99%9A/"
+    },
+    {
+      "id": "lopwilldo-19856",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%b4%87%e5%bb%ba%e8%80%81%e5%b8%ab%e5%8f%b0%e4%b8%ad%e5%b9%b3%e6%97%a5/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%B4%87%E5%BB%BA%E8%80%81%E5%B8%AB%E5%8F%B0%E4%B8%AD%E5%B9%B3%E6%97%A5/"
+    },
+    {
+      "id": "lopwilldo-19860",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%b4%87%e5%bb%ba%e8%80%81%e5%b8%ab%e5%8f%b0%e4%b8%ad%e5%81%87%e6%97%a5/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%B4%87%E5%BB%BA%E8%80%81%E5%B8%AB%E5%8F%B0%E4%B8%AD%E5%81%87%E6%97%A5/"
+    },
+    {
+      "id": "lopwilldo-19586",
+      "title": "",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%a4%a9%e5%ae%89-%e9%80%b2%e9%9a%8e_%e5%8f%b0%e4%b8%ad/",
+      "status": "ok",
+      "http": 200,
+      "note": "→ https://lopwilldo.com/event/%E5%A4%A9%E5%AE%89-%E9%80%B2%E9%9A%8E_%E5%8F%B0%E4%B8%AD/"
+    },
+    {
+      "id": "shiuhli-1044",
+      "title": "與你更親近－親密關係工作坊（個別報名區）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1044",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-568-569bei",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/568-569bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-568-569bei-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程 (家動學員報名專區)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/568-569bei-2",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-568xian-shang-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》part1：12堂線上導讀課程 (家動學員報名專區)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/568xian-shang-2",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-568xian-shang",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》part1：12堂線上導讀課程",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/568xian-shang",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-581zhu",
+      "title": "薩提爾深度學習之旅—從滋養自己到陪伴他人",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/581zhu",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-547bei",
+      "title": "陪伴他人的內在練習：自我支持與陪伴力的整合訓練（薩提爾成長模式＿北區＿第三期）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/547bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-557bei",
+      "title": "個人成長之旅一：【冰山覺察中的陪伴與療癒】",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/557bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-557-558-559he-bao",
+      "title": "個人成長之旅系列課程（三堂課程合報）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/557-558-559he-bao",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-585nan",
+      "title": "在關係中回到自己：以冰山覺察內在歷程，從反應走向選擇",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/585nan",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1048",
+      "title": "薩提爾教練模式工作坊（夏季班）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1048",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1085",
+      "title": "『在關係中讓愛流動』－薩提爾模式邁向和諧工作坊",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1085",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-566-567he-bao",
+      "title": "【愛與自由】系列：第二梯次 ( 一 + 二 ) 課程合報專區",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/566-567he-bao",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-566zhong",
+      "title": "【愛與自由】系列一：溝通與成長工作坊 （第二梯次）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/566zhong",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1118",
+      "title": "薩提爾模式教師自我關愛工作坊－公益方案（台北場）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1118",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-587yun",
+      "title": "點亮心中的燭火～社工公益薩提爾自我成長團體(雲林場)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/587yun",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1106",
+      "title": "Level 2認證班",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1106",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1123",
+      "title": "薩提爾模式教師自我關愛工作坊－公益方案（台北場）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1123",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-576zhu",
+      "title": "身心靈安頓 - 起承轉合，照見健康",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/576zhu",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1122",
+      "title": "薩提爾模式教師自我關愛工作坊－公益方案（宜蘭場）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1122",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-561bei",
+      "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（台北場進階）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/561bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1125",
+      "title": "薩提爾模式教師自我關愛工作坊－公益方案（台北場）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1125",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-558bei",
+      "title": "個人成長之旅二：【探源與療癒】探索生命經驗的影響，走過自我療癒的旅程",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/558bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-563hua",
+      "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（花蓮場進階）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/563hua",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-586-zhu",
+      "title": "「青少年人際溝通工作坊」-看、聽、讀~練習為自己說個明白",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/586-zhu",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-554zhong",
+      "title": "家庭溯源－回到初始的愛",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/554zhong",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1040",
+      "title": "薩提爾輕鬆入門工作坊－在衝突中覺察自己的內在冰山，讓我們更親近",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1040",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-569bei-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程 (家動學員報名專區)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/569bei-2",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-569bei",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/569bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-550gao-tui",
+      "title": "薩提爾模式的冰山理論在班級經營的應用",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/550gao-tui",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1087",
+      "title": "《看見自己的光，連結自我能量》女性成長工作坊",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1087",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-552bei-tui",
+      "title": "「媽咪充電站」--薩提爾模式自我關照與增能團體",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/552bei-tui",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1042",
+      "title": "從自我覺察到發揮影響力工作坊（秋季班）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1042",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-572zhong",
+      "title": "「回到愛的源頭：從家族故事中重塑自我」 - 透過薩提爾模式，看見代代相傳的生命力量，整合成為內在穩定與愛的根基",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/572zhong",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1077",
+      "title": "與你更親近－親密關係工作坊（伴侶報名區）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1077",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1073",
+      "title": "【線上直播講座】做自己世界的主角～新薩提爾之面貌舞會",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1073",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-555xian-shang",
+      "title": "陪伴孩子成長－桀驁不馴的青少年",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/555xian-shang",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1045",
+      "title": "伴侶、愛戀與父親－父親關係與伴侶關係",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1045",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-583bei",
+      "title": "讓愛自由流動、尊重與靠近—前青春期親子關係連結工作坊",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/583bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-559bei",
+      "title": "個人成長之旅三：【與人和諧】增進關係中的愛與親近",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/559bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1049",
+      "title": "薩提爾教練模式工作坊（冬季班）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1049",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-577zhu",
+      "title": "尋根之旅 — 探索與體驗「原生家庭」的豐厚",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/577zhu",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1115",
+      "title": "薩提爾輕鬆入門體驗工作坊－與我同行～愛與自由",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1115",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-573zhong",
+      "title": "親密關係工作坊－愛與連結，攜手在關係中成長",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/573zhong",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1092",
+      "title": "成為教練，也成為更好的自己－當教練不能不知道的幾件事",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1092",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1078",
+      "title": "家庭溯源與自我追尋－家庭重塑工作坊（冬季班）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1078",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    }
+  ]
+}

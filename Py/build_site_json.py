@@ -34,6 +34,16 @@ SITE_JSON = ROOT / "events.json"
 
 NUM_RE = re.compile(r"\d[\d,]*")
 
+# 來源 key → (顯示名稱, 機構首頁)。爬蟲只存 source key,前端要顯示中文名與可點首頁,
+# 在此集中對照。新增爬蟲時補一筆即可,缺項則退回 key 本身與空首頁。
+SOURCE_META = {
+    "lopwilldo": ("長耳兔心靈維度", "https://lopwilldo.com"),
+    "shiuhli":   ("旭立文教基金會", "https://www.shiuhli.org.tw"),
+    "comflow":   ("心流逸境教育平台", "https://comflow.tw"),
+    "satir_org": ("台灣薩提爾成長模式推展協會", "https://www.satir.org.tw"),
+    "omia":      ("OMIA 學東西", "https://www.omia.com.tw"),
+}
+
 
 def parse_price_min(price: str) -> Optional[int]:
     """從價格字串取最低數字(早鳥/優惠價)。無數字回 None。"""
@@ -49,6 +59,12 @@ def build(events: list[dict]) -> dict:
     for e in events:
         ev = dict(e)
         ev["price_min"] = parse_price_min(e.get("price", ""))
+        # 來源顯示名與「原始活動連結」:前端卡片把「來源」做成可點連結,直接連回
+        # 該活動的原始頁面(signup_url);無 signup_url 時退回機構首頁。
+        name, home = SOURCE_META.get(e.get("source", ""),
+                                     (e.get("source", ""), ""))
+        ev["source_name"] = name
+        ev["source_url"] = e.get("signup_url") or home
         # 前端 highlights 來源欄名為 highlights_source,爬蟲未產則略過(不杜撰)
         out_events.append(ev)
     out_events.sort(key=lambda e: e.get("date_start") or "9999")
