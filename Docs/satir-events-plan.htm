@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>薩提爾活動清單網站 — 計畫書</title>
+<style>
+  :root{
+    --ink:#2b2a28;
+    --ink-soft:#5c574f;
+    --paper:#f6f3ec;
+    --paper-deep:#ece6d9;
+    --line:#d8d0bf;
+    --water:#3a6b6f;        /* 深湖綠，呼應冰山水面 */
+    --water-soft:#6f9b9d;
+    --clay:#b56a4a;         /* 點綴的陶土色 */
+    --gold:#c9a24b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Noto Serif TC",Georgia,"Songti TC",serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 28px;}
+
+  /* ── Hero：冰山隱喻 ── */
+  header{
+    background:linear-gradient(180deg,#dfe7e3 0%,var(--paper) 78%);
+    padding:96px 0 64px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+  }
+  .berg{
+    position:absolute;right:-40px;top:30px;width:300px;height:300px;opacity:.5;
+    pointer-events:none;
+  }
+  .eyebrow{
+    font-family:ui-sans-serif,"Noto Sans TC",sans-serif;
+    letter-spacing:.34em;text-transform:uppercase;
+    font-size:.7rem;color:var(--water);font-weight:600;margin-bottom:22px;
+  }
+  h1{
+    font-size:clamp(2.2rem,5vw,3.4rem);font-weight:700;line-height:1.18;
+    letter-spacing:-.01em;max-width:14ch;
+  }
+  h1 .accent{color:var(--water);}
+  .lede{
+    margin-top:24px;font-size:1.12rem;color:var(--ink-soft);max-width:46ch;
+  }
+  .meta{
+    margin-top:34px;display:flex;gap:28px;flex-wrap:wrap;
+    font-family:ui-sans-serif,"Noto Sans TC",sans-serif;font-size:.82rem;
+    color:var(--ink-soft);
+  }
+  .meta b{display:block;color:var(--ink);font-weight:600;font-size:.95rem;margin-top:3px;}
+
+  /* ── 區塊 ── */
+  section{padding:54px 0;border-bottom:1px solid var(--line);}
+  .sec-no{
+    font-family:ui-sans-serif,"Noto Sans TC",sans-serif;
+    font-size:.72rem;letter-spacing:.28em;color:var(--clay);font-weight:600;
+    text-transform:uppercase;margin-bottom:10px;
+  }
+  h2{font-size:1.7rem;font-weight:700;letter-spacing:-.01em;margin-bottom:8px;}
+  h2 + p.intro{color:var(--ink-soft);margin-bottom:28px;max-width:54ch;}
+  h3{font-size:1.08rem;font-weight:600;margin:26px 0 8px;color:var(--water);}
+  p{margin-bottom:14px;}
+  ul{margin:0 0 14px 1.2em;}
+  li{margin-bottom:8px;}
+
+  /* 架構流程 */
+  .flow{
+    display:flex;flex-wrap:wrap;gap:14px;align-items:stretch;margin:8px 0 6px;
+  }
+  .node{
+    flex:1;min-width:150px;background:#fff;border:1px solid var(--line);
+    border-radius:10px;padding:18px 16px;position:relative;
+  }
+  .node .tag{
+    font-family:ui-sans-serif,"Noto Sans TC",sans-serif;font-size:.66rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--water-soft);
+    font-weight:700;margin-bottom:6px;
+  }
+  .node strong{display:block;font-size:1rem;margin-bottom:4px;}
+  .node span{font-size:.86rem;color:var(--ink-soft);font-family:ui-sans-serif,"Noto Sans TC",sans-serif;}
+  .arrow{align-self:center;color:var(--clay);font-size:1.3rem;font-weight:700;}
+
+  /* JSON schema 卡 */
+  pre{
+    background:#26302f;color:#e6ede9;border-radius:10px;padding:20px 22px;
+    overflow-x:auto;font-family:ui-monospace,"SFMono-Regular",Menlo,monospace;
+    font-size:.82rem;line-height:1.6;margin:6px 0 16px;
+  }
+  pre .k{color:#9fd2c2;}
+  pre .s{color:#e3c07b;}
+  pre .c{color:#7f8c89;font-style:italic;}
+
+  /* 功能格 */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:6px;}
+  .card{
+    background:var(--paper-deep);border-radius:10px;padding:18px 18px;
+    border-left:3px solid var(--water);
+  }
+  .card h4{font-size:1rem;font-weight:600;margin-bottom:5px;}
+  .card p{font-size:.9rem;color:var(--ink-soft);margin:0;}
+
+  /* 步驟時間軸 */
+  .steps{list-style:none;margin:8px 0 0;padding:0;}
+  .steps li{
+    position:relative;padding:0 0 22px 42px;border-left:2px solid var(--line);
+    margin-left:14px;
+  }
+  .steps li:last-child{border-left-color:transparent;}
+  .steps li::before{
+    content:attr(data-n);position:absolute;left:-15px;top:-2px;
+    width:28px;height:28px;border-radius:50%;background:var(--water);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:700;
+    font-family:ui-sans-serif,sans-serif;font-size:.82rem;
+  }
+  .steps li b{display:block;font-size:1.02rem;margin-bottom:2px;}
+  .steps li span{font-size:.9rem;color:var(--ink-soft);}
+
+  /* 風險 */
+  .risk{
+    background:#fbf4ee;border:1px solid #e7d3c2;border-radius:10px;
+    padding:16px 18px;margin-bottom:12px;
+  }
+  .risk b{color:var(--clay);}
+  .risk p{margin:4px 0 0;font-size:.92rem;color:var(--ink-soft);}
+
+  .cost{
+    display:inline-block;background:var(--water);color:#fff;
+    font-family:ui-sans-serif,sans-serif;font-weight:600;font-size:.9rem;
+    padding:4px 14px;border-radius:999px;letter-spacing:.04em;
+  }
+
+  footer{padding:40px 0 64px;color:var(--ink-soft);font-size:.85rem;
+    font-family:ui-sans-serif,"Noto Sans TC",sans-serif;}
+
+  @media(max-width:640px){
+    .grid{grid-template-columns:1fr;}
+    .berg{display:none;}
+    header{padding:64px 0 44px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="berg" viewBox="0 0 200 200" aria-hidden="true">
+    <line x1="0" y1="118" x2="200" y2="118" stroke="#6f9b9d" stroke-width="1.5" stroke-dasharray="5 6"/>
+    <path d="M70 30 L120 118 L40 118 Z" fill="#fff" stroke="#bcd0cb" stroke-width="1.5"/>
+    <path d="M70 30 L120 118 L150 175 L30 175 Z" fill="#cfe0db" opacity=".6"/>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow">Project Plan · 計畫書</div>
+    <h1>全台<span class="accent">薩提爾</span>活動，<br>每天替你自動匯整一次</h1>
+    <p class="lede">一個會自己更新的活動清單網站。每天主動搜尋全台薩提爾相關活動，依日期遠近排序，並提供自訂排序與多關鍵字搜尋，讓人輕鬆找到屬於自己的那一場。</p>
+    <div class="meta">
+      <div>託管方式<b>GitHub Pages</b></div>
+      <div>更新方式<b>GitHub Actions 每日排程</b></div>
+      <div>資料格式<b>events.json</b></div>
+      <div>總成本<b>NT$ 0</b></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-no">01 — Architecture</div>
+    <h2>整體架構</h2>
+    <p class="intro">關鍵觀念：GitHub Pages 只負責「顯示」，不會自己跑程式。「每天主動更新」由 GitHub Actions 這個內建免費排程器完成——它定時跑爬蟲、更新 JSON、自動提交，網站隨之刷新。三者全部免費。</p>
+    <div class="flow">
+      <div class="node">
+        <div class="tag">Scheduler</div>
+        <strong>GitHub Actions</strong>
+        <span>每日定時觸發（cron），執行爬蟲腳本</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="tag">Crawler</div>
+        <strong>Python 爬蟲</strong>
+        <span>抓各來源活動，正規化後寫入 events.json 並 commit</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="tag">Frontend</div>
+        <strong>GitHub Pages</strong>
+        <span>讀取 JSON，前端負責排序、搜尋、呈現</span>
+      </div>
+    </div>
+    <p style="margin-top:18px;font-size:.92rem;color:var(--ink-soft);">前端是純靜態的 HTML + JavaScript，所有排序與篩選都在瀏覽器端完成，不需後端伺服器，因此沒有運算費用。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-no">02 — Data Sources</div>
+    <h2>資料從哪裡來</h2>
+    <p class="intro">薩提爾活動沒有單一官方來源，分散在各協會、帶領者與售票平台。策略是「主來源優先 + 逐步擴充」，每個來源各寫一支解析器。</p>
+    <h3>建議優先抓取的來源</h3>
+    <ul>
+      <li><b>售票/報名平台</b>：Accupass、KKTIX——結構化、有 API 或穩定的 HTML，最好抓，建議第一階段先做。</li>
+      <li><b>協會官網</b>：如台灣薩提爾人文發展中心、各地家族治療／薩提爾推廣協會的課程頁。</li>
+      <li><b>知名帶領者</b>：個別講師的官網或公開課程頁。</li>
+      <li><b>Facebook 公開活動</b>：涵蓋最廣，但反爬蟲嚴格、條款限制多，列為後期、低優先，或改用人工補登。</li>
+    </ul>
+    <h3>關鍵字策略</h3>
+    <p>以「薩提爾、Satir、冰山、家族治療、自我覺察、對話練習、一致性表達」等關鍵字交叉搜尋各平台，再過濾雜訊。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-no">03 — Data Model</div>
+    <h2>每個活動的資料欄位</h2>
+    <p class="intro">依你指定的呈現重點設計。其中活動宗旨、內容、與正面回饋是「畫龍點睛」的核心，排在資料模型的中心位置。</p>
+    <pre><span class="c">// events.json 中的單筆活動</span>
+{
+  <span class="k">"id"</span>: <span class="s">"2026-satir-taipei-0712"</span>,
+  <span class="k">"title"</span>: <span class="s">"薩提爾冰山對話工作坊"</span>,
+  <span class="k">"purpose"</span>: <span class="s">"透過冰山隱喻，練習與自己和他人一致地連結"</span>,   <span class="c">// 宗旨</span>
+  <span class="k">"summary"</span>: <span class="s">"兩天沉浸式練習，含案例演練與小組對話"</span>,        <span class="c">// 內容摘要</span>
+  <span class="k">"highlights"</span>: [
+    <span class="s">"練習後第一次能在衝突中停下來深呼吸"</span>,                <span class="c">// 參加者感謝 / 正評</span>
+    <span class="s">"帶領者很溫柔，不會逼你說不想說的"</span>
+  ],
+  <span class="k">"date_start"</span>: <span class="s">"2026-07-12"</span>,
+  <span class="k">"date_end"</span>:   <span class="s">"2026-07-13"</span>,
+  <span class="k">"region"</span>:  <span class="s">"台北"</span>,
+  <span class="k">"venue"</span>:   <span class="s">"中正區 ◯◯空間"</span>,
+  <span class="k">"facilitator"</span>: <span class="s">"◯◯◯"</span>,                              <span class="c">// 帶領者</span>
+  <span class="k">"organizer"</span>:   <span class="s">"◯◯薩提爾推廣協會"</span>,                  <span class="c">// 主辦協會</span>
+  <span class="k">"price"</span>:    <span class="s">"NT$ 3,600（早鳥 3,200）"</span>,
+  <span class="k">"signup_url"</span>: <span class="s">"https://..."</span>,
+  <span class="k">"source"</span>:    <span class="s">"accupass"</span>,
+  <span class="k">"fetched_at"</span>: <span class="s">"2026-06-23"</span>
+}</pre>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-no">04 — Features</div>
+    <h2>排序與搜尋功能</h2>
+    <p class="intro">預設依日期遠近排序（最近的活動在最上方），並開放自訂排序與多維搜尋。全部在前端即時運算。</p>
+    <div class="grid">
+      <div class="card"><h4>預設排序</h4><p>依 <code>date_start</code> 由近到遠，過期活動自動沉底或隱藏。</p></div>
+      <div class="card"><h4>自訂排序</h4><p>可切換依日期、地區、帶領者、主辦協會、價格排序。</p></div>
+      <div class="card"><h4>關鍵字搜尋</h4><p>跨標題、宗旨、內容、帶領者、協會的即時全文搜尋。</p></div>
+      <div class="card"><h4>多重篩選</h4><p>依地區、價格區間、月份多條件交叉過濾。</p></div>
+      <div class="card"><h4>正評優先呈現</h4><p>卡片著重顯示宗旨與參加者感謝，弱化冷冰冰的條列資訊。</p></div>
+      <div class="card"><h4>RWD 響應式</h4><p>手機、平板、桌機皆適配，無障礙鍵盤可操作。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-no">05 — Daily Pipeline</div>
+    <h2>每日更新流程</h2>
+    <p class="intro">為了解決「資訊過期」，每天主動跑一次完整流程。第一步先重建來源清單，再依清單逐一抓活動，最後刷新網站。</p>
+    <div class="flow">
+      <div class="node">
+        <div class="tag">Step 1 · 來源探索</div>
+        <strong>discover_sources.py</strong>
+        <span>重建 Satir_list.md：維護全台薩提爾相關網站清單，做連線健康檢查，標註各來源的爬蟲狀態。不抓活動內容。</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="tag">Step 2 · 逐站爬取</div>
+        <strong>各網站專屬爬蟲</strong>
+        <span>讀 Satir_list.md，對每個來源跑對應 parser（如 crawlers/shiuhli.py），正規化後寫入 events.json。</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="tag">Step 3 · 發佈</div>
+        <strong>commit + Pages</strong>
+        <span>GitHub Actions 自動提交更新後的 JSON，GitHub Pages 隨之刷新，前端依日期排序呈現。</span>
+      </div>
+    </div>
+    <h3>為什麼把「來源清單」和「活動爬取」分開？</h3>
+    <p style="font-size:.92rem;color:var(--ink-soft);">來源清單（Satir_list.md）變動慢、是人工可讀的登記簿；活動資料變動快、需機器抓取。分層後，新增一個機構只要在來源腳本加一筆，再替它寫一支獨立爬蟲即可，互不干擾，也方便追蹤哪些來源已可爬、哪些待開發。旭立文教基金會已勘查完成（課程頁含「薩提爾」分類標籤、日期、價格、講師與分頁），列為第一個待開發爬蟲。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-no">06 — Build Steps</div>
+    <h2>開發步驟</h2>
+    <ol class="steps">
+      <li data-n="1"><b>建立 repo 與 GitHub Pages</b><span>放入前端骨架與一份手動填好的 events.json 範例，先讓網站能顯示。</span></li>
+      <li data-n="2"><b>來源探索腳本 discover_sources.py</b><span>維護 SEED_SOURCES 名冊、做連線健康檢查、產生 Satir_list.md。已可運作，旭立列為第一個待開發來源。</span></li>
+      <li data-n="3"><b>完成前端排序與搜尋</b><span>純 JS 讀取 JSON，實作預設排序、自訂排序、搜尋、篩選與卡片版型。</span></li>
+      <li data-n="4"><b>寫第一支網站爬蟲 crawlers/shiuhli.py</b><span>解析旭立課程頁（薩提爾分類、日期、價格、講師、分頁），輸出符合資料模型的 JSON。</span></li>
+      <li data-n="5"><b>設定 GitHub Actions 每日排程</b><span>cron 每日觸發：先跑 discover_sources.py 重建清單，再依清單跑各爬蟲，去重後自動 commit。</span></li>
+      <li data-n="6"><b>逐步擴充來源與爬蟲</b><span>在 SEED_SOURCES 新增機構並各寫一支 parser；加入人工補登（編輯 JSON / issue 表單）。</span></li>
+      <li data-n="7"><b>維護與監控</b><span>來源改版時修對應 parser；Actions 失敗時 GitHub 自動寄信通知。</span></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-no">07 — Risks</div>
+    <h2>需要先知道的風險</h2>
+    <div class="risk"><b>來源分散且無 API</b><p>每個來源各需一支 parser，網站改版就要維護。建議從少數穩定來源起步，不要一開始就追求全面。</p></div>
+    <div class="risk"><b>Facebook 反爬與條款</b><p>FB 公開活動涵蓋最廣，但抓取困難且違反條款風險高。建議改以人工補登，或僅貼出連結。</p></div>
+    <div class="risk"><b>「正面評價」的來源與真實性</b><p>感謝語多來自報名頁或社群留言，需註明出處或取得同意，避免變成不實宣傳。</p></div>
+    <div class="risk"><b>資料正確性</b><p>爬來的日期、價格可能過期或誤判。卡片應標示「資料更新日」，並保留原始報名連結讓使用者核對。</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-no">08 — Cost</div>
+    <h2>成本</h2>
+    <p>GitHub Pages 託管、GitHub Actions 排程（公開 repo 免費額度充足）、前端純靜態運算——全部 <span class="cost">免費</span></p>
+    <p style="margin-top:14px;font-size:.92rem;color:var(--ink-soft);">唯一的「成本」是維護時間：當來源網站改版時，需要更新對應的爬蟲解析邏輯。</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    薩提爾活動清單網站 · 計畫書　|　產出日期 2026-06-23　|　架構：GitHub Pages + GitHub Actions + events.json
+  </div>
+</footer>
+
+</body>
+</html>

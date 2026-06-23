@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SatirDaily — 全台薩提爾活動清單</title>
+<style>
+  :root{
+    --ink:#2b2a28; --ink-soft:#5c574f;
+    --paper:#f6f3ec; --paper-deep:#ece6d9; --line:#d8d0bf;
+    --water:#3a6b6f; --water-soft:#6f9b9d; --clay:#b56a4a; --gold:#c9a24b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:"Noto Serif TC",Georgia,"Songti TC",serif;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  a{color:var(--water);}
+
+  /* Hero */
+  header{
+    background:linear-gradient(180deg,#dfe7e3 0%,var(--paper) 82%);
+    padding:64px 0 40px;border-bottom:1px solid var(--line);
+    position:relative;overflow:hidden;
+  }
+  .berg{position:absolute;right:-30px;top:24px;width:240px;height:240px;opacity:.5;pointer-events:none;}
+  .eyebrow{
+    font-family:ui-sans-serif,"Noto Sans TC",sans-serif;
+    letter-spacing:.34em;text-transform:uppercase;
+    font-size:.7rem;color:var(--water);font-weight:600;margin-bottom:16px;
+  }
+  h1{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:700;line-height:1.18;letter-spacing:-.01em;}
+  h1 .accent{color:var(--water);}
+  .lede{margin-top:16px;font-size:1.02rem;color:var(--ink-soft);max-width:48ch;}
+  .updated{margin-top:18px;font-family:ui-sans-serif,sans-serif;font-size:.78rem;color:var(--ink-soft);}
+
+  /* Controls */
+  .controls{
+    position:sticky;top:0;z-index:5;background:var(--paper);
+    border-bottom:1px solid var(--line);padding:14px 0;
+    font-family:ui-sans-serif,"Noto Sans TC",sans-serif;
+  }
+  .controls .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  .controls input,.controls select{
+    font:inherit;font-size:.88rem;padding:8px 12px;border:1px solid var(--line);
+    border-radius:8px;background:#fff;color:var(--ink);
+  }
+  .controls input[type=search]{flex:1;min-width:180px;}
+  .controls label{font-size:.78rem;color:var(--ink-soft);display:flex;align-items:center;gap:6px;}
+  .count{margin-left:auto;font-size:.8rem;color:var(--ink-soft);}
+
+  /* Cards */
+  main{padding:28px 0 64px;}
+  .card{
+    background:#fff;border:1px solid var(--line);border-left:3px solid var(--water);
+    border-radius:12px;padding:22px 22px;margin-bottom:16px;
+  }
+  .card.past{opacity:.55;border-left-color:var(--line);}
+  .card .when{
+    font-family:ui-sans-serif,sans-serif;font-size:.8rem;color:var(--clay);
+    font-weight:600;letter-spacing:.02em;margin-bottom:4px;
+  }
+  .card h3{font-size:1.25rem;font-weight:700;margin-bottom:8px;}
+  .card .purpose{color:var(--water);font-size:.98rem;margin-bottom:8px;}
+  .card .summary{color:var(--ink-soft);font-size:.92rem;margin-bottom:12px;}
+  .card .highlights{list-style:none;margin:0 0 14px;padding:12px 14px;
+    background:var(--paper-deep);border-radius:8px;}
+  .card .highlights li{font-size:.9rem;color:var(--ink);margin-bottom:4px;position:relative;padding-left:18px;}
+  .card .highlights li::before{content:"“";position:absolute;left:2px;top:-2px;color:var(--gold);font-size:1.2rem;}
+  .card .hl-src{font-size:.72rem;color:var(--ink-soft);font-family:ui-sans-serif,sans-serif;margin-top:4px;}
+  .meta-row{display:flex;flex-wrap:wrap;gap:8px 16px;font-family:ui-sans-serif,sans-serif;
+    font-size:.82rem;color:var(--ink-soft);margin-bottom:14px;}
+  .meta-row b{color:var(--ink);font-weight:600;}
+  .card .foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;}
+  .btn{
+    display:inline-block;background:var(--water);color:#fff;text-decoration:none;
+    font-family:ui-sans-serif,sans-serif;font-weight:600;font-size:.88rem;
+    padding:8px 18px;border-radius:999px;
+  }
+  .fetched{font-size:.72rem;color:var(--ink-soft);font-family:ui-sans-serif,sans-serif;}
+  .empty{text-align:center;color:var(--ink-soft);padding:60px 0;font-family:ui-sans-serif,sans-serif;}
+
+  footer{padding:32px 0 56px;color:var(--ink-soft);font-size:.82rem;
+    font-family:ui-sans-serif,"Noto Sans TC",sans-serif;border-top:1px solid var(--line);}
+
+  @media(max-width:640px){.berg{display:none;}header{padding:48px 0 32px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <svg class="berg" viewBox="0 0 200 200" aria-hidden="true">
+    <line x1="0" y1="118" x2="200" y2="118" stroke="#6f9b9d" stroke-width="1.5" stroke-dasharray="5 6"/>
+    <path d="M70 30 L120 118 L40 118 Z" fill="#fff" stroke="#bcd0cb" stroke-width="1.5"/>
+    <path d="M70 30 L120 118 L150 175 L30 175 Z" fill="#cfe0db" opacity=".6"/>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow">SatirDaily · 每日更新</div>
+    <h1>全台<span class="accent">薩提爾</span>活動,一站找齊</h1>
+    <p class="lede">每天替你自動匯整全台薩提爾相關活動,依日期遠近排序,並提供自訂排序與多關鍵字搜尋。</p>
+    <div class="updated" id="updated"></div>
+  </div>
+</header>
+
+<div class="controls">
+  <div class="wrap row">
+    <input type="search" id="q" placeholder="搜尋:標題 / 宗旨 / 內容 / 帶領者 / 協會 …" aria-label="關鍵字搜尋">
+    <label>排序
+      <select id="sort">
+        <option value="date_asc">日期(近→遠)</option>
+        <option value="date_desc">日期(遠→近)</option>
+        <option value="region">地區</option>
+        <option value="facilitator">帶領者</option>
+        <option value="organizer">主辦協會</option>
+        <option value="price">價格(低→高)</option>
+      </select>
+    </label>
+    <label>地區
+      <select id="region"><option value="">全部</option></select>
+    </label>
+    <label><input type="checkbox" id="hidePast" checked> 隱藏已過期</label>
+    <span class="count" id="count"></span>
+  </div>
+</div>
+
+<main>
+  <div class="wrap" id="list"></div>
+</main>
+
+<footer>
+  <div class="wrap">
+    SatirDaily · 資料每日由 GitHub Actions 自動更新 ·
+    活動資訊以原始報名連結為準,請點「我要報名」核對最新內容。
+  </div>
+</footer>
+
+<script>
+const today = new Date().toISOString().slice(0,10); // YYYY-MM-DD
+let ALL = [];
+
+function fmtDate(s,e){
+  if(!s) return "日期未定";
+  return (e && e!==s) ? `${s} ～ ${e}` : s;
+}
+function isPast(ev){
+  return (ev.date_end || ev.date_start || "9999") < today;
+}
+
+async function load(){
+  try{
+    const res = await fetch("events.json", {cache:"no-store"});
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    const data = await res.json();
+    ALL = data.events || [];
+    document.getElementById("updated").textContent =
+      "資料更新日:" + (data.updated_at || "—") + "　共 " + ALL.length + " 場";
+    buildRegionOptions();
+    render();
+  }catch(err){
+    document.getElementById("list").innerHTML =
+      `<div class="empty">讀取活動資料失敗:${err.message}<br>(本地預覽請以 HTTP server 開啟,勿用 file://)</div>`;
+  }
+}
+
+function buildRegionOptions(){
+  const sel = document.getElementById("region");
+  [...new Set(ALL.map(e=>e.region).filter(Boolean))].sort().forEach(r=>{
+    const o = document.createElement("option"); o.value=r; o.textContent=r; sel.appendChild(o);
+  });
+}
+
+function matchQuery(ev,q){
+  if(!q) return true;
+  const hay = [ev.title,ev.purpose,ev.summary,ev.facilitator,ev.organizer,
+    (ev.highlights||[]).join(" "),ev.region].join(" ").toLowerCase();
+  return q.toLowerCase().split(/\s+/).every(t=>hay.includes(t));
+}
+
+function sortEvents(arr,mode){
+  const c = (a,b)=> (a||"").localeCompare(b||"","zh-Hant");
+  const by = {
+    date_asc:  (a,b)=> (a.date_start||"").localeCompare(b.date_start||""),
+    date_desc: (a,b)=> (b.date_start||"").localeCompare(a.date_start||""),
+    region:    (a,b)=> c(a.region,b.region) || (a.date_start||"").localeCompare(b.date_start||""),
+    facilitator:(a,b)=> c(a.facilitator,b.facilitator),
+    organizer: (a,b)=> c(a.organizer,b.organizer),
+    price:     (a,b)=> (a.price_min??1e9)-(b.price_min??1e9),
+  };
+  return [...arr].sort(by[mode]||by.date_asc);
+}
+
+function render(){
+  const q = document.getElementById("q").value.trim();
+  const region = document.getElementById("region").value;
+  const hidePast = document.getElementById("hidePast").checked;
+  const mode = document.getElementById("sort").value;
+
+  let list = ALL.filter(ev=>
+    matchQuery(ev,q) &&
+    (!region || ev.region===region) &&
+    (!hidePast || !isPast(ev))
+  );
+  list = sortEvents(list,mode);
+
+  document.getElementById("count").textContent = `顯示 ${list.length} 場`;
+  const root = document.getElementById("list");
+
+  if(!list.length){ root.innerHTML = `<div class="empty">沒有符合條件的活動。</div>`; return; }
+
+  root.innerHTML = list.map(ev=>{
+    const past = isPast(ev);
+    const hl = (ev.highlights&&ev.highlights.length)
+      ? `<ul class="highlights">${ev.highlights.map(h=>`<li>${esc(h)}</li>`).join("")}
+         ${ev.highlights_source?`<div class="hl-src">回饋來源:${esc(ev.highlights_source)}</div>`:""}</ul>` : "";
+    return `<article class="card${past?" past":""}">
+      <div class="when">${esc(fmtDate(ev.date_start,ev.date_end))}${past?"　·　已過期":""}</div>
+      <h3>${esc(ev.title||"未命名活動")}</h3>
+      ${ev.purpose?`<div class="purpose">${esc(ev.purpose)}</div>`:""}
+      ${ev.summary?`<div class="summary">${esc(ev.summary)}</div>`:""}
+      ${hl}
+      <div class="meta-row">
+        ${ev.region?`<span>地區 <b>${esc(ev.region)}</b></span>`:""}
+        ${ev.venue?`<span>地點 <b>${esc(ev.venue)}</b></span>`:""}
+        ${ev.facilitator?`<span>帶領者 <b>${esc(ev.facilitator)}</b></span>`:""}
+        ${ev.organizer?`<span>主辦 <b>${esc(ev.organizer)}</b></span>`:""}
+        ${ev.price?`<span>費用 <b>${esc(ev.price)}</b></span>`:""}
+      </div>
+      <div class="foot">
+        ${ev.signup_url?`<a class="btn" href="${esc(ev.signup_url)}" target="_blank" rel="noopener">我要報名 →</a>`:"<span></span>"}
+        <span class="fetched">資料更新日 ${esc(ev.fetched_at||"—")}　·　來源 ${esc(ev.source||"—")}</span>
+      </div>
+    </article>`;
+  }).join("");
+}
+
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+["q","sort","region","hidePast"].forEach(id=>{
+  document.getElementById(id).addEventListener("input",render);
+});
+load();
+</script>
+</body>
+</html>

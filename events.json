@@ -1,0 +1,69 @@
+{
+  "updated_at": "2026-06-23",
+  "events": [
+    {
+      "id": "2026-satir-taipei-0712",
+      "title": "薩提爾冰山對話工作坊",
+      "purpose": "透過冰山隱喻,練習與自己和他人一致地連結",
+      "summary": "兩天沉浸式練習,含案例演練與小組對話",
+      "highlights": [
+        "練習後第一次能在衝突中停下來深呼吸",
+        "帶領者很溫柔,不會逼你說不想說的"
+      ],
+      "highlights_source": "Accupass 報名頁留言(經整理)",
+      "date_start": "2026-07-12",
+      "date_end": "2026-07-13",
+      "region": "台北",
+      "venue": "中正區 ◯◯空間",
+      "facilitator": "◯◯◯",
+      "organizer": "◯◯薩提爾推廣協會",
+      "price": "NT$ 3,600(早鳥 3,200)",
+      "price_min": 3200,
+      "signup_url": "https://example.com/event/0712",
+      "source": "accupass",
+      "fetched_at": "2026-06-23"
+    },
+    {
+      "id": "2026-satir-taichung-0809",
+      "title": "家族治療入門:薩提爾成長模式",
+      "purpose": "認識家庭規條如何影響當下的自我價值感",
+      "summary": "一日講座,理論導讀搭配雕塑體驗",
+      "highlights": [
+        "雕塑體驗讓我看見自己在家裡的位置"
+      ],
+      "highlights_source": "主辦官網學員回饋",
+      "date_start": "2026-08-09",
+      "date_end": "2026-08-09",
+      "region": "台中",
+      "venue": "西區 旭立台中教室",
+      "facilitator": "△△△",
+      "organizer": "財團法人旭立文教基金會",
+      "price": "NT$ 1,800",
+      "price_min": 1800,
+      "signup_url": "https://www.shiuhli.org.tw/course",
+      "source": "shiuhli",
+      "fetched_at": "2026-06-23"
+    },
+    {
+      "id": "2026-satir-online-0920",
+      "title": "一致性表達線上練習團體",
+      "purpose": "在日常溝通中練習表裡一致的表達",
+      "summary": "連續四週線上小團體,每週一次兩小時",
+      "highlights": [
+        "線上也能有很深的連結,沒想到"
+      ],
+      "highlights_source": "帶領者粉專貼文(經同意)",
+      "date_start": "2026-09-20",
+      "date_end": "2026-10-11",
+      "region": "線上",
+      "venue": "Google Meet",
+      "facilitator": "□□□",
+      "organizer": "薩提爾成長模式推廣",
+      "price": "NT$ 2,400",
+      "price_min": 2400,
+      "signup_url": "https://example.com/event/0920",
+      "source": "manual",
+      "fetched_at": "2026-06-23"
+    }
+  ]
+}
