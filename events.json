@@ -1,6 +1,6 @@
 {
   "updated_at": "2026-06-23",
-  "count": 77,
+  "count": 75,
   "events": [
     {
       "id": "lopwilldo-15827",
@@ -1651,50 +1651,6 @@
       "price_min": 5980,
       "source_name": "心流逸境教育平台",
       "source_url": "https://comflow.tw/satir_basic/"
-    },
-    {
-      "id": "omia-1800",
-      "title": "薩提爾的對話練習補充課程：好奇與情緒關係",
-      "purpose": "",
-      "summary": "",
-      "highlights": [],
-      "date_start": "",
-      "date_end": "",
-      "region": "—",
-      "venue": "線上課程",
-      "facilitator": "李崇建",
-      "organizer": "OMIA 學東西",
-      "price": "990元",
-      "signup_url": "https://www.omia.com.tw/project/1800",
-      "source": "omia",
-      "fetched_at": "2026-06-23",
-      "link_ok": true,
-      "link_checked_at": "2026-06-23",
-      "price_min": 990,
-      "source_name": "OMIA 學東西",
-      "source_url": "https://www.omia.com.tw/project/1800"
-    },
-    {
-      "id": "omia-1791",
-      "title": "薩提爾的對話練習：從「好奇心」出發建立深度溝通",
-      "purpose": "",
-      "summary": "",
-      "highlights": [],
-      "date_start": "",
-      "date_end": "",
-      "region": "—",
-      "venue": "線上課程",
-      "facilitator": "李崇建",
-      "organizer": "OMIA 學東西",
-      "price": "2990元",
-      "signup_url": "https://www.omia.com.tw/project/1791",
-      "source": "omia",
-      "fetched_at": "2026-06-23",
-      "link_ok": true,
-      "link_checked_at": "2026-06-23",
-      "price_min": 2990,
-      "source_name": "OMIA 學東西",
-      "source_url": "https://www.omia.com.tw/project/1791"
     }
   ]
 }

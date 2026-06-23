@@ -301,18 +301,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://guru4tw.github.io/SatirDaily/events/omia-1800.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://guru4tw.github.io/SatirDaily/events/omia-1791.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://guru4tw.github.io/SatirDaily/facilitators/%E6%88%90%E8%92%82.html</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -488,12 +476,6 @@
   </url>
   <url>
     <loc>https://guru4tw.github.io/SatirDaily/facilitators/%E6%9E%97%E4%BD%B3%E9%80%B8-Jerry-Lin.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://guru4tw.github.io/SatirDaily/facilitators/%E6%9D%8E%E5%B4%87%E5%BB%BA.html</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
