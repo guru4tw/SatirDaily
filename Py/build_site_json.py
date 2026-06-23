@@ -31,6 +31,11 @@ from typing import Optional
 ROOT = Path(__file__).resolve().parent.parent
 DOCS_JSON = ROOT / "Docs" / "events.json"
 SITE_JSON = ROOT / "events.json"
+SITEMAP = ROOT / "sitemap.xml"
+INDEX_HTML = ROOT / "index.html"
+
+# GitHub Pages 服務網址(專案頁)。robots.txt 與 sitemap 的 <loc> 都指這。
+SITE_BASE = "https://guru4tw.github.io/SatirDaily/"
 
 NUM_RE = re.compile(r"\d[\d,]*")
 
@@ -73,6 +78,127 @@ def build(events: list[dict]) -> dict:
     return {"updated_at": updated, "count": len(out_events), "events": out_events}
 
 
+def write_sitemap(updated: str) -> None:
+    """產 sitemap.xml。前端為單頁 SPA(所有活動同頁渲染),故只列首頁一條 URL,
+    lastmod 取資料更新日,changefreq daily,讓 Google 提高爬取頻率。"""
+    lastmod = f"    <lastmod>{updated}</lastmod>\n" if updated else ""
+    xml = (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+        "  <url>\n"
+        f"    <loc>{SITE_BASE}</loc>\n"
+        f"{lastmod}"
+        "    <changefreq>daily</changefreq>\n"
+        "    <priority>1.0</priority>\n"
+        "  </url>\n"
+        "</urlset>\n"
+    )
+    SITEMAP.write_text(xml, encoding="utf-8")
+
+
+def esc(s) -> str:
+    """HTML escape(預渲染文字用)。"""
+    return (str(s or "")
+            .replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+            .replace('"', "&quot;"))
+
+
+def build_jsonld(events: list[dict]) -> str:
+    """產 schema.org ItemList<Event> JSON 字串(伺服器端版本,與前端 injectJsonLd 等價)。
+    只收有 date_start 者(Event 必填 startDate);無日期者略過,不杜撰。"""
+    items = []
+    pos = 0
+    for e in events:
+        if not e.get("date_start"):
+            continue
+        pos += 1
+        ev = {
+            "@type": "Event",
+            "name": e.get("title") or "薩提爾活動",
+            "startDate": e["date_start"],
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+                "@type": "Place",
+                "name": e.get("venue") or e.get("region") or "台灣",
+                "address": e.get("region") or e.get("venue") or "台灣",
+            },
+        }
+        if e.get("date_end"):
+            ev["endDate"] = e["date_end"]
+        desc = e.get("purpose") or e.get("summary")
+        if desc:
+            ev["description"] = str(desc)[:300]
+        if e.get("signup_url"):
+            ev["url"] = e["signup_url"]
+        if e.get("organizer"):
+            ev["organizer"] = {"@type": "Organization", "name": e["organizer"]}
+        if e.get("facilitator"):
+            ev["performer"] = {"@type": "Person", "name": e["facilitator"]}
+        if e.get("price_min") is not None:
+            ev["offers"] = {
+                "@type": "Offer", "price": e["price_min"], "priceCurrency": "TWD",
+                "url": e.get("signup_url") or SITE_BASE,
+                "availability": "https://schema.org/InStock",
+            }
+        items.append({"@type": "ListItem", "position": pos, "item": ev})
+    ld = {
+        "@context": "https://schema.org", "@type": "ItemList",
+        "name": "全台薩提爾活動清單", "itemListElement": items,
+    }
+    return json.dumps(ld, ensure_ascii=False)
+
+
+def build_prerender(events: list[dict]) -> str:
+    """產可索引的活動清單 HTML(無 JS 時的 fallback,也是 Googlebot 抓原始 HTML 看到的內容)。
+    前端 JS 載入後會以互動版覆寫 #list,故此處只求語意清楚、含關鍵欄位。"""
+    rows = []
+    for e in events:
+        when = e.get("date_start") or "日期未定"
+        if e.get("date_end") and e.get("date_end") != e.get("date_start"):
+            when = f'{e["date_start"]} ～ {e["date_end"]}'
+        meta = " · ".join(filter(None, [
+            esc(e.get("region")), esc(e.get("venue")),
+            f'帶領:{esc(e["facilitator"])}' if e.get("facilitator") else "",
+            f'主辦:{esc(e["organizer"])}' if e.get("organizer") else "",
+        ]))
+        url = e.get("signup_url") or e.get("source_url") or ""
+        title = esc(e.get("title") or "薩提爾活動")
+        link = (f'<a href="{esc(url)}" rel="noopener nofollow">{title}</a>'
+                if url else title)
+        rows.append(
+            f'<article class="card"><h3>{link}</h3>'
+            f'<p class="when">{esc(when)}</p>'
+            + (f'<p class="meta">{meta}</p>' if meta else "")
+            + "</article>"
+        )
+    return "\n".join(rows)
+
+
+def inject_index(jsonld: str, prerender: str) -> bool:
+    """把 JSON-LD 與預渲染清單寫進 index.html 的標記區。回傳是否有改動。"""
+    if not INDEX_HTML.exists():
+        print(f"略過注入:找不到 {INDEX_HTML}", file=sys.stderr)
+        return False
+    html = INDEX_HTML.read_text(encoding="utf-8")
+    orig = html
+    # 1) JSON-LD:替換 id="ld-events" script 的內容
+    html = re.sub(
+        r'(<script type="application/ld\+json" id="ld-events">).*?(</script>)',
+        lambda m: m.group(1) + jsonld + m.group(2),
+        html, count=1, flags=re.DOTALL,
+    )
+    # 2) 預渲染清單:替換 PRERENDER 標記之間的內容
+    html = re.sub(
+        r"(<!--PRERENDER:START-->).*?(<!--PRERENDER:END-->)",
+        lambda m: m.group(1) + "\n" + prerender + "\n" + m.group(2),
+        html, count=1, flags=re.DOTALL,
+    )
+    if html != orig:
+        INDEX_HTML.write_text(html, encoding="utf-8")
+        return True
+    return False
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="正規化 Docs/events.json → 根 events.json")
     ap.add_argument("--check", action="store_true", help="只印統計不寫檔")
@@ -91,7 +217,11 @@ def main() -> None:
         return
     SITE_JSON.write_text(json.dumps(site, ensure_ascii=False, indent=2),
                          encoding="utf-8")
-    print(f"已寫入 {SITE_JSON}", file=sys.stderr)
+    write_sitemap(site["updated_at"])
+    changed = inject_index(build_jsonld(site["events"]),
+                           build_prerender(site["events"]))
+    print(f"已寫入 {SITE_JSON} 與 {SITEMAP}"
+          f"{';並更新 index.html 預渲染' if changed else ''}", file=sys.stderr)
 
 
 if __name__ == "__main__":

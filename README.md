@@ -42,3 +42,13 @@ python -m http.server 8000
 - [x] 部署 GitHub Pages
 
 成本:免費。詳見計畫書。
+
+## 分享 / 授權與注意事項
+
+本專案匯整各機構**公開**的薩提爾活動資訊,無後端、無使用者資料、無 API 金鑰,適合公開。公開前/維護時請留意三點:
+
+1. **公開前掃一次 git 歷史** — 確認從未誤 commit 過 `.env`、cookie、個人筆記等敏感檔。建議用 [gitleaks](https://github.com/gitleaks/gitleaks):`gitleaks detect --source .`。本 repo 為全新 git 起點,歷史乾淨。
+2. **GitHub Actions 權限最小化** — workflow 僅用內建 `GITHUB_TOKEN` 且只開 `contents: write`(見 `.github/workflows/daily.yml`),無外洩風險;請勿在 repo Settings → Actions 把預設權限改寬。
+3. **爬蟲禮儀** — 爬蟲沿用 `SatirEventBot` UA + 請求間延遲。fork 本專案者請遵守各來源站的 `robots.txt` 與服務條款,勿短時間連發。
+
+**授權**:程式碼採 MIT。活動資料僅為匯整呈現,著作權歸原機構;**活動詳情一律以卡片「來源」連回的原始頁面為準**,本站不保證即時正確。

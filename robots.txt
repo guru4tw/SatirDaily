@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://guru4tw.github.io/SatirDaily/sitemap.xml
