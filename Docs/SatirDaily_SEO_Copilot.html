@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SatirDaily SEO 改善需求 — Copilot 版</title>
+<style>
+  body{font-family:"Noto Sans TC","Segoe UI",sans-serif;line-height:1.75;background:#f9faf9;color:#1f302d;margin:0;}
+  header{background:#e6f0ec;padding:40px 24px;border-bottom:1px solid #dde8e3;}
+  h1{margin:0;font-size:1.9rem;font-family:"Noto Serif TC",serif;}
+  section{padding:28px 24px;border-bottom:1px solid #dde8e3;}
+  h2{font-size:1.32rem;font-family:"Noto Serif TC",serif;margin:0 0 12px;}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.9rem;}
+  th,td{padding:9px 12px;border-bottom:1px solid #dde8e3;text-align:left;vertical-align:top;}
+  th{background:#eaf2ee;color:#5d6f6b;font-weight:600;}
+  .pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.78rem;font-weight:600;}
+  .pill.ok{background:#dff0ec;color:#2c8c84;}
+  .pill.todo{background:#f6e9dc;color:#c08552;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>SatirDaily — SEO 改善需求（Copilot 整理版）</h1>
+  <p>網站：<a href="https://guru4tw.github.io/SatirDaily/">guru4tw.github.io/SatirDaily</a></p>
+  <p>原始碼：<a href="https://github.com/guru4tw/SatirDaily">github.com/guru4tw/SatirDaily</a></p>
+  <p>更新日：2026-06-23</p>
+</header>
+
+<section>
+  <h2>摘要</h2>
+  <p>SatirDaily 是「全台薩提爾活動／課程每日自動匯整清單」，目前 SEO 基礎已完成，瓶頸在於 <b>站外權重不足</b> 與 <b>單頁 SPA 長尾覆蓋上限</b>。</p>
+</section>
+
+<section>
+  <h2>已知弱點</h2>
+  <ul>
+    <li>單頁 SPA，缺乏獨立落地頁，長尾關鍵字覆蓋有限。</li>
+    <li>使用 GitHub Pages 子網域，品牌信任度不足。</li>
+    <li>新站，零反向連結，外部引用缺乏。</li>
+    <li>無 og:image，社群分享 CTR 受限。</li>
+    <li>內容深度偏薄，主題權威性不足。</li>
+    <li>過期活動混入，降低「即將舉行」相關性。</li>
+    <li>JSON-LD 為 ItemList，缺乏單一 Event rich result。</li>
+  </ul>
+</section>
+
+<section>
+  <h2>SEO 改善需求清單</h2>
+  <table>
+    <tr><th>項目</th><th>效益</th><th>靜態實作方式</th><th>風險/成本</th><th>優先級</th></tr>
+    <tr>
+      <td>提交 sitemap.xml 至 GSC</td>
+      <td>加速收錄，提升索引完整度</td>
+      <td>人工登入 GSC 提交</td>
+      <td>低</td>
+      <td><span class="pill.todo">高</span></td>
+    </tr>
+    <tr>
+      <td>建立每活動/講師/地區靜態頁</td>
+      <td>擴張長尾關鍵字，提升 Event rich result 機率</td>
+      <td>Python build 腳本生成 /events/{id}.html，並更新 sitemap 與內部連結</td>
+      <td>維護成本中等，需處理過期活動</td>
+      <td><span class="pill.todo">中高</span></td>
+    </tr>
+    <tr>
+      <td>加 og:image</td>
+      <td>提升社群分享 CTR，增加圖片搜尋曝光</td>
+      <td>build 腳本自動產活動卡圖，寫入 meta</td>
+      <td>需設計模板，成本中</td>
+      <td><span class="pill.todo">中</span></td>
+    </tr>
+    <tr>
+      <td>擴充主題知識內容</td>
+      <td>提升主題權威性，抗 thin content</td>
+      <td>新增「薩提爾模式介紹」「講師專頁」靜態文檔</td>
+      <td>需人工撰寫，持續更新</td>
+      <td><span class="pill.todo">中</span></td>
+    </tr>
+    <tr>
+      <td>爭取反向連結</td>
+      <td>提升網域權重，改善排名</td>
+      <td>聯繫活動主辦單位，請求引用</td>
+      <td>人工溝通，成本高</td>
+      <td><span class="pill.todo">高</span></td>
+    </tr>
+  </table>
+</section>
+
+<section>
+  <h2>建議的資料夾結構</h2>
+  <pre>
+/index.html
+/events/{event-id}.html
+/lecturers/{lecturer-name}.html
+/regions/{region-name}.html
+/sitemap.xml
+  </pre>
+  <p>內部連結策略：首頁活動卡片 → 對應活動頁；講師名 → 講師頁；地區 → 地區頁。確保 sitemap.xml 每日更新。</p>
+</section>
+
+<footer>
+  <p>SatirDaily SEO Copilot 版 · 產生於 2026-06-23</p>
+</footer>
+
+</body>
+</html>

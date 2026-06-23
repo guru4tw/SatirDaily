@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SatirDaily SEO 深度優化建議報告 — Manus AI</title>
+<style>
+  :root {
+    --primary: #1f6f68;
+    --primary-dark: #15534d;
+    --secondary: #c08552;
+    --bg: #f8faf9;
+    --surface: #ffffff;
+    --text: #1f302d;
+    --text-light: #5d6f6b;
+    --border: #dde8e3;
+    --shadow: 0 4px 12px rgba(0,0,0,0.05);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans TC", system-ui, -apple-system, sans-serif;
+    line-height: 1.8;
+    background: var(--bg);
+    color: var(--text);
+  }
+  .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+  header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 0 0 30px 30px;
+    margin-bottom: 40px;
+  }
+  header h1 { margin: 0; font-size: 2.2rem; font-weight: 700; }
+  header p { margin: 15px 0 0; opacity: 0.9; font-size: 1.1rem; }
+  
+  .card {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  h2 {
+    color: var(--primary);
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+  h3 { color: var(--primary-dark); margin-top: 25px; }
+  
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  th, td { padding: 12px 15px; border-bottom: 1px solid var(--border); text-align: left; }
+  th { background: #f1f7f4; color: var(--primary-dark); font-weight: 600; }
+  
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+  }
+  .badge-high { background: #fee2e2; color: #dc2626; }
+  .badge-med { background: #fef3c7; color: #d97706; }
+  .badge-low { background: #dcfce7; color: #16a34a; }
+  
+  .action-box {
+    background: #f0fdfa;
+    border: 1px solid #99f6e4;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 15px;
+  }
+  .action-box h4 { margin: 0 0 10px; color: var(--primary-dark); }
+  
+  footer { text-align: center; padding: 40px; color: var(--text-light); font-size: 0.9rem; }
+  code { background: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>SatirDaily SEO 深度優化建議報告</h1>
+    <p>針對全靜態 GitHub Pages 架構的搜尋引擎優化策略彙整</p>
+  </div>
+</header>
+
+<div class="container">
+  <div class="card">
+    <h2>1. 核心現況診斷</h2>
+    <p>SatirDaily 目前已完成基礎的技術型 SEO（如預渲染、JSON-LD、Sitemap），在 GitHub Pages 的限制下表現優異。然而，目前的<b>「單頁 SPA」</b>架構是限制長尾流量增長的最大瓶頸。</p>
+    <table>
+      <tr><th>指標</th><th>現況描述</th><th>SEO 影響</th></tr>
+      <tr><td>收錄頁面</td><td>僅有 1 個首頁 URL</td><td>無法針對特定講師、主題或地區進行排名。</td></tr>
+      <tr><td>內容深度</td><td>77 場活動預渲染</td><td>Google 可抓取內容，但缺乏主題權威性（Authority）。</td></tr>
+      <tr><td>結構化資料</td><td>ItemList (72 筆)</td><td>雖然符合規範，但單頁承載過多 Event 易被 Google 視為目錄頁而非活動頁。</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>2. 高價值優化清單 (Manus AI 建議)</h2>
+    <p>以下建議遵循「全免費、純靜態、自動化」的原則，旨在提升長尾關鍵字覆蓋率。</p>
+
+    <h3>A. 靜態生成獨立活動/講師/地區頁面</h3>
+    <p><b>原理：</b>將原本僅存在於 <code>events.json</code> 的資料，透過 Python 腳本在 build 時生成為獨立的 HTML 檔案。</p>
+    <div class="action-box">
+      <h4>具體實作建議：</h4>
+      <ul>
+        <li><b>資料夾結構：</b> <code>/events/{id}.html</code>, <code>/teachers/{name}.html</code>, <code>/locations/{city}.html</code></li>
+        <li><b>URL 規劃：</b> 使用語意化 URL，例如 <code>/teachers/成蒂</code>。</li>
+        <li><b>Sitemap：</b> 將所有生成的 HTML 加入 <code>sitemap.xml</code>。</li>
+      </ul>
+      <p><b>優先級：</b> <span class="badge badge-high">最高</span> | <b>預期效益：</b> 顯著增加長尾關鍵字（如「成蒂 薩提爾課程」）的排名機會。</p>
+    </div>
+
+    <h3>B. 自動化生成社交分享圖 (og:image)</h3>
+    <p><b>原理：</b> 使用 Python (Pillow 庫) 在 build 階段，根據活動標題、日期、帶領者自動繪製一張活動卡片圖。</p>
+    <div class="action-box">
+      <h4>具體實作建議：</h4>
+      <ul>
+        <li>在 <code>build_site_json.py</code> 中加入圖像生成邏輯。</li>
+        <li>生成的圖片存放在 <code>/assets/og-images/{id}.png</code>。</li>
+        <li>在對應的 HTML 中設置 <code>&lt;meta property="og:image"&gt;</code>。</li>
+      </ul>
+      <p><b>優先級：</b> <span class="badge badge-med">中高</span> | <b>預期效益：</b> 提升在 FB/LINE 分享時的點擊率 (CTR)。</p>
+    </div>
+
+    <h3>C. 強化主題內容與內部連結策略</h3>
+    <p><b>原理：</b> 增加關於薩提爾模式的深度文章，並在文章中自然地連結到相關活動頁面，建立站內權威。</p>
+    <div class="action-box">
+      <h4>具體實作建議：</h4>
+      <ul>
+        <li>建立一個 <code>/blog/</code> 或 <code>/guide/</code> 區塊，放置「如何選擇薩提爾課程」等文章。</li>
+        <li>在首頁底部增加「熱門講師」或「熱門地區」連結，導向新生成的靜態頁。</li>
+      </ul>
+      <p><b>優先級：</b> <span class="badge badge-med">中</span> | <b>預期效益：</b> 降低跳出率，提升使用者停留時間與搜尋引擎權重。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>3. 待辦清單執行建議 (按效益排序)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>任務項目</th>
+          <th>類別</th>
+          <th>優先級</th>
+          <th>建議動作</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GSC 提交 sitemap.xml</td>
+          <td>人工</td>
+          <td><span class="badge badge-high">高</span></td>
+          <td>立即執行，確保 Google 知道 sitemap 的存在。</td>
+        </tr>
+        <tr>
+          <td>靜態頁面生成腳本開發</td>
+          <td>技術</td>
+          <td><span class="badge badge-high">高</span></td>
+          <td>修改 build 腳本，從 events.json 遍歷生成個別 HTML。</td>
+        </tr>
+        <tr>
+          <td>外部反向連結經營</td>
+          <td>人工</td>
+          <td><span class="badge badge-med">中高</span></td>
+          <td>向旭立、薩提爾協會等機構爭取連結回本站。</td>
+        </tr>
+        <tr>
+          <td>自動化 og:image 生成</td>
+          <td>技術</td>
+          <td><span class="badge badge-med">中</span></td>
+          <td>提升社群傳播視覺效果。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>4. 總結</h2>
+    <p>SatirDaily 已具備良好的 SEO 基礎。未來的核心應放在<b>「從單頁到多頁」</b>的轉型，利用 GitHub Actions 的強大自動化能力，在不增加維護負擔的前提下，將每一場活動、每一位講師都轉化為一個可被 Google 索引的入口。這將使 SatirDaily 從一個單純的工具頁，進化為一個薩提爾模式的內容樞紐。</p>
+  </div>
+
+  <footer>
+    <p>報告產生時間：2026-06-23 | 由 Manus AI 根據 SatirDaily SEO 需求分析產生</p>
+  </footer>
+</div>
+
+</body>
+</html>

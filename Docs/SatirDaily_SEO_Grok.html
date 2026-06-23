@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SatirDaily SEO — Grok 優化建議</title>
+<style>
+  :root{
+    --ink:#1f302d; --ink-soft:#5d6f6b; --ink-faint:#7c8a86;
+    --bg:#f1f7f4; --surface:#ffffff; --line:#dde8e3;
+    --accent:#1f6f68; --accent-2:#2c8c84; --warm:#c08552;
+    --ok:#2c8c84; --todo:#c08552; --na:#a0aba7;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans TC","Segoe UI",system-ui,sans-serif;line-height:1.75;}
+  .wrap{max-width:980px;margin:0 auto;padding:0 24px;}
+  header{background:linear-gradient(135deg,#e6f0ec,#f1f7f4);border-bottom:1px solid var(--line);
+    padding:44px 0 34px;}
+  header .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;
+    color:var(--accent);font-weight:600;letter-spacing:.04em;}
+  header .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent-2);}
+  h1{font-family:"Noto Serif TC",serif;font-size:1.9rem;margin:10px 0 6px;}
+  header p.sub{color:var(--ink-soft);margin:0;font-size:.96rem;}
+  header .meta{margin-top:16px;font-size:.84rem;color:var(--ink-faint);display:flex;flex-wrap:wrap;gap:6px 18px;}
+  header .meta b{color:var(--ink-soft);font-weight:600;}
+  header .meta a{color:var(--accent);}
+
+  section{padding:30px 0;border-bottom:1px solid var(--line);}
+  h2{font-family:"Noto Serif TC",serif;font-size:1.32rem;margin:0 0 4px;
+    display:flex;align-items:center;gap:10px;}
+  h2 .num{display:inline-flex;align-items:center;justify-content:center;
+    width:30px;height:30px;border-radius:9px;background:var(--accent);color:#fff;
+    font-size:.92rem;font-family:"Noto Sans TC",sans-serif;flex:none;}
+  h2.plain{display:block;}
+  .lede{color:var(--ink-soft);margin:2px 0 18px;font-size:.95rem;}
+  h3{font-size:1.04rem;margin:22px 0 8px;color:var(--ink);}
+  p{margin:0 0 12px;}
+  ul,ol{margin:0 0 12px;padding-left:22px;}
+  li{margin:5px 0;}
+  code{background:#eaf2ee;border:1px solid var(--line);border-radius:5px;
+    padding:1px 6px;font-size:.86em;font-family:"Cascadia Code",Consolas,monospace;color:#15534d;}
+  a{color:var(--accent-2);}
+
+  table{width:100%;border-collapse:collapse;margin:6px 0 16px;font-size:.9rem;}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:#eaf2ee;color:var(--ink-soft);font-weight:600;font-size:.82rem;}
+  td.c,th.c{text-align:center;white-space:nowrap;}
+  .pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.78rem;font-weight:600;}
+  .pill.ok{background:#dff0ec;color:var(--ok);}
+  .pill.todo{background:#f6e9dc;color:var(--todo);}
+  .pill.na{background:#eef1f0;color:var(--na);}
+
+  .callout{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:10px;padding:16px 18px;margin:16px 0;}
+  .callout.warm{border-left-color:var(--warm);}
+  .callout h3{margin-top:0;}
+
+  .recommendation{background:#e6f0ec;border-left:4px solid var(--accent-2);padding:16px;margin:16px 0;border-radius:8px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Grok SEO 分析與建議</span>
+    <h1>SatirDaily — Grok 優化建議</h1>
+    <p class="sub">基於 2026-06-23 現況，提供高投入產出比的純靜態 GitHub Pages SEO 改善方案。</p>
+    <div class="meta">
+      <span><b>網站</b> <a href="https://guru4tw.github.io/SatirDaily/">guru4tw.github.io/SatirDaily</a></span>
+      <span><b>原始碼</b> <a href="https://github.com/guru4tw/SatirDaily">github.com/guru4tw/SatirDaily</a></span>
+      <span><b>更新日</b> 2026-06-23</span>
+      <span><b>分析者</b> Grok by xAI</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="plain">摘要（Grok TL;DR）</h2>
+    <p>您的網站基礎 SEO 已非常扎實，尤其是預渲染與結構化資料解決了 SPA 最大痛點。目前瓶頸在長尾關鍵字、站外權重與內容深度。<b>最值得立即行動</b>：提交 sitemap、生成 og:image、過濾過期活動、擴充靜態內容。</p>
+    <p><b>靜態多頁生成</b>：值得為講師與地區生成獨立頁（中高優先），但先從簡單版本開始。以下是詳細建議。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="num">1</span>Grok 高優先改善清單</h2>
+    <div class="recommendation">
+      <h3>1. 提交 sitemap.xml 到 GSC + 網址審查</h3>
+      <p><b>(a) 效益</b>：立即提升收錄率，讓 Google 發現所有預渲染活動。</p>
+      <p><b>(b) 實作</b>：GSC 介面提交。</p>
+      <p><b>(c) 成本</b>：低。</p>
+      <p><b>(d) 優先級</b> <span class="pill ok">最高</span></p>
+    </div>
+
+    <div class="recommendation">
+      <h3>2. 生成 og:image 與活動卡圖</h3>
+      <p><b>(a) 效益</b>：提升社群 CTR 與分享率；圖片搜尋曝光。</p>
+      <p><b>(b) 實作</b>：Python build 腳本中使用 Pillow 或簡單 Canvas 生成帶活動資訊的 PNG，存到 /images/ 資料夾，build 時動態更新 meta og:image。</p>
+      <p><b>(c) 成本</b>：中（需加依賴）。</p>
+      <p><b>(d) 優先級</b> <span class="pill ok">高</span></p>
+    </div>
+
+    <div class="recommendation">
+      <h3>3. 過濾過期活動 + 過去活動歸檔頁</h3>
+      <p><b>(a) 效益</b>：提升相關性訊號，避免稀釋即將舉行活動。</p>
+      <p><b>(b) 實作</b>：build 腳本分離 upcoming / past events，生成 /past.html 或 /archive/ 目錄。</p>
+      <p><b>(c) 成本</b>：低。</p>
+      <p><b>(d) 優先級</b> <span class="pill ok">高</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="num">2</span>靜態多頁生成建議</h2>
+    <p><b>值得做</b>：是的，尤其是講師頁與地區頁，能大幅擴張長尾關鍵字與 Event rich results。</p>
+    <div class="callout">
+      <h3>推薦資料夾結構</h3>
+      <pre><code>/
+├── index.html          # 主清單頁 (保持現有)
+├── events/
+│   ├── [slugified-event-name].html   # 每場活動獨立頁
+├── instructors/
+│   ├── [lecturer-slug].html          # 講師頁
+├── regions/
+│   ├── taipei.html
+│   ├── taichung.html
+│   └── ... 
+├── past.html           # 過期活動
+└── sitemap.xml         # 更新涵蓋所有頁</code></pre>
+    </div>
+    <p><b>URL 規劃</b>：/events/活動標題-slug、/instructors/講師名 等，乾淨且語意化。</p>
+    <p><b>實作方式</b>：擴充 build_site_json.py，使用 Jinja2 或 string template 為每筆 event 生成 HTML 檔案。Actions 每日 build 時一併產生。</p>
+    <p><b>內部連結</b>：主頁卡片連結到獨立頁；sitemap 更新；JSON-LD 改用個別 Event schema。</p>
+    <p><b>風險</b>：建置時間略增（77 場仍極輕量），但 GitHub Pages 無問題。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2><span class="num">3</span>其他高 CP 值建議</h2>
+    <ul>
+      <li><b>自訂網域</b>：若可能，綁定 satir-daily.tw 等（免費 DNS），提升品牌信任。</li>
+      <li><b>內容擴充</b>：build 時注入更多薩提爾知識文章或講師 bio。</li>
+      <li><b>內部連結與麵包屑</b>：強化站內導航。</li>
+      <li><b>反向連結</b>：繼續聯絡機構請求連結。</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    SatirDaily SEO Grok 版 · 產生於 2026-06-23 · 建議可直接整合到 build 流程。
+  </div>
+</footer>
+
+</body>
+</html>

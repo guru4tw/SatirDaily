@@ -52,8 +52,13 @@
 | `Docs/link_report.json` | 自動產生 | verify_links 的驗證報告(摘要 + broken 清單 + 每筆狀態),勿手改 |
 | `Log/history.md` | **人工/半自動** | 精簡修改 log,有意義的改動補一筆。逐 commit 細節看 `git log` |
 | `events.json`(根) | 自動產生 | GitHub Pages 服務的檔,前端 `index.html` fetch 此檔。由 `build_site_json.py` 從 `Docs/events.json` 正規化而來,勿手改 |
+| `Py/build_og.py` | 已建 | og:image 生成器(Pillow):為每場有效活動 + 站台預設畫 1200×630 分享縮圖,輸出 `assets/og/{id}.png` / `default.png`。無 Pillow 或無 CJK 字型則 graceful 略過。須在 `build_site_json.py` **之前**跑 |
+| `events/{id}.html` 等 | 自動產生 | SSG 子頁:`events/`(每活動)、`facilitators/`(講師彙整)、`regions/`(地區彙整)、`archive/index.html`(過期歸檔)。`build_site_json.py` 每次乾淨重建(`rmtree`),勿手改 |
+| `assets/og/*.png` | 自動產生 | `build_og.py` 產的分享縮圖,勿手改 |
 
-> Python 腳本統一置於 `Py/`(`discover_sources.py`、`crawlers/`);資料檔(`*.md`、`events.json`)仍在 `Docs/`。腳本內以 `__file__` 錨定 `../Docs`,故從任何 cwd 執行都對得到資料檔。
+> Python 腳本統一置於 `Py/`(`discover_sources.py`、`build_site_json.py`、`build_og.py`、`verify_links.py`、`crawlers/`);資料檔(`*.md`、`events.json`)仍在 `Docs/`。腳本內以 `__file__` 錨定 `../Docs`,故從任何 cwd 執行都對得到資料檔。
+>
+> **SSG / 過期分離**(2026-06):`build_site_json.py` 以今天為界分 `upcoming`/`undated`/`past`,首頁預渲染與 JSON-LD 只收有效活動(upcoming+undated),past 進 `/archive/`;並為每場有效活動/每位講師/每個地區生成獨立靜態頁 + 對應 JSON-LD(活動頁用單一 `Event`+`BreadcrumbList`,彙整頁用 `ItemList`),sitemap 列全部子頁。每日 pipeline 順序:discover → 爬蟲 → verify_links → **build_og** → **build_site_json** → commit。完整策略見 `Docs/SatirDaily_SEO_Plan.html`。
 
 ---
 

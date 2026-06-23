@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SatirDaily SEO 改善提案 - Gemini 分析報告</title>
+<style>
+  :root {
+    --primary: #1a4f48;
+    --secondary: #2c8c84;
+    --bg-color: #f8faf9;
+    --text-main: #2d3748;
+    --text-muted: #718096;
+    --border: #e2e8f0;
+    --highlight: #edf2f7;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 40px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+  h1 { color: var(--primary); font-size: 2.2rem; border-bottom: 2px solid var(--border); padding-bottom: 10px; }
+  h2 { color: var(--secondary); font-size: 1.5rem; margin-top: 30px; border-bottom: 1px solid var(--border); padding-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+  h3 { color: var(--primary); font-size: 1.2rem; margin-top: 25px; }
+  p { margin-bottom: 16px; }
+  ul, ol { margin-bottom: 20px; padding-left: 24px; }
+  li { margin-bottom: 8px; }
+  code { background-color: #f1f5f9; padding: 2px 6px; border-radius: 4px; font-family: "Cascadia Code", monospace; font-size: 0.9em; color: #e53e3e; }
+  .alert { background-color: #ebf8ff; border-left: 4px solid #3182ce; padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+  .alert-success { background-color: #f0fff4; border-left-color: #38a169; }
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+  th, td { border: 1px solid var(--border); padding: 12px; text-align: left; }
+  th { background-color: var(--highlight); font-weight: 600; color: var(--primary); }
+  .badge { display: inline-block; padding: 4px 8px; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; }
+  .badge-high { background-color: #fed7d7; color: #c53030; }
+  .badge-med { background-color: #feebc8; color: #c05621; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>SatirDaily — SEO 進階改善提案</h1>
+  <p>針對您所提供的全靜態 GitHub Pages 網站架構限制，以下提出在「零成本、無後端」前提下，投資報酬率（ROI）最高的 SEO 策略方案。</p>
+
+  <div class="alert alert-success">
+    <strong>核心答覆：絕對值得為每場活動／講師／地區「靜態生成獨立 HTML 頁」 (SSG)。</strong>
+    <p>單頁 SPA 的 SEO 上限非常明顯。將自動化資料流延伸，在 Build 階段利用 Python 讀取 JSON 並產出獨立的 HTML 檔案，是突破長尾關鍵字覆蓋率的最有效做法。這能徹底解決「單一 URL 無法乘載多元意圖」以及「ItemList JSON-LD 權重不如 Event 專屬頁」的痛點。</p>
+  </div>
+
+  <h2>1. 靜態生成獨立頁面 (SSG) 策略規劃</h2>
+  <p>此步驟的邏輯是在您現有的 <code>build_site_json.py</code> 中，加入 HTML 模板渲染功能（可使用 Python 內建的字串格式化，或引入 <code>jinja2</code>），將 <code>events.json</code> 中的每一筆資料輸出為實體檔案。</p>
+
+  <h3>A. 資料夾結構與 URL 規劃</h3>
+  <ul>
+    <li><strong>活動專屬頁：</strong> <code>/events/{date}-{organizer}-{id}.html</code><br>
+        <em>(例如: <code>/events/2026-06-25-lopwilldo-workshop.html</code>)</em></li>
+    <li><strong>講師/機構彙整頁：</strong> <code>/organizers/{organizer-name}.html</code></li>
+  </ul>
+
+  <h3>B. 內部連結與 SPA 共存策略</h3>
+  <p>在首頁的 SPA 列表中，卡片的點擊網址（<code>&lt;a href="..."&gt;</code>）<strong>必須寫死指向靜態生成的 HTML 頁面</strong>。您可以保留 SPA 的流暢體驗：利用 JavaScript 攔截點擊事件 (<code>e.preventDefault()</code>)，在畫面上彈出 Modal 顯示活動詳情。這樣一來，爬蟲爬到的是真實的長尾 URL，而使用者享受的是無縫的 SPA 體驗。</p>
+
+  <h3>C. SEO 元件配置</h3>
+  <ul>
+    <li><strong>獨立 Title / Meta：</strong> 「2026 薩提爾工作坊 - {活動名稱}｜{機構名稱}」</li>
+    <li><strong>獨立 JSON-LD：</strong> 捨棄首頁龐大的 ItemList，在各獨立頁注入單一且完整的 <code>Event</code> Schema.org 結構化資料，極大化觸發 Google Event Rich Result 的機率。</li>
+    <li><strong>Sitemap 更新：</strong> Python 腳本在產生 HTML 的同時，將這些新 URL 寫入 <code>sitemap.xml</code>。</li>
+  </ul>
+
+  <h2>2. 高 ROI 改善清單 (依優先級排序)</h2>
+
+  <table>
+    <tr>
+      <th style="width: 25%">改善項目</th>
+      <th style="width: 35%">預期效益與原理</th>
+      <th style="width: 25%">純靜態實作方式</th>
+      <th style="width: 15%">優先級</th>
+    </tr>
+    <tr>
+      <td><strong>自動化生成活動靜態頁 (SSG)</strong></td>
+      <td>解決長尾關鍵字（講師名、特定區域）無法排名的問題；提升結構化資料的精準度。</td>
+      <td>擴充 Python build 腳本，透過迴圈讀取 JSON，輸出 <code>/events/xxx.html</code>。</td>
+      <td><span class="badge badge-high">最高</span></td>
+    </tr>
+    <tr>
+      <td><strong>歷史與未來活動分離</strong></td>
+      <td>解決「過期活動混入」稀釋頁面相關性與新鮮度的問題。交易型意圖高度依賴「未來可報名」的狀態。</td>
+      <td>Python 爬蟲在寫入 <code>events.json</code> 時，依日期切分為 <code>upcoming.json</code> 與 <code>past.json</code>。首頁僅渲染未來活動，建立 <code>/archive/</code> 目錄存放過去活動。</td>
+      <td><span class="badge badge-high">高</span></td>
+    </tr>
+    <tr>
+      <td><strong>動態生成 og:image (Open Graph)</strong></td>
+      <td>大幅提高社群平台 (LINE, FB) 轉載時的點擊率 (CTR)。社群流量能間接送出正向的使用者行為訊號給搜尋引擎。</td>
+      <td>在 GitHub Actions 環境中安裝 <code>Pillow</code> (Python 影像處理函式庫)。準備一張底圖，腳本執行時將「活動名稱、日期、機構」浮水印壓上去，存入 <code>/assets/og/</code> 並寫入該頁的 HTML meta。</td>
+      <td><span class="badge badge-med">中高</span></td>
+    </tr>
+    <tr>
+      <td><strong>自訂網域 (唯一需要微小成本的項目)</strong></td>
+      <td>擺脫 <code>github.io</code> 子網域，建立專屬品牌信任度，累積獨立的網域權重 (Domain Authority)。</td>
+      <td>購買便宜的 .tw 或 .com 網域（每年約幾百台幣），在 GitHub Pages 設定 CNAME。雖違反「全免費」，但對 SEO 突破天花板至關重要。</td>
+      <td><span class="badge badge-med">中</span></td>
+    </tr>
+  </table>
+
+  <h2>3. 關於反向連結 (Backlinks) 的冷啟動</h2>
+  <p>新站零反向連結是硬傷。既然 SatirDaily 是自動幫各機構推廣活動的公益平台，您可以主動出擊：</p>
+  <ol>
+    <li>整理一份精美的 Email 或 FB 訊息。</li>
+    <li>聯繫您所爬取的 5 大來源機構（lopwilldo, satir_org 等）。</li>
+    <li>告知他們：「我們建立了一個公益的薩提爾活動匯總站，每天自動幫貴單位的活動增加曝光。如果方便，是否能在貴單位的『相關資源』或『友站連結』中提及 SatirDaily？」</li>
+  </ol>
+  <p>只要有 1~2 個高權重的相關機構給予 <code>dofollow</code> 連結，對新站的排名將是質的飛躍。</p>
+
+  <div class="alert">
+    <strong>維護成本與風險提示：</strong><br>
+    改用靜態生成 (SSG) 後，GitHub 儲存庫的檔案數量會隨著活動增加而變多。建議在 <code>.gitignore</code> 的策略上稍作調整，或者將生成的 <code>/events/</code> HTML 檔案僅存在於 <code>gh-pages</code> 分支，保持 <code>main</code> 分支乾淨。
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SatirDaily SEO 整合行動計畫 ｜ 五份 AI 報告彙整</title>
+<style>
+  :root{
+    --ink:#1f302d; --ink-soft:#5d6f6b; --ink-faint:#7c8a86;
+    --bg:#f1f7f4; --surface:#ffffff; --line:#dde8e3;
+    --accent:#1f6f68; --accent-2:#2c8c84; --warm:#c08552;
+    --ok:#2c8c84; --todo:#c08552; --na:#a0aba7; --bad:#c0524e;
+    --p1:#c0524e; --p2:#c08552; --p3:#2c8c84;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Noto Sans TC","Segoe UI",system-ui,sans-serif;line-height:1.75;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 24px;}
+  header{background:linear-gradient(135deg,#0f2e2a,#1f6f68);color:#eaf5f1;
+    border-bottom:1px solid var(--line);padding:48px 0 38px;}
+  header .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;
+    color:#bfe5dd;font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
+  header .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:#bfe5dd;}
+  h1{font-family:"Noto Serif TC",serif;font-size:2rem;margin:12px 0 8px;color:#fff;}
+  header p.sub{color:#cfe7e1;margin:0;font-size:1rem;}
+  header .meta{margin-top:18px;font-size:.84rem;color:#a9cfc8;display:flex;flex-wrap:wrap;gap:6px 18px;}
+  header .meta b{color:#d9efe9;font-weight:600;}
+  header .meta a{color:#bfe5dd;}
+
+  section{padding:32px 0;border-bottom:1px solid var(--line);}
+  h2{font-family:"Noto Serif TC",serif;font-size:1.36rem;margin:0 0 6px;
+    display:flex;align-items:center;gap:10px;}
+  h2 .num{display:inline-flex;align-items:center;justify-content:center;
+    width:30px;height:30px;border-radius:9px;background:var(--accent);color:#fff;
+    font-size:.92rem;font-family:"Noto Sans TC",sans-serif;flex:none;}
+  h2.plain{display:block;}
+  .lede{color:var(--ink-soft);margin:2px 0 18px;font-size:.95rem;}
+  h3{font-size:1.06rem;margin:24px 0 8px;color:var(--ink);}
+  p{margin:0 0 12px;}
+  ul,ol{margin:0 0 12px;padding-left:22px;}
+  li{margin:5px 0;}
+  code{background:#eaf2ee;border:1px solid var(--line);border-radius:5px;
+    padding:1px 6px;font-size:.85em;font-family:"Cascadia Code",Consolas,monospace;color:#15534d;}
+  pre{background:#0f2e2a;color:#dcebe6;border-radius:10px;padding:16px 18px;overflow:auto;
+    font-size:.84rem;line-height:1.7;}
+  pre code{background:none;border:none;color:inherit;padding:0;}
+  a{color:var(--accent-2);}
+
+  table{width:100%;border-collapse:collapse;margin:8px 0 16px;font-size:.89rem;}
+  th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;}
+  th{background:#eaf2ee;color:var(--ink-soft);font-weight:600;font-size:.8rem;}
+  td.c,th.c{text-align:center;white-space:nowrap;}
+  tbody tr:hover{background:#f6faf8;}
+  .pill{display:inline-block;padding:2px 10px;border-radius:999px;font-size:.76rem;font-weight:600;white-space:nowrap;}
+  .pill.ok{background:#dff0ec;color:var(--ok);}
+  .pill.todo{background:#f6e9dc;color:var(--todo);}
+  .pill.na{background:#eef1f0;color:var(--na);}
+  .pill.bad{background:#f6e1df;color:var(--bad);}
+  .pill.p1{background:#f6e1df;color:var(--p1);}
+  .pill.p2{background:#f6e9dc;color:var(--p2);}
+  .pill.p3{background:#dff0ec;color:var(--p3);}
+  .yes{color:var(--ok);font-weight:700;}
+  .no{color:var(--na);}
+
+  .callout{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--accent);
+    border-radius:10px;padding:16px 18px;margin:16px 0;}
+  .callout.warm{border-left-color:var(--warm);}
+  .callout.bad{border-left-color:var(--bad);}
+  .callout h3{margin-top:0;}
+  .big{background:#0f2e2a;color:#dcebe6;border-radius:14px;padding:26px 28px;margin:8px 0;}
+  .big h3{color:#fff;margin-top:0;}
+  .big code{background:#1c403a;border-color:#26534c;color:#bfe5dd;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  @media(max-width:720px){.grid2{grid-template-columns:1fr;}}
+  .mini{font-size:.82rem;color:var(--ink-faint);}
+  footer{padding:28px 0 64px;color:var(--ink-faint);font-size:.82rem;}
+  @media print{body{background:#fff;}header{background:#0f2e2a;}section{break-inside:avoid;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">SEO 整合行動計畫</span>
+    <h1>SatirDaily — SEO 整合行動計畫</h1>
+    <p class="sub">彙整 5 份 AI 顧問報告（本站現況 · Copilot · Gemini · Grok · Manus），對齊線上實況，產出單一可執行路線圖。</p>
+    <div class="meta">
+      <span><b>網站</b> <a href="https://guru4tw.github.io/SatirDaily/">guru4tw.github.io/SatirDaily</a></span>
+      <span><b>原始碼</b> <a href="https://github.com/guru4tw/SatirDaily">github.com/guru4tw/SatirDaily</a></span>
+      <span><b>架構</b> 全靜態 GitHub Pages（單頁 SPA + 每日 build）</span>
+      <span><b>產出日</b> 2026-06-23</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== TL;DR ===================== -->
+<section>
+  <div class="wrap">
+    <h2 class="plain">結論（TL;DR）</h2>
+    <p>基礎與技術型 SEO <b>已大致到位</b>：SPA「原始 HTML 空白」這個最致命問題已解（活動清單 + <code>ItemList&lt;Event&gt;</code> 結構化資料皆於 build 時伺服器端預渲染進 <code>index.html</code>），robots / sitemap / GSC 驗證 / 意圖化 metadata 全部完成。</p>
+    <div class="big">
+      <h3>五份報告的最大共識：把「單頁」變「多頁」</h3>
+      <p style="margin-bottom:8px">5 份 AI 報告高度一致地指向<b>同一個核心工程</b>：在每日 build 時，由 <code>build_site_json.py</code> 遍歷 <code>events.json</code>，為<b>每場活動／每位講師／每個地區靜態生成獨立 HTML 頁</b>，並改用「一活動一頁」的單一 <code>Event</code> JSON-LD。這同時打破三道天花板：① 長尾關鍵字（特定講師／主題／地區）終於有專屬落地頁；② Event Rich Result 觸發率提高（Google 偏好一活動一頁，而非 ItemList 目錄頁）；③ 收錄頁數從 1 → 數十，站點規模與主題權威性同步上升。</p>
+      <p style="margin:0" class="mini">次要但一致的共識：<b>og:image 自動生成</b>、<b>過期活動分離</b>、<b>向來源機構爭取反向連結</b>、<b>GSC 提交 sitemap</b>（這項最即時、零成本、純手動）。</p>
+    </div>
+    <p class="mini">本計畫所有「現況」欄位皆已對線上部署版 + 本機 repo 實測核對（非沿用舊簡報的宣稱值）。</p>
+  </div>
+</section>
+
+<!-- ===================== §1 現況 ===================== -->
+<section>
+  <div class="wrap">
+    <h2><span class="num">1</span>目前實際完成狀況（實測核對）</h2>
+    <p class="lede">截至 2026-06-23，對 <code>guru4tw.github.io/SatirDaily</code> 線上版與本機 <code>index.html</code> / <code>build_site_json.py</code> 逐項驗證。</p>
+    <table>
+      <tr><th style="width:26%">項目</th><th class="c" style="width:10%">狀態</th><th>實測結果</th></tr>
+      <tr><td><code>&lt;title&gt;</code>／description／keywords</td><td class="c"><span class="pill ok">已完成</span></td><td>對準交易型意圖：「薩提爾工作坊・課程・活動總覽 ｜ SatirDaily 全台每日更新」。</td></tr>
+      <tr><td>canonical</td><td class="c"><span class="pill ok">已完成</span></td><td><code>rel="canonical"</code> → 首頁正規網址。</td></tr>
+      <tr><td>Open Graph（type/title/description/url）</td><td class="c"><span class="pill ok">已完成</span></td><td>LINE/FB 分享預覽四欄齊全。</td></tr>
+      <tr><td><b>內容預渲染</b>（解 SPA 空白）</td><td class="c"><span class="pill ok">已完成</span></td><td>原始 HTML 含 <code>&lt;article class="card"&gt;</code> ×82，由 <code>build_prerender()</code> 注入 <code>&lt;!--PRERENDER--&gt;</code> 區；JS 載入後以互動版覆寫（漸進增強）。</td></tr>
+      <tr><td><b>Event 結構化資料</b></td><td class="c"><span class="pill ok">已完成</span></td><td>伺服器端注入 <code>&lt;script id="ld-events"&gt;</code> 的 schema.org <code>ItemList&lt;Event&gt;</code>（72 筆有日期活動）。</td></tr>
+      <tr><td>robots.txt</td><td class="c"><span class="pill ok">已完成</span></td><td>根目錄，未擋 Googlebot，指向 sitemap。</td></tr>
+      <tr><td>sitemap.xml</td><td class="c"><span class="pill todo">部分</span></td><td>每日自動產、<code>changefreq=daily</code>，但<b>只列首頁 1 條 URL</b>（單頁 SPA 設計使然）。</td></tr>
+      <tr><td>GSC 擁有權驗證</td><td class="c"><span class="pill ok">已完成</span></td><td>HTML 檔法（<code>googlede28061b78c7b0f2.html</code>）已上線。</td></tr>
+      <tr><td>h1 語意 + sr-only／FAQ 長文</td><td class="c"><span class="pill ok">已完成</span></td><td>單一 h1 +「關於薩提爾」長文 + 2 則 FAQ，覆蓋核心關鍵字。</td></tr>
+      <tr><td>LINE／FB 分享鈕、每日自動化</td><td class="c"><span class="pill ok">已完成</span></td><td>頁尾分享列；workflow 每日把更新後的 index.html / sitemap.xml 納入 commit。</td></tr>
+      <tr><td><b>og:image</b></td><td class="c"><span class="pill bad">未做</span></td><td>head 內無 <code>og:image</code> 與 <code>twitter:card</code>，社群分享無縮圖。</td></tr>
+      <tr><td><b>獨立子頁</b>（活動／講師／地區）</td><td class="c"><span class="pill bad">未做</span></td><td>全站僅 1 個 URL，無 <code>/events/</code>、<code>/facilitators/</code>、<code>/regions/</code>。</td></tr>
+      <tr><td><b>過期活動處理</b></td><td class="c"><span class="pill bad">未做</span></td><td>線上清單仍混入 2020–2021 等已結束活動，稀釋「即將舉行」相關性。</td></tr>
+      <tr><td>GSC 提交 sitemap／要求建立索引</td><td class="c"><span class="pill todo">待手動</span></td><td>擁有權已驗證，但 sitemap 尚未在 GSC「Sitemap」分頁提交。</td></tr>
+      <tr><td>反向連結</td><td class="c"><span class="pill todo">待經營</span></td><td>新站零外部引用，網域權重低。</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== §2 共識矩陣 ===================== -->
+<section>
+  <div class="wrap">
+    <h2><span class="num">2</span>五份 AI 報告共識矩陣</h2>
+    <p class="lede">每列為一項建議，✓ 代表該報告有提及／推薦。右欄為本計畫綜整後的判讀。</p>
+    <table>
+      <tr>
+        <th style="width:26%">建議項目</th>
+        <th class="c">現況簡報</th><th class="c">Copilot</th><th class="c">Gemini</th><th class="c">Grok</th><th class="c">Manus</th>
+        <th class="c" style="width:14%">共識強度</th>
+      </tr>
+      <tr><td><b>靜態多頁生成（SSG）</b><br><span class="mini">活動／講師／地區獨立頁 + 單一 Event JSON-LD</span></td>
+        <td class="c"><span class="yes">✓</span><span class="mini">評估中</span></td><td class="c yes">✓</td><td class="c"><span class="yes">✓</span><span class="mini">最高</span></td><td class="c"><span class="yes">✓</span><span class="mini">中高</span></td><td class="c"><span class="yes">✓</span><span class="mini">最高</span></td>
+        <td class="c"><span class="pill p1">5/5 最強</span></td></tr>
+      <tr><td>GSC 提交 sitemap + 要求建立索引</td>
+        <td class="c yes">✓</td><td class="c yes">✓</td><td class="c no">—</td><td class="c yes">✓</td><td class="c yes">✓</td>
+        <td class="c"><span class="pill p1">立即做</span></td></tr>
+      <tr><td>og:image 自動生成（Pillow）</td>
+        <td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td>
+        <td class="c"><span class="pill p2">5/5</span></td></tr>
+      <tr><td>過期 / 未來活動分離（歸檔頁）</td>
+        <td class="c"><span class="yes">✓</span><span class="mini">弱點</span></td><td class="c no">—</td><td class="c"><span class="yes">✓</span><span class="mini">高</span></td><td class="c"><span class="yes">✓</span><span class="mini">高</span></td><td class="c no">—</td>
+        <td class="c"><span class="pill p2">3/5</span></td></tr>
+      <tr><td>向來源機構爭取反向連結</td>
+        <td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td>
+        <td class="c"><span class="pill p2">5/5</span></td></tr>
+      <tr><td>主題內容深度（講師 bio／知識文章）</td>
+        <td class="c yes">✓</td><td class="c yes">✓</td><td class="c no">—</td><td class="c yes">✓</td><td class="c yes">✓</td>
+        <td class="c"><span class="pill p3">4/5</span></td></tr>
+      <tr><td>內部連結 / 麵包屑強化</td>
+        <td class="c no">—</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td><td class="c yes">✓</td>
+        <td class="c"><span class="pill p3">4/5</span></td></tr>
+      <tr><td>自訂網域（脫離 github.io）</td>
+        <td class="c yes">✓</td><td class="c no">—</td><td class="c"><span class="yes">✓</span><span class="mini">破免費</span></td><td class="c yes">✓</td><td class="c no">—</td>
+        <td class="c"><span class="pill na">3/5 有取捨</span></td></tr>
+      <tr><td>社群擴散（Matters／方格子／FB 社團）</td>
+        <td class="c yes">✓</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td><td class="c no">—</td>
+        <td class="c"><span class="pill na">1/5</span></td></tr>
+    </table>
+    <div class="callout">
+      <h3>報告之間的分歧點（值得注意）</h3>
+      <ul>
+        <li><b>SSG 該做多深 / 順序</b>：Gemini／Manus 主張「絕對值得、最高優先」；Grok 較保守，建議「先從簡單版本起步」。本計畫採<b>三階段分批上線</b>：<b>① 先為每場活動生成獨立頁 → ② 再為每位講師生成獨立頁 → ③ 最後為每個地區生成獨立頁</b>。活動頁資料現成、零歧義，先取得長尾與 Event Rich Result 主效益；講師頁需先建同名／別名對照表；地區頁為聚合頁，放最後彙整。</li>
+        <li><b>URL 命名</b>：各家不一（<code>/events/{id}</code> vs <code>/events/{date}-{organizer}-{slug}</code>、<code>/teachers/</code> vs <code>/instructors/</code> vs <code>/organizers/</code>）。本計畫對齊現有資料模型欄位（<code>id</code>／<code>facilitator</code>／<code>region</code>）統一命名，見 §3。</li>
+        <li><b>repo 膨脹</b>：僅 Gemini 點出檔案數會隨活動增長，建議生成檔放 <code>gh-pages</code> 分支保持 <code>main</code> 乾淨。本計畫採納為實作備註。</li>
+        <li><b>自訂網域</b>：Gemini 直言這項<b>違反「全免費」</b>（約每年數百元台幣），Grok 則提免費 DNS 可能性。屬「破硬限制」項，列為選配。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== §3 路線圖 ===================== -->
+<section>
+  <div class="wrap">
+    <h2><span class="num">3</span>優先行動路線圖（依投入產出比）</h2>
+    <p class="lede">P1＝立即／高 ROI，P2＝本輪主工程，P3＝長期經營。所有技術項皆在「全免費・純靜態・每日 build」硬限制內。</p>
+    <table>
+      <tr><th class="c" style="width:8%">優先</th><th style="width:24%">項目</th><th>動作</th><th class="c" style="width:10%">負責</th><th class="c" style="width:10%">成本</th></tr>
+      <tr><td class="c"><span class="pill p1">P1</span></td><td>GSC 提交 sitemap + 要求建立索引</td><td>GSC「Sitemap」分頁交 <code>sitemap.xml</code>；「網址審查」貼首頁→要求建立索引。<b>注意別誤交 GSC 驗證檔當 sitemap</b>。</td><td class="c">人工</td><td class="c">極低</td></tr>
+      <tr><td class="c"><span class="pill p1">P1</span></td><td>過期活動分離</td><td>build 時以資料更新日切 <code>upcoming</code>／<code>past</code>；首頁與預渲染只收即將舉行，過去活動進 <code>/archive/</code> 或 <code>past.html</code>。先做這項可讓後續 SSG 只為「有效活動」生成頁。</td><td class="c">技術</td><td class="c">低</td></tr>
+      <tr><td class="c"><span class="pill p2">P2★</span></td><td><b>SSG 階段一：活動頁</b></td><td>擴充 <code>build_site_json.py</code>，<b>先為每場有效活動</b>生成 <code>/events/{id}.html</code> + 單一 <code>Event</code> JSON-LD；sitemap 改列全部活動 URL；首頁卡片 <code>&lt;a href&gt;</code> 指向靜態頁。長尾與 Rich Result 主效益。詳見 §4。</td><td class="c">技術</td><td class="c">中</td></tr>
+      <tr><td class="c"><span class="pill p2">P2</span></td><td><b>SSG 階段二：講師頁</b></td><td><b>再為每位講師</b>生成 <code>/facilitators/{slug}.html</code>（彙整該講師所有活動）。前置：建同名／別名正規化對照表。</td><td class="c">技術</td><td class="c">中</td></tr>
+      <tr><td class="c"><span class="pill p2">P2</span></td><td><b>SSG 階段三：地區頁</b></td><td><b>最後為每個地區</b>生成 <code>/regions/{region}.html</code>（彙整該地區活動），補齊地區型長尾。</td><td class="c">技術</td><td class="c">低</td></tr>
+      <tr><td class="c"><span class="pill p2">P2</span></td><td>og:image 自動生成</td><td>Actions 裝 <code>Pillow</code>，底圖 + 浮上活動標題／日期／講師 → <code>/assets/og/{id}.png</code>，寫入各頁 <code>og:image</code> + <code>twitter:card</code>。詳見 §5。</td><td class="c">技術</td><td class="c">中</td></tr>
+      <tr><td class="c"><span class="pill p2">P2</span></td><td>向來源機構爭取反向連結</td><td>備一封定稿信，聯繫長耳兔／旭立／薩提爾協會／心流逸境／OMIA，請其在「友站／相關資源」放「活動總覽」連結（你幫他們曝光，他們給你 dofollow，雙贏）。</td><td class="c">人工</td><td class="c">中</td></tr>
+      <tr><td class="c"><span class="pill p3">P3</span></td><td>主題知識內容</td><td><code>/guide/</code> 放「如何挑選薩提爾工作坊」等知識文，內文連回相關活動／講師／地區頁，建立站內主題權威。</td><td class="c">內容</td><td class="c">中</td></tr>
+      <tr><td class="c"><span class="pill p3">P3</span></td><td>內部連結 / 麵包屑</td><td>各子頁加麵包屑（首頁 › 地區 › 活動）與相關活動推薦，強化站內權重傳遞。</td><td class="c">技術</td><td class="c">低</td></tr>
+      <tr><td class="c"><span class="pill na">選配</span></td><td>自訂網域</td><td>綁 <code>.tw</code>／<code>.com</code>（每年數百元）脫離 github.io、累積獨立網域權重。<b>唯一破「全免費」項</b>，視預算決定。</td><td class="c">人工</td><td class="c">低（付費）</td></tr>
+      <tr><td class="c"><span class="pill na">長期</span></td><td>社群擴散 / Core Web Vitals</td><td>Matters／方格子／FB 成長社團分享；持續監看效能分數。</td><td class="c">人工／維運</td><td class="c">低</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- ===================== §4 SSG 重點工程 ===================== -->
+<section>
+  <div class="wrap">
+    <h2><span class="num">4</span>重點工程：靜態多頁生成（SSG）</h2>
+    <p class="lede">這是 5 份報告的最大公約數，也是本架構唯一的長尾天花板。以下整合各家方案，落到本專案實況。</p>
+
+    <h3>A. 三階段分批上線（依此順序實作）</h3>
+    <p>本計畫把 SSG 切成三批，<b>每批可獨立上線、各自見效</b>，降低單次改動風險：</p>
+    <table>
+      <tr><th class="c" style="width:10%">階段</th><th style="width:22%">產出</th><th>內容與理由</th></tr>
+      <tr><td class="c"><span class="pill p2">① 活動</span></td><td><code>/events/{id}.html</code></td><td><b>先做</b>。每場有效活動一頁 + 單一 <code>Event</code> JSON-LD。資料現成、零歧義，直接拿下長尾與 Event Rich Result 主效益。</td></tr>
+      <tr><td class="c"><span class="pill p2">② 講師</span></td><td><code>/facilitators/{slug}.html</code></td><td><b>再做</b>。彙整該講師所有活動（如「李崇建 薩提爾課程」）。前置需建同名／別名正規化對照表，故排第二。</td></tr>
+      <tr><td class="c"><span class="pill p2">③ 地區</span></td><td><code>/regions/{region}.html</code></td><td><b>最後做</b>。彙整該地區活動（如「台中 薩提爾工作坊」），補齊地區型長尾的聚合頁。</td></tr>
+    </table>
+
+    <h3>B. 資料夾結構與 URL（對齊現有資料模型）</h3>
+    <p>各報告命名不一，本計畫統一對齊 <code>events.json</code> 既有欄位（<code>id</code>／<code>facilitator</code>／<code>region</code>），避免自創欄名：</p>
+    <pre><code>/
+├── index.html              # 主清單頁（保留現有 SPA + 預渲染）
+├── events/                 # ① 階段一：每場有效活動一頁
+│   └── {id}.html           #    id 已存在且穩定，無 slug 碰撞
+├── facilitators/           # ② 階段二：講師彙整頁（需同名/別名正規化）
+│   └── {slug}.html
+├── regions/                # ③ 階段三：地區彙整頁（台北／台中／高雄…）
+│   └── {region}.html
+├── archive/                # 過期活動歸檔（見 §6）
+│   └── index.html
+└── sitemap.xml             # 每階段把新 URL 併入</code></pre>
+    <p class="mini">為何用 <code>{id}</code> 而非 <code>{date}-{organizer}-{slug}</code>：<code>id</code> 已是穩定主鍵，避免標題改字造成 URL 變動與 404；語意化交給頁內 <code>&lt;title&gt;</code> 與 h1 即可。</p>
+
+    <div class="grid2">
+      <div class="callout">
+        <h3>C. SPA 與多頁共存（Gemini 關鍵手法）</h3>
+        <p>首頁卡片的 <code>&lt;a href&gt;</code> <b>寫死指向靜態活動頁</b>（爬蟲爬到真實長尾 URL）；同時 JS 攔截點擊（<code>e.preventDefault()</code>）以 Modal 顯示詳情，保留 SPA 流暢體驗。爬蟲得到 URL，使用者得到無縫操作。</p>
+      </div>
+      <div class="callout">
+        <h3>D. 每頁 SEO 元件</h3>
+        <ul style="margin:0">
+          <li><b>獨立 title</b>：「{活動名稱}｜{講師}・{地區}薩提爾工作坊 2026」</li>
+          <li><b>獨立 JSON-LD</b>：捨 ItemList，注入<b>單一完整 <code>Event</code></b>（name／startDate／location／organizer／performer／offers），最大化 Rich Result。</li>
+          <li><b>canonical</b> 指向自身；<b>og:image</b> 用該活動卡圖（§5）。</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>E. 實作落點（擴充 <code>build_site_json.py</code>）</h3>
+    <p>現有 <code>inject_index()</code> 已用標記區注入首頁。新增 <code>build_pages()</code>，<b>依階段順序</b>實作：先 <code>build_event_pages()</code>（遍歷有效活動）→ 再 <code>build_facilitator_pages()</code>（依正規化後的講師分組）→ 最後 <code>build_region_pages()</code>（依地區分組），各自把 URL 併入 <code>write_sitemap()</code>。用 Python 字串模板（或 <code>jinja2</code>）輸出檔案。每日 Actions build 一併產生、納入 commit。77 場活動的生成量對 GitHub Pages 極輕量。</p>
+    <div class="callout warm">
+      <h3>風險與維護（Gemini 提醒）</h3>
+      <ul style="margin:0">
+        <li><b>repo 膨脹</b>：活動增加→檔案數增加。建議生成的 <code>/events/</code> 等只存在 <b><code>gh-pages</code> 部署分支</b>，保持 <code>main</code> 乾淨；或在 workflow 裡產生後直接部署、不回寫 source。</li>
+        <li><b>過期 404</b>：活動過期下架後，舊 URL 應 301/410 或導回 <code>/archive/</code>；至少別讓 sitemap 續列死連結（沿用現有 <code>verify_links.py</code> 精神）。</li>
+        <li><b>講師正規化</b>：同一講師多種寫法（全名／別名）會切碎權重，故講師頁列第二階段，先建對照表。</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== §5 og:image ===================== -->
+<section>
+  <div class="wrap">
+    <h2><span class="num">5</span>og:image 自動生成（5/5 共識）</h2>
+    <p class="lede">社群分享無縮圖直接壓低 CTR；圖片搜尋也零曝光。純靜態下可在 build 時自動產圖。</p>
+    <ul>
+      <li><b>原理</b>：GitHub Actions 安裝 <code>Pillow</code>，準備一張品牌底圖，腳本把「活動名稱／日期／講師／地區」浮字壓上，輸出 <code>/assets/og/{id}.png</code>。</li>
+      <li><b>實作</b>：在 <code>build_site_json.py</code>（或新檔 <code>build_og.py</code>）加繪圖邏輯；各活動頁與首頁寫入 <code>&lt;meta property="og:image"&gt;</code> 與 <code>&lt;meta name="twitter:card" content="summary_large_image"&gt;</code>。</li>
+      <li><b>成本／風險</b>：新增一個 Python 依賴 + 圖檔體積；CJK 字型需在 Actions 環境備妥（指定 Noto Sans TC 路徑）。</li>
+      <li><b>效益原理</b>：社群點擊回流＝正向使用者行為訊號，間接利於搜尋排名。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== §6 過期活動 ===================== -->
+<section>
+  <div class="wrap">
+    <h2><span class="num">6</span>過期活動分離（Gemini／Grok 高優先）</h2>
+    <p class="lede">交易型意圖高度依賴「未來可報名」狀態。線上實測仍混入 2020–2021 活動，會稀釋頁面新鮮度與相關性。</p>
+    <ul>
+      <li><b>實作</b>：build 時以資料更新日為界，把 <code>events.json</code> 切為 <code>upcoming</code>／<code>past</code>。首頁清單與預渲染、首頁 JSON-LD 只收 <code>upcoming</code>；過去活動進 <code>/archive/</code>（仍可索引，保留長尾與站點規模，但不佔首頁相關性）。</li>
+      <li><b>順序</b>：建議排在 SSG <b>之前</b>——先界定「有效活動」，SSG 才只為它們生成頁，省工又避免大量過期頁。</li>
+      <li><b>成本</b>：低；純資料切分，無新依賴。</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== §7 站外 + 內容 ===================== -->
+<section>
+  <div class="wrap">
+    <h2><span class="num">7</span>站外權重與內容深度</h2>
+    <h3>反向連結冷啟動（5/5 共識，最高站外價值）</h3>
+    <p>SatirDaily 本就是<b>免費幫各機構曝光活動</b>的公益平台，這是要連結的天然籌碼。備一封定稿信／FB 訊息，聯繫所爬取的 5 大來源：</p>
+    <ol>
+      <li>說明：「我們做了一個公益薩提爾活動匯整站，每天自動幫貴單位活動增加曝光。」</li>
+      <li>請求：「方便的話，能否在貴站『相關資源／友站連結』提及 SatirDaily？」</li>
+      <li>只要 1～2 個高相關機構給 <code>dofollow</code>，對新站排名是質的跳躍。</li>
+    </ol>
+    <h3>內容深度（4/5）</h3>
+    <ul>
+      <li>建 <code>/guide/</code>：「如何挑選薩提爾工作坊」「冰山理論入門」等知識文，內文自然連回相關活動／地區頁，建立站內主題權威。</li>
+      <li>講師彙整頁附簡短 bio（須註明出處／取得同意，沿用專案「正評真實性」紀律）。</li>
+    </ul>
+    <h3>自訂網域（選配，破「全免費」）</h3>
+    <p>綁定 <code>.tw</code>／<code>.com</code> 可脫離 github.io 子網域、累積獨立網域權重與品牌信任。Gemini 直言此項違反全免費硬限制（每年數百元），Grok 提免費 DNS 方案。屬高 SEO 上限、低急迫性的選配。</p>
+  </div>
+</section>
+
+<!-- ===================== §8 待辦清單 ===================== -->
+<section>
+  <div class="wrap">
+    <h2><span class="num">8</span>濃縮待辦清單</h2>
+    <table>
+      <tr><th>項目</th><th class="c" style="width:14%">類別</th><th class="c" style="width:12%">優先</th><th class="c" style="width:12%">狀態</th></tr>
+      <tr><td>GSC 提交 <code>sitemap.xml</code>（勿誤交驗證檔）</td><td class="c">人工</td><td class="c"><span class="pill p1">P1</span></td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>GSC「網址審查」要求建立索引</td><td class="c">人工</td><td class="c"><span class="pill p1">P1</span></td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>過期 / 未來活動分離 + <code>/archive/</code></td><td class="c">技術</td><td class="c"><span class="pill p1">P1</span></td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>SSG 階段一：<b>活動頁</b> <code>/events/{id}.html</code> + 單一 Event JSON-LD + sitemap 擴充</td><td class="c">技術</td><td class="c"><span class="pill p2">P2</span></td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>SSG 階段二：<b>講師頁</b> <code>/facilitators/{slug}.html</code>（含同名／別名正規化）</td><td class="c">技術</td><td class="c"><span class="pill p2">P2</span></td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>SSG 階段三：<b>地區頁</b> <code>/regions/{region}.html</code></td><td class="c">技術</td><td class="c"><span class="pill p2">P2</span></td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>og:image / twitter:card 自動生成（Pillow）</td><td class="c">技術</td><td class="c"><span class="pill p2">P2</span></td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>向 5 來源機構爭取反向連結</td><td class="c">人工</td><td class="c"><span class="pill p2">P2</span></td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td><code>/guide/</code> 主題知識文 + 內部連結</td><td class="c">內容</td><td class="c"><span class="pill p3">P3</span></td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>麵包屑 / 內部連結強化</td><td class="c">技術</td><td class="c"><span class="pill p3">P3</span></td><td class="c"><span class="pill todo">待辦</span></td></tr>
+      <tr><td>自訂網域</td><td class="c">人工</td><td class="c"><span class="pill na">選配</span></td><td class="c"><span class="pill na">評估</span></td></tr>
+      <tr><td>社群擴散 / Core Web Vitals 監看</td><td class="c">人工／維運</td><td class="c"><span class="pill na">長期</span></td><td class="c"><span class="pill na">長期</span></td></tr>
+    </table>
+    <div class="callout">
+      <h3>建議執行序（最省工的依賴順序）</h3>
+      <p style="margin:0"><b>① GSC 提交 sitemap（今天就能做，零成本）</b> → ② 過期活動分離（界定有效活動）→ ③ <b>SSG 階段一：活動頁</b>（長尾主工程）→ ④ <b>SSG 階段二：講師頁</b> → ⑤ <b>SSG 階段三：地區頁</b> → ⑥ og:image（搭 SSG 一起寫各頁 meta）→ ⑦ 反向連結信（與工程並行）→ ⑧ 內容 / 麵包屑（長期）。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    SatirDaily SEO 整合行動計畫 · 產生於 2026-06-23 · 彙整來源：<code>SatirDaily_SEO.htm</code>、<code>_Copilot</code>、<code>_Gemini</code>、<code>_Grok</code>、<code>_Manus.html</code>。
+    現況欄位均對線上部署版與本機 repo 實測核對。詳細策略另見 <code>Docs/SatirDaily_SEO_Strategy.md</code>。
+  </div>
+</footer>
+
+</body>
+</html>
