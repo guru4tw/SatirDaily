@@ -16,7 +16,7 @@
 <style>
   :root{
     /* 現代清新療癒:airy mint-white + 湖水青 + 暖陶土點綴 */
-    --ink:#1f302d; --ink-soft:#5d6f6b; --ink-faint:#8b9b96;
+    --ink:#1f302d; --ink-soft:#5d6f6b; --ink-faint:#647571;
     --bg:#f1f7f4; --bg-2:#e6f0ec; --surface:#ffffff;
     --line:#e3ece8; --line-soft:#eef4f1;
     --water:#2c8c84; --water-600:#1f6f68; --water-soft:#7cc0b8; --water-wash:#dcebe6;
@@ -130,6 +130,7 @@
   .tab:hover{color:var(--ink);background:var(--line-soft);}
   .tab[aria-selected=true]{color:#fff;background:var(--water);border-color:var(--water);box-shadow:0 8px 18px -10px rgba(44,140,132,.8);}
   .tab[aria-selected=true] .n{background:rgba(255,255,255,.22);color:#fff;}
+  .tab:focus-visible{outline:2px solid var(--water-600);outline-offset:2px;}
 
   /* ── Controls ───────────────────────────── */
   .controls{
@@ -187,9 +188,33 @@
   .card .highlights li::before{content:"\201C";position:absolute;left:2px;top:2px;color:var(--gold);font-family:var(--serif);font-size:1.5rem;line-height:1;}
   .card .hl-src{font-size:.72rem;color:var(--ink-faint);margin-top:8px;padding-left:22px;}
   .meta-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
-  .meta-row span{font-size:.8rem;color:var(--ink-soft);background:var(--bg);border:1px solid var(--line-soft);
-    border-radius:999px;padding:5px 12px;}
+  .meta-row span,.meta-row button.meta-tag{font-size:.8rem;color:var(--ink-soft);background:var(--bg);
+    border:1px solid var(--line-soft);border-radius:999px;padding:5px 12px;}
   .meta-row b{color:var(--ink);font-weight:600;}
+  /* 可點 meta:帶領者 / 主辦 → 篩選 */
+  button.meta-tag{font-family:inherit;cursor:pointer;transition:border-color .16s,background .16s,color .16s;}
+  button.meta-tag:hover{border-color:var(--water-soft);background:var(--water-wash);}
+  button.meta-tag:hover b{color:var(--water-600);}
+  button.meta-tag:focus-visible{outline:2px solid var(--water-600);outline-offset:2px;}
+
+  /* 進行中的篩選條件(可移除) */
+  .active-filter{display:inline-flex;align-items:center;gap:7px;font-size:.8rem;color:var(--water-600);
+    background:var(--water-wash);border:1px solid var(--water-soft);border-radius:999px;padding:5px 8px 5px 13px;}
+  .active-filter b{font-weight:600;}
+  .active-filter button{appearance:none;border:none;background:rgba(31,111,104,.12);color:var(--water-600);
+    cursor:pointer;width:18px;height:18px;border-radius:50%;font-size:.8rem;line-height:1;display:flex;
+    align-items:center;justify-content:center;}
+  .active-filter button:hover{background:rgba(31,111,104,.24);}
+  .active-filter button:focus-visible{outline:2px solid var(--water-600);outline-offset:1px;}
+
+  /* 載入骨架 */
+  .skeleton{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 26px;margin-bottom:18px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+  .skeleton::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--line);}
+  .sk-line{height:13px;border-radius:6px;background:linear-gradient(90deg,var(--line-soft) 25%,var(--bg-2) 37%,var(--line-soft) 63%);
+    background-size:400% 100%;animation:shimmer 1.4s ease infinite;margin-bottom:12px;}
+  @keyframes shimmer{0%{background-position:100% 0;}100%{background-position:0 0;}}
+  @media(prefers-reduced-motion:reduce){.sk-line{animation:none;}.card{animation:none;}}
   .card .foot{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;
     padding-top:4px;border-top:1px solid var(--line-soft);margin-top:2px;padding-top:16px;}
   .btn{
@@ -293,7 +318,7 @@
       </article>
 
       <article class="voice">
-        <div class="vh"><span class="vname">成蒂</span><span class="vrole">薩提爾模式婚姻伴侶治療</span></div>
+        <div class="vh"><span class="vname">成蒂</span><span class="vrole">薩提爾嫡傳 ·體驗式家族,婚姻伴侶治療</span></div>
         <p class="vlens">透鏡:<b>關係中的連結與自我價值</b></p>
         <p class="vquote">「親密關係,是人生最好的機會,去遇見自己與對方真實的自我。」</p>
         <p class="vquote">「親密,是可以分享脆弱,是施與受之間的平衡。」</p>
@@ -312,11 +337,11 @@
 
 <div class="tabs">
   <div class="wrap row" role="tablist" aria-label="活動分類">
-    <button class="tab" role="tab" id="tab-upcoming" data-tab="upcoming" aria-selected="true">
+    <button class="tab" role="tab" id="tab-upcoming" data-tab="upcoming" aria-controls="panel" aria-selected="true" tabindex="0">
       近期活動 <span class="n" id="n-upcoming">0</span></button>
-    <button class="tab" role="tab" id="tab-undated" data-tab="undated" aria-selected="false">
+    <button class="tab" role="tab" id="tab-undated" data-tab="undated" aria-controls="panel" aria-selected="false" tabindex="-1">
       日期未定 <span class="n" id="n-undated">0</span></button>
-    <button class="tab" role="tab" id="tab-past" data-tab="past" aria-selected="false">
+    <button class="tab" role="tab" id="tab-past" data-tab="past" aria-controls="panel" aria-selected="false" tabindex="-1">
       已過去 <span class="n" id="n-past">0</span></button>
   </div>
 </div>
@@ -341,12 +366,13 @@
     <label>地區
       <select id="region"><option value="">全部</option></select>
     </label>
+    <span id="activeFilter"></span>
     <span class="count" id="count"></span>
   </div>
 </div>
 
 <main>
-  <div class="wrap" id="list"></div>
+  <div class="wrap" id="list" role="tabpanel" aria-labelledby="tab-upcoming" tabindex="0"></div>
 </main>
 
 <footer>
@@ -360,6 +386,7 @@
 const today = new Date().toISOString().slice(0,10); // YYYY-MM-DD
 let ALL = [];
 let activeTab = "upcoming";
+let activeFilter = null; // {type:"facilitator"|"organizer", value:string}
 
 const TAB_META = {
   upcoming: {sort:"date_asc",  hint:"由近到遠列出即將舉行的活動,越上面越快開始。"},
@@ -380,7 +407,17 @@ function bucketOf(ev){
   return isPast(ev) ? "past" : "upcoming";
 }
 
+function renderSkeleton(){
+  const card = `<div class="skeleton" aria-hidden="true">
+    <div class="sk-line" style="width:30%"></div>
+    <div class="sk-line" style="width:75%;height:20px"></div>
+    <div class="sk-line" style="width:55%"></div>
+    <div class="sk-line" style="width:40%;margin-bottom:0"></div></div>`;
+  document.getElementById("list").innerHTML = card.repeat(3);
+}
+
 async function load(){
+  renderSkeleton();
   try{
     const res = await fetch("events.json", {cache:"no-store"});
     if(!res.ok) throw new Error("HTTP "+res.status);
@@ -394,7 +431,9 @@ async function load(){
     render();
   }catch(err){
     document.getElementById("list").innerHTML =
-      `<div class="empty">讀取活動資料失敗:${err.message}<br>(本地預覽請以 HTTP server 開啟,勿用 file://)</div>`;
+      `<div class="empty"><svg class="em-mark" viewBox="0 0 64 64" aria-hidden="true"><line x1="10" y1="33" x2="54" y2="33" stroke="#7cc0b8" stroke-width="2" stroke-linecap="round"/><path d="M22 33 L32 16 L42 33" fill="none" stroke="#9fd0c9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      活動資料暫時讀不到,先喝口水,稍後重新整理試試。<br>
+      <span style="font-size:.82rem;color:var(--ink-faint)">(本地預覽請以 HTTP server 開啟,勿用 file://　·　${esc(err.message)})</span></div>`;
   }
 }
 
@@ -433,14 +472,27 @@ function updateTabCounts(){
   document.getElementById("n-past").textContent     = c.past;
 }
 
-function selectTab(tab){
+function selectTab(tab,focus){
   activeTab = tab;
-  document.querySelectorAll(".tab").forEach(b=>
-    b.setAttribute("aria-selected", String(b.dataset.tab===tab)));
+  document.querySelectorAll(".tab").forEach(b=>{
+    const on = b.dataset.tab===tab;
+    b.setAttribute("aria-selected", String(on));
+    b.tabIndex = on ? 0 : -1;
+    if(on && focus) b.focus();
+  });
+  document.getElementById("list").setAttribute("aria-labelledby","tab-"+tab);
   document.getElementById("sort").value = TAB_META[tab].sort;
   document.getElementById("tabHint").textContent = TAB_META[tab].hint;
   render();
 }
+
+// 設定 / 清除 帶領者・主辦 篩選
+function setFilter(type,value){
+  activeFilter = (activeFilter && activeFilter.type===type && activeFilter.value===value)
+    ? null : {type,value};
+  render();
+}
+function clearFilter(){ activeFilter=null; render(); }
 
 function render(){
   const q = document.getElementById("q").value.trim();
@@ -450,14 +502,23 @@ function render(){
   let list = ALL.filter(ev=>
     bucketOf(ev)===activeTab &&
     matchQuery(ev,q) &&
-    (!region || ev.region===region)
+    (!region || ev.region===region) &&
+    (!activeFilter || (ev[activeFilter.type]||"")===activeFilter.value)
   );
   list = sortEvents(list,mode);
 
+  renderActiveFilter();
   document.getElementById("count").textContent = `顯示 ${list.length} 場`;
   const root = document.getElementById("list");
 
-  if(!list.length){ root.innerHTML = `<div class="empty"><svg class="em-mark" viewBox="0 0 64 64" aria-hidden="true"><line x1="10" y1="33" x2="54" y2="33" stroke="#7cc0b8" stroke-width="2" stroke-linecap="round"/><path d="M22 33 L32 16 L42 33" fill="none" stroke="#9fd0c9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>這個分類目前沒有符合條件的活動。</div>`; return; }
+  if(!list.length){
+    const narrowed = q || region || activeFilter;
+    const msg = narrowed
+      ? "這個條件下暫時沒有活動,換個關鍵字、清掉篩選,或看看「日期未定」的常態課程。"
+      : "這個分類目前沒有活動,過幾天再回來看看。";
+    root.innerHTML = `<div class="empty"><svg class="em-mark" viewBox="0 0 64 64" aria-hidden="true"><line x1="10" y1="33" x2="54" y2="33" stroke="#7cc0b8" stroke-width="2" stroke-linecap="round"/><path d="M22 33 L32 16 L42 33" fill="none" stroke="#9fd0c9" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>${msg}</div>`;
+    return;
+  }
 
   const cal = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>`;
 
@@ -475,8 +536,8 @@ function render(){
       <div class="meta-row">
         ${ev.region?`<span>地區 <b>${esc(ev.region)}</b></span>`:""}
         ${ev.venue?`<span>地點 <b>${esc(ev.venue)}</b></span>`:""}
-        ${ev.facilitator?`<span>帶領者 <b>${esc(ev.facilitator)}</b></span>`:""}
-        ${ev.organizer?`<span>主辦 <b>${esc(ev.organizer)}</b></span>`:""}
+        ${ev.facilitator?`<button type="button" class="meta-tag" data-filter="facilitator" data-value="${esc(ev.facilitator)}" title="只看這位帶領者的活動">帶領者 <b>${esc(ev.facilitator)}</b></button>`:""}
+        ${ev.organizer?`<button type="button" class="meta-tag" data-filter="organizer" data-value="${esc(ev.organizer)}" title="只看這個主辦的活動">主辦 <b>${esc(ev.organizer)}</b></button>`:""}
         ${ev.price?`<span>費用 <b>${esc(ev.price)}</b></span>`:""}
       </div>
       <div class="foot">
@@ -496,18 +557,46 @@ function srcLink(ev){
     ? `<a class="src-link" href="${esc(ev.source_url)}" target="_blank" rel="noopener">${name} ↗</a>`
     : name;
 }
-// 連結驗證徽章:link_ok 由 verify_links.py 寫入(true=已驗證可連 / false=連結異常 / 無=未驗證)
+// 連結驗證徽章:連結正常為常態不另標示;只在 link_ok===false 時提醒
 function linkBadge(ev){
-  if(ev.link_ok===true)  return `<span class="lk lk-ok" title="原始連結已於 ${esc(ev.link_checked_at||"")} 驗證可連">✓ 連結已驗證</span>`;
   if(ev.link_ok===false) return `<span class="lk lk-bad" title="最近一次驗證連結異常,請以原網站為準">⚠ 連結待確認</span>`;
   return "";
+}
+
+// 進行中的 帶領者・主辦 篩選 chip
+function renderActiveFilter(){
+  const slot = document.getElementById("activeFilter");
+  if(!activeFilter){ slot.innerHTML=""; return; }
+  const label = activeFilter.type==="facilitator" ? "帶領者" : "主辦";
+  slot.innerHTML = `<span class="active-filter">${label}:<b>${esc(activeFilter.value)}</b>
+    <button type="button" id="clearFilter" aria-label="清除篩選" title="清除篩選">×</button></span>`;
+  document.getElementById("clearFilter").addEventListener("click",clearFilter);
 }
 
 ["q","sort","region"].forEach(id=>{
   document.getElementById(id).addEventListener("input",render);
 });
+
+// 可點 meta tag → 設篩選(事件委派)
+document.getElementById("list").addEventListener("click",e=>{
+  const t = e.target.closest(".meta-tag");
+  if(t) setFilter(t.dataset.filter, t.dataset.value);
+});
+
+// tab:點擊 + 方向鍵切換(WAI-ARIA tablist 慣例)
+const TAB_ORDER = ["upcoming","undated","past"];
 document.querySelectorAll(".tab").forEach(b=>
   b.addEventListener("click",()=>selectTab(b.dataset.tab)));
+document.querySelector('[role=tablist]').addEventListener("keydown",e=>{
+  const i = TAB_ORDER.indexOf(activeTab);
+  let n = -1;
+  if(e.key==="ArrowRight"||e.key==="ArrowDown") n=(i+1)%TAB_ORDER.length;
+  else if(e.key==="ArrowLeft"||e.key==="ArrowUp") n=(i-1+TAB_ORDER.length)%TAB_ORDER.length;
+  else if(e.key==="Home") n=0;
+  else if(e.key==="End") n=TAB_ORDER.length-1;
+  if(n>=0){ e.preventDefault(); selectTab(TAB_ORDER[n],true); }
+});
+
 document.getElementById("tabHint").textContent = TAB_META[activeTab].hint;
 load();
 </script>
