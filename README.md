@@ -12,8 +12,9 @@
 |---|---|
 | `index.html` | 前端,讀 `events.json`,排序/搜尋/篩選全在瀏覽器端 |
 | `events.json` | 活動資料(目前為手填範例) |
-| `Docs/discover_sources.py` | 來源探索:維護 `SEED_SOURCES`、健康檢查、產 `Satir_list.md` |
-| `Docs/Satir_list.md` | 來源名冊(自動產生,勿手改) |
+| `Docs/Satir_website.md` | 人工維護的來源網站清單(`- [名稱](URL)`),唯一手改檔 |
+| `Docs/discover_sources.py` | 讀 `Satir_website.md`,逐站連線檢查 + 結構偵測,產 `Satir_source.md` |
+| `Docs/Satir_source.md` | 來源規格(自動產生,含結構線索與建議解析路徑,勿手改) |
 | `Docs/satir-events-plan.htm` | 完整計畫書 |
 | `crawlers/` | 各來源專屬爬蟲(待開發) |
 

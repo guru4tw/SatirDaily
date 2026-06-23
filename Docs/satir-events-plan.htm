@@ -193,7 +193,7 @@
         <span>讀取 JSON，前端負責排序、搜尋、呈現</span>
       </div>
     </div>
-    <p style="margin-top:18px;font-size:.92rem;color:var(--ink-soft);">前端是純靜態的 HTML + JavaScript，所有排序與篩選都在瀏覽器端完成，不需後端伺服器，因此沒有運算費用。</p>
+    <p style="margin-top:18px;font-size:.92rem;color:var(--ink-soft);">前端是純靜態的 HTML + JavaScript，排序與篩選都在瀏覽器端完成。唯一例外是「登入與愛心評價」這類需要跨使用者共享、持久保存的互動資料——它無法寫進每日被覆寫的 <code>events.json</code>，改由 Firebase 這個免費託管後端承接（見 §08）。前端仍不需自己架伺服器。</p>
   </div>
 </section>
 
@@ -266,15 +266,15 @@
     <p class="intro">為了解決「資訊過期」，每天主動跑一次完整流程。第一步先重建來源清單，再依清單逐一抓活動，最後刷新網站。</p>
     <div class="flow">
       <div class="node">
-        <div class="tag">Step 1 · 來源探索</div>
+        <div class="tag">Step 1 · 來源清單</div>
         <strong>discover_sources.py</strong>
-        <span>重建 Satir_list.md：維護全台薩提爾相關網站清單，做連線健康檢查，標註各來源的爬蟲狀態。不抓活動內容。</span>
+        <span>讀人工維護的 Satir_website.md（純網站連結），逐站做連線檢查與結構偵測，產出 parser 友善的 Satir_source.md（含結構線索與建議解析路徑）。不抓活動內容。</span>
       </div>
       <div class="arrow">→</div>
       <div class="node">
         <div class="tag">Step 2 · 逐站爬取</div>
         <strong>各網站專屬爬蟲</strong>
-        <span>讀 Satir_list.md，對每個來源跑對應 parser（如 crawlers/shiuhli.py），正規化後寫入 events.json。</span>
+        <span>讀 Satir_source.md，依各來源的「建議解析路徑」跑對應 parser（如 crawlers/shiuhli.py），正規化後寫入 events.json。</span>
       </div>
       <div class="arrow">→</div>
       <div class="node">
@@ -284,7 +284,7 @@
       </div>
     </div>
     <h3>為什麼把「來源清單」和「活動爬取」分開？</h3>
-    <p style="font-size:.92rem;color:var(--ink-soft);">來源清單（Satir_list.md）變動慢、是人工可讀的登記簿；活動資料變動快、需機器抓取。分層後，新增一個機構只要在來源腳本加一筆，再替它寫一支獨立爬蟲即可，互不干擾，也方便追蹤哪些來源已可爬、哪些待開發。旭立文教基金會已勘查完成（課程頁含「薩提爾」分類標籤、日期、價格、講師與分頁），列為第一個待開發爬蟲。</p>
+    <p style="font-size:.92rem;color:var(--ink-soft);">人工只維護純連結清單 Satir_website.md（變動慢、好讀好改）；腳本把它轉成含結構線索的 Satir_source.md（給機器與 parser 用）；活動資料變動最快，由各爬蟲抓。三層分開後，新增一個機構只要在 Satir_website.md 加一行，再替它寫一支獨立爬蟲即可，互不干擾，也方便追蹤哪些來源已可爬、哪些待開發。旭立文教基金會已勘查完成（課程頁含「薩提爾」分類標籤、日期、價格、講師與分頁），列為第一個待開發爬蟲。</p>
   </div>
 </section>
 
@@ -294,12 +294,13 @@
     <h2>開發步驟</h2>
     <ol class="steps">
       <li data-n="1"><b>建立 repo 與 GitHub Pages</b><span>放入前端骨架與一份手動填好的 events.json 範例，先讓網站能顯示。</span></li>
-      <li data-n="2"><b>來源探索腳本 discover_sources.py</b><span>維護 SEED_SOURCES 名冊、做連線健康檢查、產生 Satir_list.md。已可運作，旭立列為第一個待開發來源。</span></li>
+      <li data-n="2"><b>來源清單腳本 discover_sources.py</b><span>讀人工維護的 Satir_website.md，逐站連線檢查 + 結構偵測，產出 parser 友善的 Satir_source.md。已可運作，旭立列為第一個待開發來源。</span></li>
       <li data-n="3"><b>完成前端排序與搜尋</b><span>純 JS 讀取 JSON，實作預設排序、自訂排序、搜尋、篩選與卡片版型。</span></li>
       <li data-n="4"><b>寫第一支網站爬蟲 crawlers/shiuhli.py</b><span>解析旭立課程頁（薩提爾分類、日期、價格、講師、分頁），輸出符合資料模型的 JSON。</span></li>
       <li data-n="5"><b>設定 GitHub Actions 每日排程</b><span>cron 每日觸發：先跑 discover_sources.py 重建清單，再依清單跑各爬蟲，去重後自動 commit。</span></li>
       <li data-n="6"><b>逐步擴充來源與爬蟲</b><span>在 SEED_SOURCES 新增機構並各寫一支 parser；加入人工補登（編輯 JSON / issue 表單）。</span></li>
-      <li data-n="7"><b>維護與監控</b><span>來源改版時修對應 parser；Actions 失敗時 GitHub 自動寄信通知。</span></li>
+      <li data-n="7"><b>接 Firebase 登入與愛心</b><span>建 Firebase 專案，開 Google 登入、設授權網域與 Firestore 安全規則；前端加登入按鈕與愛心元件，以活動 id 讀寫 likes（見 §08）。</span></li>
+      <li data-n="8"><b>維護與監控</b><span>來源改版時修對應 parser；Actions 失敗時 GitHub 自動寄信通知。</span></li>
     </ol>
   </div>
 </section>
@@ -317,10 +318,59 @@
 
 <section>
   <div class="wrap">
-    <div class="sec-no">08 — Cost</div>
+    <div class="sec-no">08 — Community</div>
+    <h2>登入與愛心評價</h2>
+    <p class="intro">讓登入的人替活動按一顆愛心（可取消），網站顯示每場的愛心總數。重點：愛心是「會被很多人同時讀寫、且要長期保存」的資料，<b>不能</b>放進每天被爬蟲覆寫的 <code>events.json</code>，必須交給一個能驗證身分又能存資料的後端。</p>
+
+    <h3>選用 Firebase（免費、不必自架伺服器）</h3>
+    <p style="font-size:.95rem;">前端維持 GitHub Pages 純靜態，只在頁面引入 Firebase JS SDK，由 Google 託管的服務承接登入與資料：</p>
+    <div class="flow">
+      <div class="node">
+        <div class="tag">登入</div>
+        <strong>Firebase Authentication</strong>
+        <span>內建 Google 登入（OAuth），一行 signInWithPopup 即可，免處理密碼與 token。</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="tag">資料</div>
+        <strong>Cloud Firestore</strong>
+        <span>存每場活動的愛心數與「誰按過」，前端即時讀取與更新。</span>
+      </div>
+      <div class="arrow">→</div>
+      <div class="node">
+        <div class="tag">規則</div>
+        <strong>Security Rules</strong>
+        <span>限定：未登入不可寫、每人對同一活動只能留一筆，防灌票。</span>
+      </div>
+    </div>
+
+    <h3>資料怎麼存</h3>
+    <p style="font-size:.92rem;color:var(--ink-soft);">愛心是動態層，與 <code>events.json</code> 用活動 <code>id</code> 對應，互不覆寫。建議用「一個使用者對一個活動一筆」的紀錄，總數即為筆數，天生防重複也能取消：</p>
+    <pre><span class="c">// Firestore：likes 集合，文件 id = `${eventId}__${uid}`</span>
+{
+  <span class="k">"eventId"</span>: <span class="s">"2026-satir-taipei-0712"</span>,
+  <span class="k">"uid"</span>:     <span class="s">"google-oauth 使用者唯一碼"</span>,
+  <span class="k">"createdAt"</span>: <span class="s">"2026-06-23T10:20:00Z"</span>
+}
+<span class="c">// 顯示某活動愛心數 = 查 likes where eventId == ? 的筆數</span>
+<span class="c">// 按愛心 = 新增該筆；取消 = 刪該筆（規則限 uid 必須等於登入者）</span></pre>
+    <p style="font-size:.92rem;color:var(--ink-soft);">活動多時，可另存一份彙總計數（如 <code>eventStats/{eventId}.likeCount</code>）以 transaction 維護，前端就不必每次數整個集合。</p>
+
+    <h3>取捨</h3>
+    <ul>
+      <li>引入第三方託管後端（Firebase），原「完全無後端」改為「無<em>自架</em>後端」。Spark 免費方案的讀寫額度對這種規模綽綽有餘。</li>
+      <li>需先建一個 Firebase 專案、開 Google 登入、設定授權網域（你的 Pages 網址）與 Firestore 安全規則。</li>
+      <li>替代方案：Supabase（Postgres + Auth）功能相當；若不想綁 Google 生態可選它。建議二選一，不混用。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-no">09 — Cost</div>
     <h2>成本</h2>
-    <p>GitHub Pages 託管、GitHub Actions 排程（公開 repo 免費額度充足）、前端純靜態運算——全部 <span class="cost">免費</span></p>
-    <p style="margin-top:14px;font-size:.92rem;color:var(--ink-soft);">唯一的「成本」是維護時間：當來源網站改版時，需要更新對應的爬蟲解析邏輯。</p>
+    <p>GitHub Pages 託管、GitHub Actions 排程（公開 repo 免費額度充足）、前端純靜態運算、Firebase 登入與愛心（Spark 免費方案）——全部 <span class="cost">免費</span></p>
+    <p style="margin-top:14px;font-size:.92rem;color:var(--ink-soft);">唯一的「成本」是維護時間：來源網站改版時更新對應爬蟲；另需一次性建好 Firebase 專案與安全規則。</p>
   </div>
 </section>
 

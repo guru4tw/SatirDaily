@@ -36,9 +36,30 @@
   .lede{margin-top:16px;font-size:1.02rem;color:var(--ink-soft);max-width:48ch;}
   .updated{margin-top:18px;font-family:ui-sans-serif,sans-serif;font-size:.78rem;color:var(--ink-soft);}
 
+  /* Tabs */
+  .tabs{
+    position:sticky;top:0;z-index:6;background:var(--paper);
+    border-bottom:1px solid var(--line);
+    font-family:ui-sans-serif,"Noto Sans TC",sans-serif;
+  }
+  .tabs .row{display:flex;gap:6px;align-items:stretch;flex-wrap:wrap;}
+  .tab{
+    appearance:none;border:none;background:none;cursor:pointer;
+    font:inherit;font-size:.92rem;font-weight:600;color:var(--ink-soft);
+    padding:14px 18px 12px;border-bottom:3px solid transparent;
+    display:flex;align-items:center;gap:8px;
+  }
+  .tab .n{
+    font-size:.72rem;font-weight:700;color:#fff;background:var(--water-soft);
+    border-radius:999px;padding:1px 8px;min-width:20px;text-align:center;
+  }
+  .tab:hover{color:var(--ink);}
+  .tab[aria-selected=true]{color:var(--water);border-bottom-color:var(--water);}
+  .tab[aria-selected=true] .n{background:var(--water);}
+
   /* Controls */
   .controls{
-    position:sticky;top:0;z-index:5;background:var(--paper);
+    position:sticky;top:48px;z-index:5;background:var(--paper);
     border-bottom:1px solid var(--line);padding:14px 0;
     font-family:ui-sans-serif,"Noto Sans TC",sans-serif;
   }
@@ -50,6 +71,7 @@
   .controls input[type=search]{flex:1;min-width:180px;}
   .controls label{font-size:.78rem;color:var(--ink-soft);display:flex;align-items:center;gap:6px;}
   .count{margin-left:auto;font-size:.8rem;color:var(--ink-soft);}
+  .tab-hint{width:100%;font-size:.78rem;color:var(--ink-soft);margin-bottom:10px;}
 
   /* Cards */
   main{padding:28px 0 64px;}
@@ -104,8 +126,20 @@
   </div>
 </header>
 
+<div class="tabs">
+  <div class="wrap row" role="tablist" aria-label="活動分類">
+    <button class="tab" role="tab" id="tab-upcoming" data-tab="upcoming" aria-selected="true">
+      近期活動 <span class="n" id="n-upcoming">0</span></button>
+    <button class="tab" role="tab" id="tab-undated" data-tab="undated" aria-selected="false">
+      日期未定 <span class="n" id="n-undated">0</span></button>
+    <button class="tab" role="tab" id="tab-past" data-tab="past" aria-selected="false">
+      已過去 <span class="n" id="n-past">0</span></button>
+  </div>
+</div>
+
 <div class="controls">
   <div class="wrap row">
+    <div class="tab-hint" id="tabHint"></div>
     <input type="search" id="q" placeholder="搜尋:標題 / 宗旨 / 內容 / 帶領者 / 協會 …" aria-label="關鍵字搜尋">
     <label>排序
       <select id="sort">
@@ -120,7 +154,6 @@
     <label>地區
       <select id="region"><option value="">全部</option></select>
     </label>
-    <label><input type="checkbox" id="hidePast" checked> 隱藏已過期</label>
     <span class="count" id="count"></span>
   </div>
 </div>
@@ -139,13 +172,25 @@
 <script>
 const today = new Date().toISOString().slice(0,10); // YYYY-MM-DD
 let ALL = [];
+let activeTab = "upcoming";
+
+const TAB_META = {
+  upcoming: {sort:"date_asc",  hint:"由近到遠列出即將舉行的活動,越上面越快開始。"},
+  undated:  {sort:"organizer", hint:"隨到隨學或依報名場次開課的課程,沒有固定日期,點報名連結看最新梯次。"},
+  past:     {sort:"date_desc", hint:"已結束的活動,供回顧參考;最近結束的排在最前面。"},
+};
 
 function fmtDate(s,e){
   if(!s) return "日期未定";
   return (e && e!==s) ? `${s} ～ ${e}` : s;
 }
 function isPast(ev){
-  return (ev.date_end || ev.date_start || "9999") < today;
+  if(!ev.date_start) return false;
+  return (ev.date_end || ev.date_start) < today;
+}
+function bucketOf(ev){
+  if(!ev.date_start) return "undated";
+  return isPast(ev) ? "past" : "upcoming";
 }
 
 async function load(){
@@ -157,6 +202,7 @@ async function load(){
     document.getElementById("updated").textContent =
       "資料更新日:" + (data.updated_at || "—") + "　共 " + ALL.length + " 場";
     buildRegionOptions();
+    updateTabCounts();
     render();
   }catch(err){
     document.getElementById("list").innerHTML =
@@ -191,23 +237,39 @@ function sortEvents(arr,mode){
   return [...arr].sort(by[mode]||by.date_asc);
 }
 
+function updateTabCounts(){
+  const c = {upcoming:0, undated:0, past:0};
+  ALL.forEach(ev=>{ c[bucketOf(ev)]++; });
+  document.getElementById("n-upcoming").textContent = c.upcoming;
+  document.getElementById("n-undated").textContent  = c.undated;
+  document.getElementById("n-past").textContent     = c.past;
+}
+
+function selectTab(tab){
+  activeTab = tab;
+  document.querySelectorAll(".tab").forEach(b=>
+    b.setAttribute("aria-selected", String(b.dataset.tab===tab)));
+  document.getElementById("sort").value = TAB_META[tab].sort;
+  document.getElementById("tabHint").textContent = TAB_META[tab].hint;
+  render();
+}
+
 function render(){
   const q = document.getElementById("q").value.trim();
   const region = document.getElementById("region").value;
-  const hidePast = document.getElementById("hidePast").checked;
   const mode = document.getElementById("sort").value;
 
   let list = ALL.filter(ev=>
+    bucketOf(ev)===activeTab &&
     matchQuery(ev,q) &&
-    (!region || ev.region===region) &&
-    (!hidePast || !isPast(ev))
+    (!region || ev.region===region)
   );
   list = sortEvents(list,mode);
 
   document.getElementById("count").textContent = `顯示 ${list.length} 場`;
   const root = document.getElementById("list");
 
-  if(!list.length){ root.innerHTML = `<div class="empty">沒有符合條件的活動。</div>`; return; }
+  if(!list.length){ root.innerHTML = `<div class="empty">這個分類目前沒有符合條件的活動。</div>`; return; }
 
   root.innerHTML = list.map(ev=>{
     const past = isPast(ev);
@@ -237,9 +299,12 @@ function render(){
 
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
 
-["q","sort","region","hidePast"].forEach(id=>{
+["q","sort","region"].forEach(id=>{
   document.getElementById(id).addEventListener("input",render);
 });
+document.querySelectorAll(".tab").forEach(b=>
+  b.addEventListener("click",()=>selectTab(b.dataset.tab)));
+document.getElementById("tabHint").textContent = TAB_META[activeTab].hint;
 load();
 </script>
 </body>
