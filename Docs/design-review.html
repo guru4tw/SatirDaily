@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SatirDaily 設計健檢 — 六位專家視角的改進建議</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1f302d; --ink-soft:#52635f; --ink-faint:#7a8a85;
+    --bg:#f1f7f4; --bg-2:#e6f0ec; --surface:#ffffff;
+    --line:#e3ece8; --line-soft:#eef4f1;
+    --water:#2c8c84; --water-600:#1f6f68; --water-soft:#7cc0b8; --water-wash:#dcebe6;
+    --clay:#c96f45; --gold:#c79a3e;
+    --serif:"Noto Serif TC",Georgia,serif;
+    --sans:"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --shadow-sm:0 1px 2px rgba(31,48,45,.05);
+    --shadow:0 1px 2px rgba(31,48,45,.04),0 10px 30px -16px rgba(31,48,45,.22);
+    --radius:18px; --radius-sm:12px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.75;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+  a{color:var(--water-600);}
+
+  header{
+    position:relative;overflow:hidden;
+    background:radial-gradient(120% 90% at 85% -10%, #e9f4ef 0%, rgba(233,244,239,0) 60%),
+      linear-gradient(178deg,var(--water-wash) 0%, #eaf3ef 46%, var(--bg) 100%);
+    padding:42px 0 52px;border-bottom:1px solid var(--line);
+  }
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.72rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--water-600);background:rgba(255,255,255,.7);
+    border:1px solid var(--line);border-radius:999px;padding:5px 13px;margin-bottom:18px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--clay);}
+  h1{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700;line-height:1.25;color:var(--ink);}
+  .sub{margin-top:14px;font-size:1.04rem;color:var(--ink-soft);max-width:56ch;}
+  .meta{margin-top:20px;font-size:.82rem;color:var(--ink-faint);}
+
+  main{padding:36px 0 72px;}
+  .note{background:#fff8ef;border:1px solid #f0e2c8;border-radius:var(--radius-sm);
+    padding:14px 18px;font-size:.86rem;color:#7a6325;margin-bottom:34px;}
+  .note b{color:#5f4c16;}
+
+  h2.section{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);
+    margin:46px 0 6px;padding-top:8px;display:flex;align-items:center;gap:11px;}
+  h2.section .bar{width:5px;height:24px;border-radius:3px;background:linear-gradient(180deg,var(--water),var(--water-soft));}
+  .section-lede{color:var(--ink-soft);font-size:.95rem;margin-bottom:18px;}
+
+  .expert{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:24px 26px;margin-bottom:18px;box-shadow:var(--shadow);position:relative;overflow:hidden;}
+  .expert::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+    background:linear-gradient(180deg,var(--water),var(--water-soft));}
+  .expert.ui::before{background:linear-gradient(180deg,var(--clay),var(--gold));}
+  .ex-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px;}
+  .ex-name{font-family:var(--serif);font-size:1.28rem;font-weight:700;color:var(--ink);}
+  .ex-role{font-size:.8rem;color:var(--water-600);font-weight:600;background:var(--water-wash);
+    border-radius:999px;padding:3px 11px;}
+  .expert.ui .ex-role{color:#9a5226;background:#f7e8dc;}
+  .ex-lens{font-size:.9rem;color:var(--ink-soft);margin:6px 0 14px;}
+  .ex-lens b{color:var(--ink);font-weight:600;}
+  .expert h4{font-size:.82rem;font-weight:700;color:var(--ink-faint);letter-spacing:.04em;
+    text-transform:uppercase;margin:14px 0 8px;}
+  .expert ul{list-style:none;}
+  .expert li{position:relative;padding-left:24px;margin-bottom:9px;font-size:.95rem;color:var(--ink);line-height:1.65;}
+  .expert li::before{content:"";position:absolute;left:6px;top:.62em;width:7px;height:7px;border-radius:50%;
+    background:var(--water-soft);}
+  .expert.ui li::before{background:var(--gold);}
+  .expert li b{color:var(--water-600);font-weight:600;}
+  .expert.ui li b{color:var(--clay);}
+
+  .quotes{margin-top:16px;padding:15px 17px;background:linear-gradient(180deg,var(--bg-2),var(--bg));
+    border:1px solid var(--line-soft);border-radius:var(--radius-sm);}
+  .quotes .qh{font-size:.78rem;font-weight:700;color:var(--water-600);letter-spacing:.04em;margin-bottom:11px;
+    display:flex;align-items:center;gap:7px;}
+  .quotes .qh::before{content:"\201C";font-family:var(--serif);font-size:1.4rem;line-height:0;color:var(--gold);}
+  .quotes ol{margin:0;padding:0;list-style:none;counter-reset:q;}
+  .quotes li{position:relative;padding-left:30px;margin-bottom:12px;font-size:.95rem;line-height:1.6;color:var(--ink);}
+  .quotes li::before{counter-increment:q;content:counter(q);position:absolute;left:0;top:1px;
+    width:21px;height:21px;border-radius:50%;background:var(--water);color:#fff;font-size:.72rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;}
+  .quotes li:last-child{margin-bottom:0;}
+  .quotes .qq{font-family:var(--serif);color:var(--ink);}
+  .quotes .qm{display:block;font-size:.76rem;color:var(--ink-soft);margin-top:3px;}
+  .quotes .qm b{color:var(--water-600);font-weight:600;}
+
+  .priority{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+    padding:8px 0;box-shadow:var(--shadow);margin-top:8px;overflow:hidden;}
+  .prow{display:grid;grid-template-columns:34px 1fr 96px;gap:14px;align-items:start;
+    padding:15px 22px;border-bottom:1px solid var(--line-soft);}
+  .prow:last-child{border-bottom:none;}
+  .prow .num{font-family:var(--serif);font-weight:700;color:var(--water-soft);font-size:1.2rem;}
+  .prow .txt{font-size:.95rem;color:var(--ink);}
+  .prow .txt b{color:var(--ink);font-weight:600;}
+  .prow .txt small{display:block;color:var(--ink-soft);font-size:.84rem;margin-top:2px;}
+  .tag{font-size:.7rem;font-weight:700;padding:3px 10px;border-radius:999px;text-align:center;white-space:nowrap;height:fit-content;}
+  .t-quick{color:var(--water-600);background:var(--water-wash);}
+  .t-big{color:#9a5226;background:#f7e8dc;}
+
+  footer{padding:32px 0 56px;color:var(--ink-faint);font-size:.8rem;border-top:1px solid var(--line);
+    background:linear-gradient(0deg,var(--bg-2),var(--bg));}
+  @media(max-width:600px){
+    .prow{grid-template-columns:26px 1fr;}
+    .prow .tag{grid-column:2;justify-self:start;margin-top:4px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>設計健檢 Design Review</span>
+    <h1>SatirDaily 改進建議<br>八位專家的視角</h1>
+    <p class="sub">針對 <a href="https://guru4tw.github.io/SatirDaily/" target="_blank" rel="noopener">guru4tw.github.io/SatirDaily</a> 的設計與體驗,從五位薩提爾取向專家與三位使用者體驗／設計大師的框架出發,提出可落地的改進方向。</p>
+    <p class="meta">檢視日期 2026-06-23　·　涵蓋:內容定位、情感溫度、易用性、無障礙、SEO 與技術體驗</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="note">
+    <b>關於這份文件的方法:</b> 以下「專家視角」是以每位人物<b>公開著作與既有理論框架</b>為分析透鏡(例如冰山理論、Nielsen 十大可用性原則、Rams 好設計十誡),套用到本網站上做評析,並非引用其本人對本站發表的真實言論。目的是用多元、互補的專業角度,幫你看見不同層面的改進空間。
+  </div>
+
+  <!-- ───────────── 薩提爾專家 ───────────── -->
+  <h2 class="section"><span class="bar"></span>薩提爾取向 · 內容與情感溫度</h2>
+  <p class="section-lede">這五個視角關注的是:訪客「為什麼」會來找薩提爾活動,以及網站能否在第一眼就接住那份渴望。呼應你 CLAUDE.md 的宗旨——「宗旨、內容、正面回饋為呈現重點,不要弱化成冷冰冰條列」。</p>
+
+  <article class="expert">
+    <div class="ex-head"><span class="ex-name">維琴尼亞·薩提爾 Virginia Satir</span><span class="ex-role">薩提爾模式創始人</span></div>
+    <p class="ex-lens">透鏡:<b>自我價值、一致性、冰山、五種自由</b>——「問題本身不是問題,如何應對才是問題。」每個人都有價值、都能經由自我認可界定自己。</p>
+    <h4>看見什麼</h4>
+    <ul>
+      <li>站名就叫 SatirDaily,卻沒讓訪客感受到薩提爾的核心精神——<b>每個人都有價值、都值得被看見</b>。網站把活動當資料陳列,少了「來這裡是為了更靠近自己」的定調。</li>
+      <li>訪客搜「薩提爾活動」,水面下的渴望往往是<b>連結、成長、被理解</b>;目前首頁主標僅「薩提爾」、副標「台灣薩提爾活動資訊!」,停在最表層的行為(找活動),沒接住底層的渴望。</li>
+    </ul>
+    <h4>建議</h4>
+    <ul>
+      <li>用一句帶薩提爾精神的話<b>定調首頁</b>,讓站有靈魂而非冷清單,例如呼應「五種自由」或「一致性」:在台灣,找一場讓自己更靠近自己的薩提爾活動。</li>
+      <li>把<b>一致性原則</b>套到文案:誠實、溫暖、不浮誇——標語別過度承諾,如實呈現資料現況,內外一致。</li>
+    </ul>
+    <div class="quotes">
+      <div class="qh">溫暖代表金句 · 三選一</div>
+      <ol>
+        <li><span class="qq">「我能得到的最大禮物,是被你看見、被你聽見、被你理解、被你觸碰;而我能給的最大禮物,也是如此地回應另一個人。」</span><span class="qm">原話　·　獨特:<b>看見與連結</b></span></li>
+        <li><span class="qq">「我就是我。在全世界,沒有一個人和我完全一樣……我屬於我自己,所以我能塑造我自己。我就是我,而我很好。」</span><span class="qm">原話,〈自我價值宣言〉　·　獨特:<b>自我價值</b></span></li>
+        <li><span class="qq">「問題本身不是問題,如何面對問題,才是問題。」</span><span class="qm">原話　·　獨特:<b>面對的姿態</b></span></li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="expert">
+    <div class="ex-head"><span class="ex-name">瑪莉亞·葛茉莉 Maria Gomori</span><span class="ex-role">體驗式家族治療 · 薩提爾嫡傳</span></div>
+    <p class="ex-lens">透鏡:<b>人的臨在、自發與創造</b>——與薩提爾共事二十年,重視真實的人與真實的接觸,而非技術或標籤;「成為更完整的人」。</p>
+    <h4>看見什麼</h4>
+    <ul>
+      <li>活動由「<b>帶領者</b>」這個人撐起,但目前帶領者只是 meta 列裡的一個小標籤,沒有面孔、沒有溫度——人被資料化了。</li>
+      <li>整體視覺已經很溫柔(湖水青、襯線字、水面意象),方向正確;但文字語氣偏「公告」,少了一點對訪客的招呼與臨在感。</li>
+    </ul>
+    <h4>建議</h4>
+    <ul>
+      <li>強化<b>帶領者的存在感</b>:可加入帶領者一句話介紹或頭像(若版權允許),或讓「帶領者」變成可篩選/可點的標籤,聚合同一位老師的所有活動。</li>
+      <li>在空狀態與載入狀態用<b>溫暖的人話</b>,而非系統訊息。例如找不到活動時,給一句「這個分類暫時沒有活動,換個關鍵字,或看看『日期未定』的常態課程」。</li>
+    </ul>
+    <div class="quotes">
+      <div class="qh">溫暖代表金句 · 三選一</div>
+      <ol>
+        <li><span class="qq">「你不是沒有選擇,而是你『認為』自己沒有選擇。」</span><span class="qm">原話　·　獨特:<b>選擇/自由</b></span></li>
+        <li><span class="qq">「每個人,都有機會重新成為自己。」</span><span class="qm">原話　·　獨特:<b>重新開始的盼望</b></span></li>
+        <li><span class="qq">「改變,任何時候開始都不嫌晚。」</span><span class="qm">理念整理(呼應她百歲仍工作、《愛與自由》的精神)　·　獨特:<b>終生成長</b></span></li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="expert">
+    <div class="ex-head"><span class="ex-name">約翰·貝曼 John Banmen</span><span class="ex-role">薩提爾系統轉化治療</span></div>
+    <p class="ex-lens">透鏡:<b>冰山與系統轉化</b>——行為底下是感受、觀點、期待與渴望;治療(與溝通)的目標是「從問題走向可能與希望」。</p>
+    <h4>看見什麼</h4>
+    <ul>
+      <li>活動卡的 <b>highlights(正評)</b>設計很好,正是「希望感」的具體呈現;這是全站最有溫度的元素,值得更突出。</li>
+      <li>站上資訊大多停在「<b>有什麼活動</b>」(行為層),少了「參加後可能帶來什麼轉變」(渴望/可能層)的訊息,難讓人從觀望走向行動。</li>
+    </ul>
+    <h4>建議</h4>
+    <ul>
+      <li>讓 <b>正評優先曝光</b>:在近期活動最上方放一張「本週推薦」,或讓有正評的卡片加微標記,把希望感放到水面上。</li>
+      <li>把文案<b>從「資訊」升級為「可能」</b>:卡片或首頁帶一句指向轉變的話,例如「找一段讓自己更靠近自己的旅程」。</li>
+    </ul>
+    <div class="quotes">
+      <div class="qh">溫暖代表金句 · 三選一</div>
+      <ol>
+        <li><span class="qq">「我們要先看見自己內心的美好,才可能真正看見別人;先感受到對自己的愛,才能去愛別人。」</span><span class="qm">原話　·　獨特:<b>先愛自己</b></span></li>
+        <li><span class="qq">「我常常回到我的冰山。」</span><span class="qm">原話　·　獨特:<b>向內覺察的修練</b></span></li>
+        <li><span class="qq">「成長的方向,是從問題走向可能與希望。」</span><span class="qm">理念整理(呼應其「系統轉化」取向)　·　獨特:<b>轉化/希望</b></span></li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="expert">
+    <div class="ex-head"><span class="ex-name">成蒂</span><span class="ex-role">薩提爾模式婚姻伴侶治療</span><span class="ex-role">體驗式家族治療 · 薩提爾嫡傳</span></div>
+    <p class="ex-lens">透鏡:<b>關係中的連結與自我價值</b>——師承薩提爾、葛茉莉、貝曼近三十年,曾任葛茉莉助手;著《我們之間》。人在關係裡受傷,也在關係裡療癒。</p>
+    <p class="ex-lens"><b>體驗式家族治療 · 薩提爾嫡傳:</b>承葛茉莉一脈的體驗式取向——治療不只在「談」問題,更在現場「經驗」轉變(雕塑、角色、當下接觸)。成蒂是少數華人國際認證的薩提爾模式訓練師,把這套以人為本、在關係中流動的工作方式帶進台灣,強調治療師自身的一致與臨在。</p>
+    <h4>看見什麼</h4>
+    <ul>
+      <li>很多訪客找活動是為了<b>關係議題</b>(親子、伴侶、家庭),但站上活動只有單一「地區」維度,無法用「我想處理的關係」來找。</li>
+      <li>highlights(正評)呈現了個人的轉變,但少了「<b>關係因此有什麼不同</b>」的角度——而那常是訪客真正在意的。</li>
+    </ul>
+    <h4>建議</h4>
+    <ul>
+      <li>加「<b>議題/關係</b>」分類:伴侶、親子、家庭、自我成長,讓訪客從「我的關係困境」入手,而非從機構名稱猜。</li>
+      <li>正評可兼採<b>關係層面的改變</b>(不只「我變好了」,也有「我們之間變好了」),呼應薩提爾在關係中流動的愛。</li>
+    </ul>
+    <div class="quotes">
+      <div class="qh">溫暖代表金句 · 三選一</div>
+      <ol>
+        <li><span class="qq">「親密關係,是人生最好的機會,去遇見自己與對方真實的自我。」</span><span class="qm">出自《我們之間》　·　獨特:<b>關係作為相遇</b></span></li>
+        <li><span class="qq">「親密,是能分享脆弱——那最容易受傷的地方,也是最能療傷的地方。」</span><span class="qm">出自《我們之間》　·　獨特:<b>脆弱與療癒</b></span></li>
+        <li><span class="qq">「從『我和你』,慢慢走向『我們』。」</span><span class="qm">出自《我們之間》　·　獨特:<b>成為「我們」</b></span></li>
+      </ol>
+    </div>
+  </article>
+
+  <article class="expert">
+    <div class="ex-head"><span class="ex-name">李崇建</span><span class="ex-role">薩提爾對話 · 台灣推廣</span></div>
+    <p class="ex-lens">透鏡:<b>對話的普及化</b>——把薩提爾從治療室帶進親子、師生、日常,用一般人聽得懂的語言降低門檻。</p>
+    <h4>看見什麼</h4>
+    <ul>
+      <li>很多訪客是<b>初次接觸</b>的家長或老師,可能不確定「薩提爾」是什麼、適不適合自己。站上沒有任何給新手的入口或一句說明。</li>
+      <li>站名 SatirDaily 與「每日匯整」很清楚,但<b>受眾</b>(這是給誰的?)沒有明說。</li>
+    </ul>
+    <h4>建議</h4>
+    <ul>
+      <li>加一段極短的「<b>什麼是薩提爾?適合誰?</b>」(2–3 句、可收合),用日常語言:這是一種關於溝通與自我成長的取向,常見於親子、伴侶、教學與自我探索。</li>
+      <li>用<b>情境式的關鍵字快搜</b>取代純文字框,例如預設標籤:親子溝通、自我成長、伴侶、教師研習、線上課,讓新手不必想關鍵字就能開始。</li>
+    </ul>
+    <div class="quotes">
+      <div class="qh">溫暖代表金句 · 三選一</div>
+      <ol>
+        <li><span class="qq">「好奇,是傾聽的起點、改變的緣起、接納的開始;好奇最終之處,是連結人的生命力。」</span><span class="qm">原話　·　獨特:<b>好奇</b></span></li>
+        <li><span class="qq">「真正的溝通,不是解決問題,而是與人連結。」</span><span class="qm">理念整理(其著作核心精神)　·　獨特:<b>連結勝於解決</b></span></li>
+        <li><span class="qq">「對話時,先不急著給答案、講道理、解決問題——先連結那個人。」</span><span class="qm">理念整理(其對話方法)　·　獨特:<b>對話姿態</b></span></li>
+      </ol>
+    </div>
+  </article>
+
+  <!-- ───────────── UI / UX 設計師 ───────────── -->
+  <h2 class="section"><span class="bar"></span>使用者體驗 · 易用性與設計品質</h2>
+  <p class="section-lede">這三個視角關注的是:訪客能不能<b>順、快、放心</b>地找到並信任一場活動,以及網站在技術與細節上是否扎實。</p>
+
+  <article class="expert ui">
+    <div class="ex-head"><span class="ex-name">唐·諾曼 Don Norman</span><span class="ex-role">以使用者為中心的設計</span></div>
+    <p class="ex-lens">透鏡:<b>可發現性、回饋、心智模型</b>——好的設計讓人一看就知道能做什麼、做了之後有清楚回應。</p>
+    <h4>看見什麼</h4>
+    <ul>
+      <li>讀取 events.json 時<b>沒有載入回饋</b>(無骨架/轉圈),慢網路下會看到一片空白;失敗時才出現訊息。系統狀態不可見。</li>
+      <li>篩選只有「地區」一個下拉,但排序選單裡卻有帶領者/主辦——<b>能排序卻不能篩選</b>,心智模型不一致。</li>
+      <li>分頁(近期/日期未定/已過去)切換會悄悄改排序,使用者不一定察覺到發生了什麼。</li>
+    </ul>
+    <h4>建議</h4>
+    <ul>
+      <li>加入<b>載入骨架(skeleton)或轉圈</b>+ 友善錯誤狀態,讓每個動作都有即時回饋。</li>
+      <li>把「<b>帶領者、主辦</b>」也做成篩選(下拉或標籤),讓排序與篩選的能力對齊。</li>
+      <li>切換分頁時,可加一行微動畫或提示,讓排序改變被「看見」。</li>
+    </ul>
+  </article>
+
+  <article class="expert ui">
+    <div class="ex-head"><span class="ex-name">雅各布·尼爾森 Jakob Nielsen</span><span class="ex-role">可用性十大原則 (NN/g)</span></div>
+    <p class="ex-lens">透鏡:<b>十大可用性啟發法</b>——系統狀態可見、貼近真實世界、辨識優於回憶、容錯、美觀且精簡、無障礙。</p>
+    <h4>看見什麼</h4>
+    <ul>
+      <li><b>對比度</b>:次要文字(資料更新日、來源)用的淺灰綠(原 #8b9b96)在白底上小字未達 WCAG AA,視力較弱者吃力。</li>
+      <li><b>鍵盤無障礙</b>:分頁用了 role="tab" 但沒有 aria-controls / tabpanel,也沒有左右方向鍵切換,螢幕報讀與鍵盤使用者體驗不完整。</li>
+      <li><b>辨識優於回憶</b>:搜尋是自由文字,使用者得自己想關鍵字;沒有常用標籤可點。</li>
+      <li>重新整理後,使用者的篩選/搜尋條件不會被記住(無狀態保存)。</li>
+    </ul>
+    <h4>建議</h4>
+    <ul>
+      <li>把次要文字色加深至可過 AA(約 #5d6f6b 以上),確保正文與標籤皆達 4.5:1。</li>
+      <li>補齊 <b>tab 無障礙</b>:aria-controls 連到 tabpanel、支援方向鍵、focus 樣式清楚。</li>
+      <li>用 <b>localStorage 記住</b>使用者上次的分頁、地區與排序,回訪更順。</li>
+    </ul>
+  </article>
+
+  <article class="expert ui">
+    <div class="ex-head"><span class="ex-name">迪特·拉姆斯 Dieter Rams</span><span class="ex-role">好設計十誡</span></div>
+    <p class="ex-lens">透鏡:<b>誠實、極簡、注重細節、歷久</b>——好設計「盡可能少設計」,且內容才是主角。</p>
+    <h4>看見什麼</h4>
+    <ul>
+      <li><b>誠實原則</b>:首頁標榜「每天自動更新」「每日匯整」,但目前只有約 77 筆且部分常態課程無日期;若某天爬蟲沒新資料,標語仍說「每日」,可能與實況不符。</li>
+      <li>視覺語言乾淨克制,水面 logo 巧妙——這部分已做得很好,維持即可。</li>
+      <li>細節:行動版隱藏 hero 圖、sticky 控制列等都處理得不錯;但卡片在「已過去」用整體變淡(opacity .62)會連帶降低文字對比。</li>
+    </ul>
+    <h4>建議</h4>
+    <ul>
+      <li>讓標語<b>誠實對應實況</b>:顯示「最後更新 X 天前」與資料總筆數(已有更新日,可再加總數與健康狀態),別讓「每日」變成空話。</li>
+      <li>「已過去」卡片改用<b>更克制的降權</b>(例如僅左側色條轉灰 + 加「已結束」標,而非整體調淡),保住可讀性。</li>
+      <li>持守「內容是主角」:抗拒加入裝飾性元素,把心力放在資料的完整與正確。</li>
+    </ul>
+  </article>
+
+  <!-- ───────────── 優先順序 ───────────── -->
+  <h2 class="section"><span class="bar"></span>綜整 · 建議優先順序</h2>
+  <p class="section-lede">把六個視角收斂成一份可執行清單。<span class="tag t-quick">快速見效</span> 多為前端小改;<span class="tag t-big">較大投入</span> 需流程或架構調整。</p>
+
+  <div class="priority">
+    <div class="prow"><span class="num">1</span><span class="txt"><b>改寫首頁文案,接住訪客的渴望</b><small>主標+副標傳達「找一段成長/連結」,而非僅「活動資訊」。(貝曼 · 李崇建)</small></span><span class="tag t-quick">快速見效</span></div>
+    <div class="prow"><span class="num">2</span><span class="txt"><b>加新手入口「什麼是薩提爾?適合誰?」</b><small>2–3 句可收合說明 + 情境快搜標籤,降低初接觸門檻。(李崇建)</small></span><span class="tag t-quick">快速見效</span></div>
+    <div class="prow"><span class="num">3</span><span class="txt"><b>提高文字對比、補齊鍵盤/讀屏無障礙</b><small>加深次要文字色至 WCAG AA;tab 加 aria-controls 與方向鍵。(尼爾森)</small></span><span class="tag t-quick">快速見效</span></div>
+    <div class="prow"><span class="num">4</span><span class="txt"><b>載入骨架 + 友善空/錯誤狀態</b><small>讓系統狀態隨時可見,訊息用人話。(諾曼 · 葛茉莉)</small></span><span class="tag t-quick">快速見效</span></div>
+    <div class="prow"><span class="num">5</span><span class="txt"><b>讓標語誠實對應資料實況</b><small>顯示「最後更新 X 天前 + 總筆數」;「已過去」卡片改克制降權。(拉姆斯)</small></span><span class="tag t-quick">快速見效</span></div>
+    <div class="prow"><span class="num">6</span><span class="txt"><b>帶領者、主辦也做成篩選/可點標籤</b><small>排序與篩選能力對齊;聚合同一位老師的活動。(諾曼 · 葛茉莉)</small></span><span class="tag t-quick">快速見效</span></div>
+    <div class="prow"><span class="num">7</span><span class="txt"><b>記住使用者的分頁/地區/排序</b><small>用 localStorage 保存上次條件,回訪更順。(尼爾森)</small></span><span class="tag t-quick">快速見效</span></div>
+    <div class="prow"><span class="num">8</span><span class="txt"><b>每場活動加「加入行事曆 (.ics)」</b><small>活動網站的高價值功能;可再考慮整站訂閱(LINE/Email/行事曆 feed)。</small></span><span class="tag t-big">較大投入</span></div>
+    <div class="prow"><span class="num">9</span><span class="txt"><b>SEO 與社群分享:預先渲染 + 結構化資料</b><small>目前活動由 JS 載入,爬蟲看不到內容;加 Event JSON-LD、OG/Twitter 卡,或在 build 時把活動寫進 HTML。</small></span><span class="tag t-big">較大投入</span></div>
+    <div class="prow"><span class="num">10</span><span class="txt"><b>突出「正評/本週推薦」與帶領者面孔</b><small>把最有溫度的元素放到水面上,呼應宗旨不淪為冷條列。(貝曼 · 葛茉莉)</small></span><span class="tag t-big">較大投入</span></div>
+  </div>
+
+  <h2 class="section"><span class="bar"></span>已經做得好的地方</h2>
+  <p class="section-lede">改進建議之外,也記下值得保留的優點,別在重構時弄丟。</p>
+  <article class="expert">
+    <ul>
+      <li>視覺語言<b>溫柔且一致</b>:湖水青配色、襯線標題、水面/倒影 logo,氣質貼合主題。</li>
+      <li><b>連結驗證徽章</b>(✓ 連結已驗證)與「來源連回原始頁」建立了難得的信任感。</li>
+      <li>分頁切換<b>自動套用合適排序</b>、每分頁有說明 hint,是體貼的小細節。</li>
+      <li>多關鍵字搜尋、地區篩選、響應式版面,核心功能完整可用。</li>
+    </ul>
+  </article>
+
+</main>
+
+<footer>
+  <div class="wrap">SatirDaily 設計健檢 · 2026-06-23 · 八位專家視角(以其公開理論框架為分析透鏡)</div>
+</footer>
+
+</body>
+</html>

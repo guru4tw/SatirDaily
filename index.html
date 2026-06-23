@@ -80,6 +80,36 @@
     box-shadow:0 0 0 0 rgba(44,140,132,.5);animation:pulse 2.4s infinite;}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(44,140,132,.45);}70%{box-shadow:0 0 0 8px rgba(44,140,132,0);}100%{box-shadow:0 0 0 0 rgba(44,140,132,0);}}
 
+  /* ── 文案區:薩提爾模式傳承者 ──────────────── */
+  .voices-intro{position:relative;z-index:2;margin:26px 0 14px;font-family:var(--serif);
+    font-size:1.04rem;font-weight:600;color:var(--ink);}
+  .voices{position:relative;z-index:2;display:grid;gap:14px;}
+  @media(min-width:760px){.voices{grid-template-columns:1fr 1fr;}}
+  .voice{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);
+    padding:18px 20px;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;}
+  .voice::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+    background:linear-gradient(180deg,var(--water),var(--water-soft));}
+  .voice .vh{display:flex;align-items:baseline;gap:9px;flex-wrap:wrap;margin-bottom:6px;}
+  .voice .vname{font-family:var(--serif);font-size:1.12rem;font-weight:700;color:var(--ink);}
+  .voice .vrole{font-size:.72rem;font-weight:600;color:var(--water-600);background:var(--water-wash);
+    border-radius:999px;padding:2px 10px;}
+  .voice .vlens{font-size:.85rem;color:var(--ink-soft);margin-bottom:12px;}
+  .voice .vlens b{color:var(--ink);font-weight:600;}
+  .voice .vquote{font-family:var(--serif);font-size:.92rem;color:var(--ink);line-height:1.62;
+    padding-left:13px;border-left:2px solid var(--water-wash);margin-bottom:9px;}
+  .voice .vquote:last-child{margin-bottom:0;}
+  .voice .vquote cite{display:block;font-family:var(--sans);font-style:normal;font-size:.73rem;
+    color:var(--ink-faint);margin-top:2px;}
+
+  /* ── 活動區段標 ───────────────────────────── */
+  .section-divider{position:relative;z-index:2;margin-top:34px;}
+  .part-title{font-family:var(--serif);font-size:clamp(1.5rem,3.4vw,2rem);font-weight:700;
+    line-height:1.25;color:var(--ink);}
+  .part-title .accent{color:var(--water-600);position:relative;white-space:nowrap;}
+  .part-title .accent::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.3em;
+    background:linear-gradient(90deg,var(--water-soft),transparent);opacity:.4;border-radius:3px;z-index:-1;}
+  .section-divider .lede{margin-top:12px;}
+
   /* ── Tabs ───────────────────────────────── */
   .tabs{
     position:sticky;top:0;z-index:20;
@@ -230,10 +260,51 @@
       </div>
     </div>
 
+    <!-- ── 第一部分:文案 ── -->
     <div class="hero-body">
-      <span class="eyebrow"><span class="dot"></span>每天自動更新</span>
+      <span class="eyebrow"><span class="dot"></span>上次更新 <span id="lastUpd">—</span></span>
       <h1><span class="accent">薩提爾</span></h1>
-      <p class="lede">台灣薩提爾活動資訊!</p>
+    </div>
+
+    <p class="voices-intro">薩提爾模式的傳承,與他們留下的話</p>
+    <div class="voices">
+      <article class="voice">
+        <div class="vh"><span class="vname">維琴尼亞·薩提爾 Virginia Satir</span><span class="vrole">薩提爾模式創始人</span></div>
+        <p class="vlens">透鏡:<b>自我價值、一致性、冰山、五種自由</b></p>
+        <p class="vquote">「問題本身不是問題,如何應對才是問題。」</p>
+        <p class="vquote">「生命並非理應如何,而是它本來如此;你如何面對,才是關鍵。」</p>
+        <p class="vquote">「我們因相同而結合,因相異而成長。」</p>
+      </article>
+
+      <article class="voice">
+        <div class="vh"><span class="vname">瑪莉亞·葛茉莉 Maria Gomori</span><span class="vrole">體驗式家族治療 · 薩提爾嫡傳</span></div>
+        <p class="vlens">透鏡:<b>人的臨在、自發與創造</b></p>
+        <p class="vquote">「每個人,都有機會做回自己。」</p>
+        <p class="vquote">「你不是沒有選擇,而是『你認為沒有選擇』。」</p>
+        <p class="vquote">「能遇見人是我的幸運,和他們在一起,我更了解自己。」<cite>出自《愛與自由》</cite></p>
+      </article>
+
+      <article class="voice">
+        <div class="vh"><span class="vname">約翰·貝曼 John Banmen</span><span class="vrole">薩提爾系統轉化治療</span></div>
+        <p class="vlens">透鏡:<b>冰山與系統轉化,從問題走向可能與希望</b></p>
+        <p class="vquote">「我的使命,是幫助人們成長。」</p>
+        <p class="vquote">「先看見自己內心的美好,才可能看見別人的;先愛自己,才能去愛別人。」</p>
+        <p class="vquote">「連接生命力,讓人成為更完整的人。」<cite>薩提爾轉化系統治療</cite></p>
+      </article>
+
+      <article class="voice">
+        <div class="vh"><span class="vname">成蒂</span><span class="vrole">薩提爾模式婚姻伴侶治療</span></div>
+        <p class="vlens">透鏡:<b>關係中的連結與自我價值</b></p>
+        <p class="vquote">「親密關係,是人生最好的機會,去遇見自己與對方真實的自我。」</p>
+        <p class="vquote">「親密,是可以分享脆弱,是施與受之間的平衡。」</p>
+        <p class="vquote">「親密,是自我與生命力的連結。」<cite>出自《我們之間》</cite></p>
+      </article>
+    </div>
+
+    <!-- ── 第二部分:活動 ── -->
+    <div class="section-divider">
+      <h2 class="part-title"><span class="accent">台灣薩提爾活動</span></h2>
+      <p class="lede">陪你找到你自己的內在聲音</p>
       <div class="updated" id="updated"></div>
     </div>
   </div>
@@ -315,8 +386,9 @@ async function load(){
     if(!res.ok) throw new Error("HTTP "+res.status);
     const data = await res.json();
     ALL = data.events || [];
+    document.getElementById("lastUpd").textContent = data.updated_at || "—";
     document.getElementById("updated").innerHTML =
-      `<span class="pulse"></span>資料更新日 ${data.updated_at || "—"}　·　共 ${ALL.length} 場`;
+      `<span class="pulse"></span>共 ${ALL.length} 場活動`;
     buildRegionOptions();
     updateTabCounts();
     render();
