@@ -81,8 +81,9 @@
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(44,140,132,.45);}70%{box-shadow:0 0 0 8px rgba(44,140,132,0);}100%{box-shadow:0 0 0 0 rgba(44,140,132,0);}}
 
   /* ── 文案區:薩提爾模式傳承者 ──────────────── */
-  .voices-intro{position:relative;z-index:2;margin:26px 0 14px;font-family:var(--serif);
-    font-size:1.04rem;font-weight:600;color:var(--ink);}
+  /* 與第二段「陪你找到你自己的內在聲音」(.lede)同格式:sans 細體、ink-soft */
+  .voices-intro{position:relative;z-index:2;margin:26px 0 14px;
+    font-size:1.05rem;font-weight:400;color:var(--ink-soft);}
   .voices{position:relative;z-index:2;display:grid;gap:14px;}
   @media(min-width:760px){.voices{grid-template-columns:1fr 1fr;}}
   .voice{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);
@@ -223,6 +224,13 @@
     box-shadow:0 8px 18px -10px rgba(44,140,132,.9);transition:background .18s,transform .18s,box-shadow .18s;
   }
   .btn:hover{background:var(--water-600);transform:translateY(-1px);box-shadow:0 12px 22px -10px rgba(31,111,104,.95);}
+  .foot-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+  .btn-ghost{display:inline-flex;align-items:center;gap:6px;background:var(--surface);
+    color:var(--water-600);text-decoration:none;font-weight:600;font-size:.84rem;
+    padding:8px 15px;border-radius:999px;border:1px solid var(--water-soft);
+    transition:background .18s,border-color .18s;}
+  .btn-ghost:hover{background:var(--water-wash);border-color:var(--water);}
+  .btn-ghost svg{width:14px;height:14px;}
   .fetched{font-size:.72rem;color:var(--ink-faint);}
   .src-link{color:var(--water-600);font-weight:600;text-decoration:none;}
   .src-link:hover{text-decoration:underline;}
@@ -428,6 +436,14 @@ async function load(){
       `<span class="pulse"></span>共 ${ALL.length} 場活動`;
     buildRegionOptions();
     updateTabCounts();
+    // 還原上次偏好
+    const saved = loadState();
+    if(saved.tab && TAB_META[saved.tab]) activeTab = saved.tab;
+    if(saved.q) document.getElementById("q").value = saved.q;
+    selectTab(activeTab, false, true);                              // 套用分頁,但保留排序待還原
+    if(saved.region) document.getElementById("region").value = saved.region;
+    if(saved.sort) document.getElementById("sort").value = saved.sort;
+    else document.getElementById("sort").value = TAB_META[activeTab].sort;
     render();
   }catch(err){
     document.getElementById("list").innerHTML =
@@ -472,7 +488,7 @@ function updateTabCounts(){
   document.getElementById("n-past").textContent     = c.past;
 }
 
-function selectTab(tab,focus){
+function selectTab(tab,focus,keepSort){
   activeTab = tab;
   document.querySelectorAll(".tab").forEach(b=>{
     const on = b.dataset.tab===tab;
@@ -481,9 +497,23 @@ function selectTab(tab,focus){
     if(on && focus) b.focus();
   });
   document.getElementById("list").setAttribute("aria-labelledby","tab-"+tab);
-  document.getElementById("sort").value = TAB_META[tab].sort;
+  if(!keepSort) document.getElementById("sort").value = TAB_META[tab].sort; // 還原時保留使用者排序
   document.getElementById("tabHint").textContent = TAB_META[tab].hint;
   render();
+}
+
+// 記住使用者偏好(分頁 / 地區 / 排序 / 關鍵字)
+const LS_KEY = "satirdaily.prefs";
+function saveState(){
+  try{ localStorage.setItem(LS_KEY, JSON.stringify({
+    tab: activeTab,
+    region: document.getElementById("region").value,
+    sort: document.getElementById("sort").value,
+    q: document.getElementById("q").value,
+  })); }catch(e){}
+}
+function loadState(){
+  try{ return JSON.parse(localStorage.getItem(LS_KEY)) || {}; }catch(e){ return {}; }
 }
 
 // 設定 / 清除 帶領者・主辦 篩選
@@ -498,6 +528,7 @@ function render(){
   const q = document.getElementById("q").value.trim();
   const region = document.getElementById("region").value;
   const mode = document.getElementById("sort").value;
+  saveState();
 
   let list = ALL.filter(ev=>
     bucketOf(ev)===activeTab &&
@@ -521,6 +552,7 @@ function render(){
   }
 
   const cal = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>`;
+  const calIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 2.5v4M16 2.5v4M12 12.5v5M9.5 15h5"/></svg>`;
 
   root.innerHTML = list.map(ev=>{
     const past = isPast(ev);
@@ -541,7 +573,10 @@ function render(){
         ${ev.price?`<span>費用 <b>${esc(ev.price)}</b></span>`:""}
       </div>
       <div class="foot">
-        ${ev.signup_url?`<a class="btn" href="${esc(ev.signup_url)}" target="_blank" rel="noopener">我要報名 →</a>`:"<span></span>"}
+        <div class="foot-actions">
+          ${ev.signup_url?`<a class="btn" href="${esc(ev.signup_url)}" target="_blank" rel="noopener">我要報名 →</a>`:""}
+          ${ev.date_start?`<a class="btn-ghost" download="satir-${esc(ev.id||"event")}.ics" href="data:text/calendar;charset=utf-8,${encodeURIComponent(buildICS(ev))}" title="下載 .ics 加入行事曆">${calIcon}加入行事曆</a>`:""}
+        </div>
         <span class="fetched">資料更新日 ${esc(ev.fetched_at||"—")}　·　來源 ${srcLink(ev)}${linkBadge(ev)}</span>
       </div>
     </article>`;
@@ -549,6 +584,29 @@ function render(){
 }
 
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));}
+
+// ── .ics 行事曆(全天事件;DTEND 為結束日隔天,exclusive) ──
+function icsEsc(s){return String(s||"").replace(/\\/g,"\\\\").replace(/[,;]/g,m=>"\\"+m).replace(/\r?\n/g,"\\n");}
+function dayAfter(s){const d=new Date(s+"T00:00:00");d.setDate(d.getDate()+1);
+  return `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,"0")}${String(d.getDate()).padStart(2,"0")}`;}
+function buildICS(ev){
+  const start = ev.date_start.replace(/-/g,"");
+  const end = dayAfter(ev.date_end || ev.date_start);
+  const desc = [ev.purpose,ev.summary,ev.signup_url].filter(Boolean).join("\n");
+  return [
+    "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//SatirDaily//TW//ZH","CALSCALE:GREGORIAN",
+    "BEGIN:VEVENT",
+    "UID:"+(ev.id||start)+"@satirdaily",
+    "DTSTAMP:"+today.replace(/-/g,"")+"T000000Z",
+    "DTSTART;VALUE=DATE:"+start,
+    "DTEND;VALUE=DATE:"+end,
+    "SUMMARY:"+icsEsc(ev.title||"薩提爾活動"),
+    desc?"DESCRIPTION:"+icsEsc(desc):null,
+    ev.venue?"LOCATION:"+icsEsc(ev.venue):null,
+    ev.signup_url?"URL:"+icsEsc(ev.signup_url):null,
+    "END:VEVENT","END:VCALENDAR"
+  ].filter(Boolean).join("\r\n");
+}
 
 // 來源 → 連回原始活動頁(source_url,build 時由 signup_url 推導);無連結則純文字
 function srcLink(ev){
