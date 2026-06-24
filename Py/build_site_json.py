@@ -240,6 +240,8 @@ header.top{background:linear-gradient(178deg,var(--water-wash),var(--bg));
 border-bottom:1px solid var(--line);padding:26px 0 30px;}
 .brand{font-family:var(--serif);font-weight:700;color:var(--water-600);font-size:1.05rem;
 text-decoration:none;display:inline-flex;align-items:center;gap:8px;}
+.hero-og{display:block;width:100%;height:auto;border-radius:16px;
+border:1px solid var(--line);margin:18px 0 4px;box-shadow:var(--shadow-sm,0 1px 2px rgba(31,48,45,.05));}
 .crumb{font-size:.82rem;color:var(--ink-faint);margin:14px 0 0;}
 .crumb a{color:var(--water);text-decoration:none;}
 .crumb a:hover{text-decoration:underline;}
@@ -391,7 +393,11 @@ def event_page(e: dict) -> str:
         for i, (n, u) in enumerate(crumb_links)
     )
 
+    og = og_url_if_exists(f"assets/og/{eid}.png")
+    hero = f'<img class="hero-og" src="{esc(og)}" alt="{esc(title_core)} 活動摘要圖" width="1200" height="630">' if og else ""
+
     body = f"""<p class="crumb">{crumb_html}</p>
+{hero}
 <h1>{esc(title_core)}</h1>
 <div class="when">{esc(when)}</div>
 <ul class="facts">
@@ -407,7 +413,6 @@ def event_page(e: dict) -> str:
 
     graph = [event_node(e), breadcrumb_ld(crumb_links)] if e.get("date_start") else [breadcrumb_ld(crumb_links)]
     jsonld = json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False)
-    og = og_url_if_exists(f"assets/og/{eid}.png")
     return page_shell(title=page_title, desc=desc, canonical=canonical,
                       body=body, jsonld=jsonld, og=og)
 
