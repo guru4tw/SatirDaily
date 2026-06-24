@@ -95,12 +95,15 @@
     border:1px solid var(--line);border-radius:999px;padding:7px 15px;box-shadow:var(--shadow-sm);}
   .updated .pulse{width:7px;height:7px;border-radius:50%;background:var(--water);
     box-shadow:0 0 0 0 rgba(44,140,132,.5);animation:pulse 2.4s infinite;}
+  .updated-row{margin-top:24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;}
+  .updated-row .updated{margin-top:0;}
+  .eyebrow-inline{margin-bottom:0;}
   @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(44,140,132,.45);}70%{box-shadow:0 0 0 8px rgba(44,140,132,0);}100%{box-shadow:0 0 0 0 rgba(44,140,132,0);}}
 
   /* ── 文案區:薩提爾模式傳承者 ──────────────── */
   /* 與第二段「陪你找到你自己的內在聲音」(.lede)同格式:sans 細體、ink-soft */
   .voices-intro{position:relative;z-index:2;margin:26px 0 14px;
-    font-size:1.05rem;font-weight:400;color:var(--ink-soft);}
+    font-size:1.05rem;font-weight:500;color:var(--ink);}
   .voices{position:relative;z-index:2;display:grid;gap:14px;}
   @media(min-width:760px){.voices{grid-template-columns:1fr 1fr;}}
   .voice{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius-sm);
@@ -126,7 +129,7 @@
   .part-title .accent{color:var(--water-600);position:relative;white-space:nowrap;}
   .part-title .accent::after{content:"";position:absolute;left:0;right:0;bottom:.08em;height:.3em;
     background:linear-gradient(90deg,var(--water-soft),transparent);opacity:.4;border-radius:3px;z-index:-1;}
-  .section-divider .lede{margin-top:12px;}
+  .section-divider .lede{margin-top:12px;color:var(--ink);font-weight:500;}
 
   /* ── Tabs ───────────────────────────────── */
   .tabs{
@@ -336,13 +339,11 @@
       </svg>
       <div>
         <div class="name">Satir<b>Daily</b></div>
-        <span class="tag">每日匯整</span>
       </div>
     </div>
 
     <!-- ── 第一部分:文案 ── -->
     <div class="hero-body">
-      <span class="eyebrow"><span class="dot"></span>上次更新 <span id="lastUpd">—</span></span>
       <h1><span class="accent">薩提爾</span><span class="sr-only">工作坊・課程・成長活動全台每日匯整</span></h1>
     </div>
 
@@ -385,7 +386,10 @@
     <div class="section-divider">
       <h2 class="part-title"><span class="accent">台灣薩提爾活動</span></h2>
       <p class="lede">陪你找到你自己的內在聲音</p>
-      <div class="updated" id="updated"></div>
+      <div class="updated-row">
+        <div class="updated" id="updated"></div>
+        <span class="eyebrow eyebrow-inline"><span class="dot"></span>上次更新 <span id="lastUpd">—</span></span>
+      </div>
     </div>
   </div>
 </header>
