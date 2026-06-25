@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-06-24",
-  "total": 75,
-  "ok": 75,
+  "checked_at": "2026-06-25",
+  "total": 77,
+  "ok": 77,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -29,6 +29,24 @@
       "title": "美好心關係‧薩提爾初階工作坊",
       "source": "comflow",
       "url": "https://comflow.tw/satir_basic/",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "omia-1800",
+      "title": "薩提爾的對話練習補充課程：好奇與情緒關係",
+      "source": "omia",
+      "url": "https://www.omia.com.tw/project/1800",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "omia-1791",
+      "title": "薩提爾的對話練習：從「好奇心」出發建立深度溝通",
+      "source": "omia",
+      "url": "https://www.omia.com.tw/project/1791",
       "status": "ok",
       "http": 200,
       "note": ""
@@ -376,19 +394,19 @@
       "note": ""
     },
     {
-      "id": "satir_org-566-567he-bao",
-      "title": "【愛與自由】系列：第二梯次 ( 一 + 二 ) 課程合報專區",
+      "id": "satir_org-566zhong",
+      "title": "【愛與自由】系列一：溝通與成長工作坊 （第二梯次）",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/566-567he-bao",
+      "url": "https://www.satir.org.tw/schedule/566zhong",
       "status": "ok",
       "http": 200,
       "note": ""
     },
     {
-      "id": "satir_org-566zhong",
-      "title": "【愛與自由】系列一：溝通與成長工作坊 （第二梯次）",
+      "id": "satir_org-566-567he-bao",
+      "title": "【愛與自由】系列：第二梯次 ( 一 + 二 ) 課程合報專區",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/566zhong",
+      "url": "https://www.satir.org.tw/schedule/566-567he-bao",
       "status": "ok",
       "http": 200,
       "note": ""
@@ -511,19 +529,19 @@
       "note": ""
     },
     {
-      "id": "satir_org-569bei-2",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程 (家動學員報名專區)",
+      "id": "satir_org-569bei",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/569bei-2",
+      "url": "https://www.satir.org.tw/schedule/569bei",
       "status": "ok",
       "http": 200,
       "note": ""
     },
     {
-      "id": "satir_org-569bei",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程",
+      "id": "satir_org-569bei-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程 (家動學員報名專區)",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/569bei",
+      "url": "https://www.satir.org.tw/schedule/569bei-2",
       "status": "ok",
       "http": 200,
       "note": ""
