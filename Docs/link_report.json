@@ -1,11 +1,38 @@
 {
-  "checked_at": "2026-06-27",
-  "total": 74,
-  "ok": 74,
+  "checked_at": "2026-06-28",
+  "total": 75,
+  "ok": 75,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
   "results": [
+    {
+      "id": "comflow-satir_intermediate",
+      "title": "家庭心工廠‧薩提爾進階工作坊",
+      "source": "comflow",
+      "url": "https://comflow.tw/satir_intermediate/",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "comflow-satir_advanced",
+      "title": "生命心燈塔‧薩提爾高階工作坊",
+      "source": "comflow",
+      "url": "https://comflow.tw/satir_advanced/",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "comflow-satir_basic",
+      "title": "美好心關係‧薩提爾初階工作坊",
+      "source": "comflow",
+      "url": "https://comflow.tw/satir_basic/",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
     {
       "id": "omia-1800",
       "title": "薩提爾的對話練習補充課程：好奇與情緒關係",
@@ -322,28 +349,10 @@
       "note": ""
     },
     {
-      "id": "satir_org-557bei",
-      "title": "個人成長之旅一：【冰山覺察中的陪伴與療癒】",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/557bei",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
       "id": "satir_org-557-558-559he-bao",
       "title": "個人成長之旅系列課程（三堂課程合報）",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/557-558-559he-bao",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-585nan",
-      "title": "在關係中回到自己：以冰山覺察內在歷程，從反應走向選擇",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/585nan",
       "status": "ok",
       "http": 200,
       "note": ""
