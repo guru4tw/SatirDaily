@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-06-29",
-  "total": 75,
-  "ok": 75,
+  "checked_at": "2026-06-30",
+  "total": 73,
+  "ok": 73,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -29,24 +29,6 @@
       "title": "美好心關係‧薩提爾初階工作坊",
       "source": "comflow",
       "url": "https://comflow.tw/satir_basic/",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "omia-1800",
-      "title": "薩提爾的對話練習補充課程：好奇與情緒關係",
-      "source": "omia",
-      "url": "https://www.omia.com.tw/project/1800",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "omia-1791",
-      "title": "薩提爾的對話練習：從「好奇心」出發建立深度溝通",
-      "source": "omia",
-      "url": "https://www.omia.com.tw/project/1791",
       "status": "ok",
       "http": 200,
       "note": ""
@@ -295,19 +277,19 @@
       "note": ""
     },
     {
-      "id": "satir_org-568-569bei",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程",
+      "id": "satir_org-568-569bei-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程 (家動學員報名專區)",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/568-569bei",
+      "url": "https://www.satir.org.tw/schedule/568-569bei-2",
       "status": "ok",
       "http": 200,
       "note": ""
     },
     {
-      "id": "satir_org-568-569bei-2",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程 (家動學員報名專區)",
+      "id": "satir_org-568-569bei",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/568-569bei-2",
+      "url": "https://www.satir.org.tw/schedule/568-569bei",
       "status": "ok",
       "http": 200,
       "note": ""
