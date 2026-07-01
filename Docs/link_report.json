@@ -1,38 +1,11 @@
 {
-  "checked_at": "2026-06-30",
-  "total": 73,
-  "ok": 73,
+  "checked_at": "2026-07-01",
+  "total": 70,
+  "ok": 70,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
   "results": [
-    {
-      "id": "comflow-satir_intermediate",
-      "title": "家庭心工廠‧薩提爾進階工作坊",
-      "source": "comflow",
-      "url": "https://comflow.tw/satir_intermediate/",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "comflow-satir_advanced",
-      "title": "生命心燈塔‧薩提爾高階工作坊",
-      "source": "comflow",
-      "url": "https://comflow.tw/satir_advanced/",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "comflow-satir_basic",
-      "title": "美好心關係‧薩提爾初階工作坊",
-      "source": "comflow",
-      "url": "https://comflow.tw/satir_basic/",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
     {
       "id": "lopwilldo-15827",
       "title": "陳桂芳老師工作坊",
