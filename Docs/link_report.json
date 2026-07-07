@@ -1,38 +1,11 @@
 {
-  "checked_at": "2026-07-06",
-  "total": 75,
-  "ok": 75,
+  "checked_at": "2026-07-07",
+  "total": 71,
+  "ok": 71,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
   "results": [
-    {
-      "id": "comflow-satir_intermediate",
-      "title": "家庭心工廠‧薩提爾進階工作坊",
-      "source": "comflow",
-      "url": "https://comflow.tw/satir_intermediate/",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "comflow-satir_advanced",
-      "title": "生命心燈塔‧薩提爾高階工作坊",
-      "source": "comflow",
-      "url": "https://comflow.tw/satir_advanced/",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "comflow-satir_basic",
-      "title": "美好心關係‧薩提爾初階工作坊",
-      "source": "comflow",
-      "url": "https://comflow.tw/satir_basic/",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
     {
       "id": "omia-1800",
       "title": "薩提爾的對話練習補充課程：好奇與情緒關係",
@@ -407,15 +380,6 @@
       "title": "點亮心中的燭火～社工公益薩提爾自我成長團體(雲林場)",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/587yun",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "shiuhli-1106",
-      "title": "Level 2認證班",
-      "source": "shiuhli",
-      "url": "https://www.shiuhli.org.tw/course/TP/1106",
       "status": "ok",
       "http": 200,
       "note": ""
