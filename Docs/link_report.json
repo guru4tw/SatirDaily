@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-07-08",
+  "checked_at": "2026-07-09",
   "total": 74,
   "ok": 74,
   "broken": 0,
@@ -295,19 +295,19 @@
       "note": ""
     },
     {
-      "id": "satir_org-568-569bei",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程",
+      "id": "satir_org-568-569bei-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程 (家動學員報名專區)",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/568-569bei",
+      "url": "https://www.satir.org.tw/schedule/568-569bei-2",
       "status": "ok",
       "http": 200,
       "note": ""
     },
     {
-      "id": "satir_org-568-569bei-2",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程 (家動學員報名專區)",
+      "id": "satir_org-568-569bei",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/568-569bei-2",
+      "url": "https://www.satir.org.tw/schedule/568-569bei",
       "status": "ok",
       "http": 200,
       "note": ""
@@ -376,19 +376,19 @@
       "note": ""
     },
     {
-      "id": "satir_org-566zhong",
-      "title": "【愛與自由】系列一：溝通與成長工作坊 （第二梯次）",
+      "id": "satir_org-566-567he-bao",
+      "title": "【愛與自由】系列：第二梯次 ( 一 + 二 ) 課程合報專區",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/566zhong",
+      "url": "https://www.satir.org.tw/schedule/566-567he-bao",
       "status": "ok",
       "http": 200,
       "note": ""
     },
     {
-      "id": "satir_org-566-567he-bao",
-      "title": "【愛與自由】系列：第二梯次 ( 一 + 二 ) 課程合報專區",
+      "id": "satir_org-566zhong",
+      "title": "【愛與自由】系列一：溝通與成長工作坊 （第二梯次）",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/566-567he-bao",
+      "url": "https://www.satir.org.tw/schedule/566zhong",
       "status": "ok",
       "http": 200,
       "note": ""
