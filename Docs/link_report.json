@@ -1,10 +1,65 @@
 {
-  "checked_at": "2026-07-10",
+  "checked_at": "2026-07-11",
   "total": 74,
-  "ok": 74,
-  "broken": 0,
+  "ok": 68,
+  "broken": 6,
   "skipped": 0,
-  "broken_list": [],
+  "broken_list": [
+    {
+      "id": "satir_org-572zhong",
+      "title": "「回到愛的源頭：從家族故事中重塑自我」 - 透過薩提爾模式，看見代代相傳的生命力量，整合成為內在穩定與愛的根基",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/572zhong",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-555xian-shang",
+      "title": "陪伴孩子成長－桀驁不馴的青少年",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/555xian-shang",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-583bei",
+      "title": "讓愛自由流動、尊重與靠近—前青春期親子關係連結工作坊",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/583bei",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-559bei",
+      "title": "個人成長之旅三：【與人和諧】增進關係中的愛與親近",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/559bei",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-577zhu",
+      "title": "尋根之旅 — 探索與體驗「原生家庭」的豐厚",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/577zhu",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-573zhong",
+      "title": "親密關係工作坊－愛與連結，攜手在關係中成長",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/573zhong",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    }
+  ],
   "results": [
     {
       "id": "comflow-satir_intermediate",
@@ -560,9 +615,9 @@
       "title": "「回到愛的源頭：從家族故事中重塑自我」 - 透過薩提爾模式，看見代代相傳的生命力量，整合成為內在穩定與愛的根基",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/572zhong",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1077",
@@ -587,9 +642,9 @@
       "title": "陪伴孩子成長－桀驁不馴的青少年",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/555xian-shang",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1045",
@@ -605,18 +660,18 @@
       "title": "讓愛自由流動、尊重與靠近—前青春期親子關係連結工作坊",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/583bei",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-559bei",
       "title": "個人成長之旅三：【與人和諧】增進關係中的愛與親近",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/559bei",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1049",
@@ -632,9 +687,9 @@
       "title": "尋根之旅 — 探索與體驗「原生家庭」的豐厚",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/577zhu",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1115",
@@ -650,9 +705,9 @@
       "title": "親密關係工作坊－愛與連結，攜手在關係中成長",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/573zhong",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1092",
