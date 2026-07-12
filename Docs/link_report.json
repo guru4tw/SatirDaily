@@ -1,15 +1,195 @@
 {
-  "checked_at": "2026-07-11",
-  "total": 74,
-  "ok": 68,
-  "broken": 6,
+  "checked_at": "2026-07-12",
+  "total": 73,
+  "ok": 47,
+  "broken": 26,
   "skipped": 0,
   "broken_list": [
+    {
+      "id": "satir_org-568-569bei",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/568-569bei",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-568-569bei-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程 (家動學員報名專區)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/568-569bei-2",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-568xian-shang-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》part1：12堂線上導讀課程 (家動學員報名專區)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/568xian-shang-2",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-568xian-shang",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》part1：12堂線上導讀課程",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/568xian-shang",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-581zhu",
+      "title": "薩提爾深度學習之旅—從滋養自己到陪伴他人",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/581zhu",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-547bei",
+      "title": "陪伴他人的內在練習：自我支持與陪伴力的整合訓練（薩提爾成長模式＿北區＿第三期）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/547bei",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-557-558-559he-bao",
+      "title": "個人成長之旅系列課程（三堂課程合報）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/557-558-559he-bao",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-566-567he-bao",
+      "title": "【愛與自由】系列：第二梯次 ( 一 + 二 ) 課程合報專區",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/566-567he-bao",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-587yun",
+      "title": "點亮心中的燭火～社工公益薩提爾自我成長團體(雲林場)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/587yun",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-576zhu",
+      "title": "身心靈安頓 - 起承轉合，照見健康",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/576zhu",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-561bei",
+      "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（台北場進階）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/561bei",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-558bei",
+      "title": "個人成長之旅二：【探源與療癒】探索生命經驗的影響，走過自我療癒的旅程",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/558bei",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-563hua",
+      "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（花蓮場進階）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/563hua",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-586-zhu",
+      "title": "「青少年人際溝通工作坊」-看、聽、讀~練習為自己說個明白",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/586-zhu",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-554zhong",
+      "title": "家庭溯源－回到初始的愛",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/554zhong",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-569bei",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/569bei",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-569bei-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程 (家動學員報名專區)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/569bei-2",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-550gao-tui",
+      "title": "薩提爾模式的冰山理論在班級經營的應用",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/550gao-tui",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-552bei-tui",
+      "title": "「媽咪充電站」--薩提爾模式自我關照與增能團體",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/552bei-tui",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
     {
       "id": "satir_org-572zhong",
       "title": "「回到愛的源頭：從家族故事中重塑自我」 - 透過薩提爾模式，看見代代相傳的生命力量，整合成為內在穩定與愛的根基",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/572zhong",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-589bei",
+      "title": "薩提爾模式~三代家庭重塑工作坊",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/589bei",
       "status": "broken",
       "http": null,
       "note": "ConnectionError"
@@ -350,94 +530,76 @@
       "note": ""
     },
     {
-      "id": "satir_org-568-569bei-2",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程 (家動學員報名專區)",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/568-569bei-2",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
       "id": "satir_org-568-569bei",
       "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/568-569bei",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    },
+    {
+      "id": "satir_org-568-569bei-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程 (家動學員報名專區)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/568-569bei-2",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-568xian-shang-2",
       "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》part1：12堂線上導讀課程 (家動學員報名專區)",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/568xian-shang-2",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-568xian-shang",
       "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》part1：12堂線上導讀課程",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/568xian-shang",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-581zhu",
       "title": "薩提爾深度學習之旅—從滋養自己到陪伴他人",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/581zhu",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-547bei",
       "title": "陪伴他人的內在練習：自我支持與陪伴力的整合訓練（薩提爾成長模式＿北區＿第三期）",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/547bei",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-557-558-559he-bao",
       "title": "個人成長之旅系列課程（三堂課程合報）",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/557-558-559he-bao",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "shiuhli-1085",
-      "title": "『在關係中讓愛流動』－薩提爾模式邁向和諧工作坊",
-      "source": "shiuhli",
-      "url": "https://www.shiuhli.org.tw/course/TP/1085",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-566-567he-bao",
       "title": "【愛與自由】系列：第二梯次 ( 一 + 二 ) 課程合報專區",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/566-567he-bao",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-566zhong",
-      "title": "【愛與自由】系列一：溝通與成長工作坊 （第二梯次）",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/566zhong",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1118",
@@ -453,9 +615,9 @@
       "title": "點亮心中的燭火～社工公益薩提爾自我成長團體(雲林場)",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/587yun",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1048",
@@ -480,9 +642,9 @@
       "title": "身心靈安頓 - 起承轉合，照見健康",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/576zhu",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1122",
@@ -498,9 +660,9 @@
       "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（台北場進階）",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/561bei",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1125",
@@ -516,36 +678,36 @@
       "title": "個人成長之旅二：【探源與療癒】探索生命經驗的影響，走過自我療癒的旅程",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/558bei",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-563hua",
       "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（花蓮場進階）",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/563hua",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-586-zhu",
       "title": "「青少年人際溝通工作坊」-看、聽、讀~練習為自己說個明白",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/586-zhu",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-554zhong",
       "title": "家庭溯源－回到初始的愛",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/554zhong",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1040",
@@ -561,27 +723,27 @@
       "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/569bei",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-569bei-2",
       "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程 (家動學員報名專區)",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/569bei-2",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-550gao-tui",
       "title": "薩提爾模式的冰山理論在班級經營的應用",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/550gao-tui",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1087",
@@ -597,9 +759,9 @@
       "title": "「媽咪充電站」--薩提爾模式自我關照與增能團體",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/552bei-tui",
-      "status": "ok",
-      "http": 200,
-      "note": ""
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "shiuhli-1042",
@@ -636,6 +798,15 @@
       "status": "ok",
       "http": 200,
       "note": ""
+    },
+    {
+      "id": "satir_org-589bei",
+      "title": "薩提爾模式~三代家庭重塑工作坊",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/589bei",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "satir_org-555xian-shang",
