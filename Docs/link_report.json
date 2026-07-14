@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-07-13",
-  "total": 73,
-  "ok": 73,
+  "checked_at": "2026-07-14",
+  "total": 72,
+  "ok": 72,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -358,24 +358,6 @@
       "note": ""
     },
     {
-      "id": "satir_org-566-567he-bao",
-      "title": "【愛與自由】系列：第二梯次 ( 一 + 二 ) 課程合報專區",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/566-567he-bao",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "shiuhli-1118",
-      "title": "薩提爾模式教師自我關愛工作坊－公益方案（台北場）",
-      "source": "shiuhli",
-      "url": "https://www.shiuhli.org.tw/course/TP/1118",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
       "id": "satir_org-587yun",
       "title": "點亮心中的燭火～社工公益薩提爾自我成長團體(雲林場)",
       "source": "satir_org",
@@ -524,6 +506,15 @@
       "title": "「媽咪充電站」--薩提爾模式自我關照與增能團體",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/552bei-tui",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-566zhong-2",
+      "title": "【愛與自由】系列一：溝通與成長工作坊 （第二梯次）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/566zhong-2",
       "status": "ok",
       "http": 200,
       "note": ""
