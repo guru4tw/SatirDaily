@@ -1,11 +1,11 @@
 # 薩提爾活動 — 來源規格（Satir_source.md）
 
-> 自動產生於 **2026-07-14 22:02**，由 `discover_sources.py` 讀 `/home/runner/work/SatirDaily/SatirDaily/Docs/Satir_website.md` 產出。
+> 自動產生於 **2026-07-15 22:05**，由 `discover_sources.py` 讀 `/home/runner/work/SatirDaily/SatirDaily/Docs/Satir_website.md` 產出。
 > **本檔為自動產物，請勿手改**；要增刪來源請改 `/home/runner/work/SatirDaily/SatirDaily/Docs/Satir_website.md`，再重跑腳本。
 >
 > 用途：每個來源在「來源細節」段提供 **入口、連線狀態、結構線索、建議解析路徑、對應 parser 模組**，讓各網站專屬爬蟲知道怎麼抓。
 
-**統計**：共 7 筆　|　🟢 可連線 7　|　✅ 已可爬 0　🛠 待開發 0　⬜ 待勘查 7
+**統計**：共 7 筆　|　🟢 可連線 6　|　✅ 已可爬 0　🛠 待開發 0　⬜ 待勘查 7
 
 ---
 
@@ -19,7 +19,7 @@
 | `lopwilldo` | 長耳兔心靈維度 | — | ⬜ 待勘查 | 🟢 可連線 (HTTP 200) | [列表頁](https://lopwilldo.com/) |
 | `comflow` | 心流逸境教育平台 | — | ⬜ 待勘查 | 🟢 可連線 (HTTP 200) | [列表頁](https://comflow.tw/category/%E6%B4%BB%E5%8B%95/%E8%96%A9%E6%8F%90%E7%88%BE) |
 | `omia` | OMIA 學東西 | — | ⬜ 待勘查 | 🟢 可連線 (HTTP 200) | [列表頁](https://www.omia.com.tw/) |
-| `accupass` | Accupass 活動通（售票平台） | — | ⬜ 待勘查 | 🟢 可連線 (HTTP 200) | [列表頁](https://www.accupass.com/search?q=%E8%96%A9%E6%8F%90%E7%88%BE) |
+| `accupass` | Accupass 活動通（售票平台） | — | ⬜ 待勘查 | 🔴 連線失敗 (ConnectionError) | [列表頁](https://www.accupass.com/search?q=%E8%96%A9%E6%8F%90%E7%88%BE) |
 
 ---
 
@@ -32,7 +32,7 @@
 - **主要地區**：—
 - **爬蟲狀態**：⬜ 待勘查
 - **建議爬蟲模組**：`crawlers/shiuhli.py`
-- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-14 22:02）
+- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-15 22:05）
 - **Content-Type**：`text/html`
 - **頁面標題**：旭立文教基金會
 - **結構線索（自動偵測，需人工確認）**：偵測到分頁樣式（?page= 或 /page/）
@@ -48,7 +48,7 @@
 - **主要地區**：—
 - **爬蟲狀態**：⬜ 待勘查
 - **建議爬蟲模組**：`crawlers/satir.py`
-- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-14 22:02）
+- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-15 22:05）
 - **Content-Type**：`text/html`
 - **頁面標題**：薩提爾課程｜親子關係、自我覺察｜可以說錯話工作室
 - **結構線索（自動偵測，需人工確認）**：疑似 WordPress（可試 /wp-json REST API）；含 JSON-LD 結構化資料（可直接取 Event schema）
@@ -64,7 +64,7 @@
 - **主要地區**：—
 - **爬蟲狀態**：⬜ 待勘查
 - **建議爬蟲模組**：`crawlers/satir_org.py`
-- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-14 22:02）
+- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-15 22:05）
 - **Content-Type**：`text/html`
 - **頁面標題**：首頁 - 台灣薩提爾成長模式推展協會
 - **結構線索（自動偵測，需人工確認）**：含 JSON-LD 結構化資料（可直接取 Event schema）；頁面含 <table>，列表可能為表格
@@ -80,7 +80,7 @@
 - **主要地區**：—
 - **爬蟲狀態**：⬜ 待勘查
 - **建議爬蟲模組**：`crawlers/lopwilldo.py`
-- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-14 22:02）
+- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-15 22:05）
 - **Content-Type**：`text/html`
 - **頁面標題**：長耳兔心靈維度｜薩提爾工作坊、親子溝通與職場對話課程
 - **結構線索（自動偵測，需人工確認）**：疑似 WordPress（可試 /wp-json REST API）；偵測到分頁樣式（?page= 或 /page/）；含 JSON-LD 結構化資料（可直接取 Event schema）；頁面含 <table>，列表可能為表格
@@ -98,7 +98,7 @@
 - **主要地區**：—
 - **爬蟲狀態**：⬜ 待勘查
 - **建議爬蟲模組**：`crawlers/comflow.py`
-- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-14 22:02）
+- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-15 22:05）
 - **Content-Type**：`text/html`
 - **頁面標題**：薩提爾 - 心流逸境教育平台
 - **結構線索（自動偵測，需人工確認）**：疑似 WordPress（可試 /wp-json REST API）；含 JSON-LD 結構化資料（可直接取 Event schema）
@@ -114,7 +114,7 @@
 - **主要地區**：—
 - **爬蟲狀態**：⬜ 待勘查
 - **建議爬蟲模組**：`crawlers/omia.py`
-- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-14 22:02）
+- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-15 22:05）
 - **Content-Type**：`text/html`
 - **頁面標題**：OMIA學東西 線上課程讓生活更美好
 - **結構線索（自動偵測，需人工確認）**：含 JSON-LD 結構化資料（可直接取 Event schema）
@@ -129,13 +129,7 @@
 - **主要地區**：—
 - **爬蟲狀態**：⬜ 待勘查
 - **建議爬蟲模組**：`crawlers/accupass.py`
-- **連線檢查**：🟢 可連線 (HTTP 200)　（檢查時間 2026-07-14 22:02）
-- **Content-Type**：`text/html`
-- **頁面標題**：Search for Events by 薩提爾｜ACCUPASS
-- **結構線索（自動偵測，需人工確認）**：Accupass 售票平台（查公開 API / 動態載入）
-- **建議解析路徑**：
-    1. 此為售票平台：改打其搜尋 API / 觀察 XHR，勿硬解靜態 HTML
-    2. 每筆對齊 events.json schema（id/title/date_start/region/signup_url/...）
+- **連線檢查**：🔴 連線失敗 (ConnectionError)　（檢查時間 2026-07-15 22:05）
 
 ---
 
