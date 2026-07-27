@@ -1,38 +1,11 @@
 {
-  "checked_at": "2026-07-26",
-  "total": 70,
-  "ok": 70,
+  "checked_at": "2026-07-27",
+  "total": 66,
+  "ok": 66,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
   "results": [
-    {
-      "id": "comflow-satir_intermediate",
-      "title": "家庭心工廠‧薩提爾進階工作坊",
-      "source": "comflow",
-      "url": "https://comflow.tw/satir_intermediate/",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "comflow-satir_advanced",
-      "title": "生命心燈塔‧薩提爾高階工作坊",
-      "source": "comflow",
-      "url": "https://comflow.tw/satir_advanced/",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "comflow-satir_basic",
-      "title": "美好心關係‧薩提爾初階工作坊",
-      "source": "comflow",
-      "url": "https://comflow.tw/satir_basic/",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
     {
       "id": "omia-1800",
       "title": "薩提爾的對話練習補充課程：好奇與情緒關係",
@@ -362,15 +335,6 @@
       "title": "薩提爾教練模式工作坊（夏季班）",
       "source": "shiuhli",
       "url": "https://www.shiuhli.org.tw/course/TP/1048",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-576zhu",
-      "title": "身心靈安頓 - 起承轉合，照見健康",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/576zhu",
       "status": "ok",
       "http": 200,
       "note": ""
