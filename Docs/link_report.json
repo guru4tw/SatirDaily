@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-08-05",
-  "total": 69,
-  "ok": 69,
+  "checked_at": "2026-08-07",
+  "total": 68,
+  "ok": 68,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -362,15 +362,6 @@
       "title": "薩提爾教練模式工作坊（夏季班）",
       "source": "shiuhli",
       "url": "https://www.shiuhli.org.tw/course/TP/1048",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "shiuhli-1122",
-      "title": "薩提爾模式教師自我關愛工作坊－公益方案（宜蘭場）",
-      "source": "shiuhli",
-      "url": "https://www.shiuhli.org.tw/course/TP/1122",
       "status": "ok",
       "http": 200,
       "note": ""
