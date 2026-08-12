@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-08-11",
-  "total": 68,
-  "ok": 68,
+  "checked_at": "2026-08-12",
+  "total": 67,
+  "ok": 67,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -398,15 +398,6 @@
       "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（花蓮場進階）",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/563hua",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-586-zhu",
-      "title": "「青少年人際溝通工作坊」-看、聽、讀~練習為自己說個明白",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/586-zhu",
       "status": "ok",
       "http": 200,
       "note": ""
