@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-08-12",
-  "total": 67,
-  "ok": 67,
+  "checked_at": "2026-08-13",
+  "total": 70,
+  "ok": 70,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -488,6 +488,33 @@
       "title": "「回到愛的源頭：從家族故事中重塑自我」 - 透過薩提爾模式，看見代代相傳的生命力量，整合成為內在穩定與愛的根基",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/572zhong",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-590xian-shang-3",
+      "title": "一致性自我的誕生：一致性、第四度誕生與成為更完整的人",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/590xian-shang-3",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-590xian-shang",
+      "title": "一致性自我的誕生：一致性、第四度誕生與成為更完整的人 (個人會員報名專區)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/590xian-shang",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-590xian-shang-2",
+      "title": "一致性自我的誕生：一致性、第四度誕生與成為更完整的人 (贊助會員報名專區)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/590xian-shang-2",
       "status": "ok",
       "http": 200,
       "note": ""
