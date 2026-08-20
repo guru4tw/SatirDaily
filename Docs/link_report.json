@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-08-18",
-  "total": 69,
-  "ok": 69,
+  "checked_at": "2026-08-20",
+  "total": 66,
+  "ok": 66,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -313,24 +313,6 @@
       "note": ""
     },
     {
-      "id": "satir_org-568xian-shang",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》part1：12堂線上導讀課程",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/568xian-shang",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-568xian-shang-2",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》part1：12堂線上導讀課程 (家動學員報名專區)",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/568xian-shang-2",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
       "id": "satir_org-581zhu",
       "title": "薩提爾深度學習之旅—從滋養自己到陪伴他人",
       "source": "satir_org",
@@ -362,15 +344,6 @@
       "title": "薩提爾教練模式工作坊（夏季班）",
       "source": "shiuhli",
       "url": "https://www.shiuhli.org.tw/course/TP/1048",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "shiuhli-1125",
-      "title": "薩提爾模式教師自我關愛工作坊－公益方案（台北場）",
-      "source": "shiuhli",
-      "url": "https://www.shiuhli.org.tw/course/TP/1125",
       "status": "ok",
       "http": 200,
       "note": ""
