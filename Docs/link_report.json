@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-08-20",
-  "total": 66,
-  "ok": 66,
+  "checked_at": "2026-08-21",
+  "total": 65,
+  "ok": 65,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -335,15 +335,6 @@
       "title": "個人成長之旅系列課程（三堂課程合報）",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/557-558-559he-bao",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "shiuhli-1048",
-      "title": "薩提爾教練模式工作坊（夏季班）",
-      "source": "shiuhli",
-      "url": "https://www.shiuhli.org.tw/course/TP/1048",
       "status": "ok",
       "http": 200,
       "note": ""
