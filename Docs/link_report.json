@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-08-22",
-  "total": 65,
-  "ok": 65,
+  "checked_at": "2026-08-23",
+  "total": 64,
+  "ok": 64,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -335,15 +335,6 @@
       "title": "個人成長之旅系列課程（三堂課程合報）",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/557-558-559he-bao",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-558bei",
-      "title": "個人成長之旅二：【探源與療癒】探索生命經驗的影響，走過自我療癒的旅程",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/558bei",
       "status": "ok",
       "http": 200,
       "note": ""
