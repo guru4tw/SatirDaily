@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-08-25",
-  "total": 63,
-  "ok": 63,
+  "checked_at": "2026-08-27",
+  "total": 62,
+  "ok": 62,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -470,15 +470,6 @@
       "title": "【線上直播講座】做自己世界的主角～新薩提爾之面貌舞會",
       "source": "shiuhli",
       "url": "https://www.shiuhli.org.tw/course/TP/1073",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-589bei",
-      "title": "薩提爾模式~三代家庭重塑工作坊",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/589bei",
       "status": "ok",
       "http": 200,
       "note": ""
