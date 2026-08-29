@@ -1,11 +1,38 @@
 {
-  "checked_at": "2026-08-28",
-  "total": 59,
-  "ok": 59,
+  "checked_at": "2026-08-29",
+  "total": 61,
+  "ok": 61,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
   "results": [
+    {
+      "id": "comflow-satir_intermediate",
+      "title": "家庭心工廠‧薩提爾進階工作坊",
+      "source": "comflow",
+      "url": "https://comflow.tw/satir_intermediate/",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "comflow-satir_advanced",
+      "title": "生命心燈塔‧薩提爾高階工作坊",
+      "source": "comflow",
+      "url": "https://comflow.tw/satir_advanced/",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "comflow-satir_basic",
+      "title": "美好心關係‧薩提爾初階工作坊",
+      "source": "comflow",
+      "url": "https://comflow.tw/satir_basic/",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
     {
       "id": "omia-1800",
       "title": "薩提爾的對話練習補充課程：好奇與情緒關係",
@@ -344,15 +371,6 @@
       "title": "薩提爾模式的冰山理論在班級經營的應用",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/550gao-tui",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "shiuhli-1087",
-      "title": "《看見自己的光，連結自我能量》女性成長工作坊",
-      "source": "shiuhli",
-      "url": "https://www.shiuhli.org.tw/course/TP/1087",
       "status": "ok",
       "http": 200,
       "note": ""
