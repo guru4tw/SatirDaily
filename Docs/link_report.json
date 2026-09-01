@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-08-30",
-  "total": 58,
-  "ok": 58,
+  "checked_at": "2026-09-01",
+  "total": 57,
+  "ok": 57,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -286,19 +286,19 @@
       "note": "→ https://lopwilldo.com/event/%E5%A4%A9%E5%AE%89-%E9%80%B2%E9%9A%8E_%E5%8F%B0%E4%B8%AD/"
     },
     {
-      "id": "satir_org-568-569bei",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程",
+      "id": "satir_org-568-569bei-2",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程 (家動學員報名專區)",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/568-569bei",
+      "url": "https://www.satir.org.tw/schedule/568-569bei-2",
       "status": "ok",
       "http": 200,
       "note": ""
     },
     {
-      "id": "satir_org-568-569bei-2",
-      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程 (家動學員報名專區)",
+      "id": "satir_org-568-569bei",
+      "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》12堂線上導讀課程+4天實體演練課程",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/568-569bei-2",
+      "url": "https://www.satir.org.tw/schedule/568-569bei",
       "status": "ok",
       "http": 200,
       "note": ""
@@ -344,15 +344,6 @@
       "title": "維吉尼亞.薩提爾經典著作一《新家庭如何塑造人》 part2：實體演練課程 (家動學員報名專區)",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/569bei-2",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-552bei-tui",
-      "title": "「媽咪充電站」--薩提爾模式自我關照與增能團體",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/552bei-tui",
       "status": "ok",
       "http": 200,
       "note": ""
