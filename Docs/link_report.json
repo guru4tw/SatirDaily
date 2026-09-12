@@ -1,10 +1,20 @@
 {
-  "checked_at": "2026-09-11",
+  "checked_at": "2026-09-12",
   "total": 53,
-  "ok": 53,
-  "broken": 0,
+  "ok": 52,
+  "broken": 1,
   "skipped": 0,
-  "broken_list": [],
+  "broken_list": [
+    {
+      "id": "lopwilldo-19526",
+      "title": "-台中晚場",
+      "source": "lopwilldo",
+      "url": "https://lopwilldo.com/event/%e5%a7%b5%e7%a9%8e-%e5%8f%b0%e4%b8%ad%e6%99%9a/",
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
+    }
+  ],
   "results": [
     {
       "id": "comflow-satir_intermediate",
@@ -254,9 +264,9 @@
       "title": "-台中晚場",
       "source": "lopwilldo",
       "url": "https://lopwilldo.com/event/%e5%a7%b5%e7%a9%8e-%e5%8f%b0%e4%b8%ad%e6%99%9a/",
-      "status": "ok",
-      "http": 200,
-      "note": "→ https://lopwilldo.com/event/%E5%A7%B5%E7%A9%8E-%E5%8F%B0%E4%B8%AD%E6%99%9A/"
+      "status": "broken",
+      "http": null,
+      "note": "ConnectionError"
     },
     {
       "id": "lopwilldo-19856",
