@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-09-17",
-  "total": 52,
-  "ok": 52,
+  "checked_at": "2026-09-18",
+  "total": 51,
+  "ok": 51,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -389,15 +389,6 @@
       "title": "陪伴孩子成長－桀驁不馴的青少年",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/555xian-shang",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "shiuhli-1045",
-      "title": "伴侶、愛戀與父親－父親關係與伴侶關係",
-      "source": "shiuhli",
-      "url": "https://www.shiuhli.org.tw/course/TP/1045",
       "status": "ok",
       "http": 200,
       "note": ""
