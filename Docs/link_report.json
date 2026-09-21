@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-09-20",
-  "total": 51,
-  "ok": 51,
+  "checked_at": "2026-09-21",
+  "total": 50,
+  "ok": 50,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -317,15 +317,6 @@
       "title": "從自我覺察到發揮影響力工作坊（秋季班）",
       "source": "shiuhli",
       "url": "https://www.shiuhli.org.tw/course/TP/1042",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-572zhong",
-      "title": "「回到愛的源頭：從家族故事中重塑自我」 - 透過薩提爾模式，看見代代相傳的生命力量，整合成為內在穩定與愛的根基",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/572zhong",
       "status": "ok",
       "http": 200,
       "note": ""
