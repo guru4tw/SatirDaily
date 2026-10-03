@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-02",
-  "total": 54,
-  "ok": 54,
+  "checked_at": "2026-10-03",
+  "total": 58,
+  "ok": 58,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -331,19 +331,19 @@
       "note": ""
     },
     {
-      "id": "satir_org-590xian-shang",
-      "title": "一致性自我的誕生：一致性、第四度誕生與成為更完整的人 (個人會員報名專區)",
+      "id": "satir_org-590xian-shang-2",
+      "title": "一致性自我的誕生：一致性、第四度誕生與成為更完整的人 (贊助會員報名專區)",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/590xian-shang",
+      "url": "https://www.satir.org.tw/schedule/590xian-shang-2",
       "status": "ok",
       "http": 200,
       "note": ""
     },
     {
-      "id": "satir_org-590xian-shang-2",
-      "title": "一致性自我的誕生：一致性、第四度誕生與成為更完整的人 (贊助會員報名專區)",
+      "id": "satir_org-590xian-shang",
+      "title": "一致性自我的誕生：一致性、第四度誕生與成為更完整的人 (個人會員報名專區)",
       "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/590xian-shang-2",
+      "url": "https://www.satir.org.tw/schedule/590xian-shang",
       "status": "ok",
       "http": 200,
       "note": ""
@@ -457,6 +457,24 @@
       "note": ""
     },
     {
+      "id": "satir_org-605zhong",
+      "title": "親密關係初階 - 愛的關係你和我",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/605zhong",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-605-606he-bao",
+      "title": "【親密關係課程】初階+進階（二堂合報專區）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/605-606he-bao",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
       "id": "satir_org-597-598-599he-bao",
       "title": "【SEL教室】系列課程（三場課程合報）",
       "source": "satir_org",
@@ -475,6 +493,15 @@
       "note": ""
     },
     {
+      "id": "satir_org-606zhong",
+      "title": "親密關係進階 - 開創愛與自由的親密",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/606zhong",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
       "id": "satir_org-598nan-tui",
       "title": "【SEL教室 - 系列2】見樹又見林－以薩提爾模式看待學生的輔導議題",
       "source": "satir_org",
@@ -488,6 +515,15 @@
       "title": "【SEL教室 - 系列3】最難的一堂課－運用薩提爾模式促進教師自我觀照",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/599nan-tui",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-608zhong",
+      "title": "薩提爾學習沙龍 - 內在冰山的運用",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/608zhong",
       "status": "ok",
       "http": 200,
       "note": ""
