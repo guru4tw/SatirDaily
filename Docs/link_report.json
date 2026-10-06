@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-04",
-  "total": 55,
-  "ok": 55,
+  "checked_at": "2026-10-06",
+  "total": 56,
+  "ok": 56,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -497,6 +497,15 @@
       "title": "薩提爾學習沙龍 - 內在冰山的運用",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/608zhong",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-607zhong",
+      "title": "家庭溯源－回到初始的愛",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/607zhong",
       "status": "ok",
       "http": 200,
       "note": ""
