@@ -10,6 +10,18 @@ env/
 Thumbs.db
 *.swp
 
+# 機密
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
 # 本地產物
 files.zip
 *.log
+
+# 爬蟲試驗腳本與輸出
+Py/_probe_*.py
+/*_out.json
+/*_err.txt
