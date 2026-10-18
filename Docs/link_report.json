@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-17",
-  "total": 54,
-  "ok": 54,
+  "checked_at": "2026-10-18",
+  "total": 53,
+  "ok": 53,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -284,15 +284,6 @@
       "status": "ok",
       "http": 200,
       "note": "→ https://lopwilldo.com/event/%E5%A4%A9%E5%AE%89-%E9%80%B2%E9%9A%8E_%E5%8F%B0%E4%B8%AD/"
-    },
-    {
-      "id": "satir_org-581zhu",
-      "title": "薩提爾深度學習之旅—從滋養自己到陪伴他人",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/581zhu",
-      "status": "ok",
-      "http": 200,
-      "note": ""
     },
     {
       "id": "satir_org-547bei",
