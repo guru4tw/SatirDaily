@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-10-29",
-  "total": 53,
-  "ok": 53,
+  "checked_at": "2026-10-30",
+  "total": 54,
+  "ok": 54,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -434,6 +434,15 @@
       "title": "【SEL教室 - 系列1】Happy teacher，Happy learner－融入式SEL × 薩提爾模式 線上課程",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/597xian-shang",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-602xian-shang",
+      "title": "薩提爾模式在教養上的運用",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/602xian-shang",
       "status": "ok",
       "http": 200,
       "note": ""
