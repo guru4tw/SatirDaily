@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-11-06",
-  "total": 55,
-  "ok": 55,
+  "checked_at": "2026-11-07",
+  "total": 57,
+  "ok": 57,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -304,28 +304,10 @@
       "note": ""
     },
     {
-      "id": "shiuhli-1042",
-      "title": "從自我覺察到發揮影響力工作坊（秋季班）",
-      "source": "shiuhli",
-      "url": "https://www.shiuhli.org.tw/course/TP/1042",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
       "id": "shiuhli-1073",
       "title": "【線上直播講座】做自己世界的主角～新薩提爾之面貌舞會",
       "source": "shiuhli",
       "url": "https://www.shiuhli.org.tw/course/TP/1073",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-555xian-shang",
-      "title": "陪伴孩子成長－桀驁不馴的青少年",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/555xian-shang",
       "status": "ok",
       "http": 200,
       "note": ""
@@ -457,10 +439,46 @@
       "note": ""
     },
     {
+      "id": "satir_org-617bei",
+      "title": "成長之旅一：【與己和諧】冰山覺察中的自我相遇與陪伴",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/617bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-617-618-619he-bao",
+      "title": "成長之旅系列課程（三堂合報專區）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/617-618-619he-bao",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-618bei",
+      "title": "成長之旅二：【探源與療癒】探索生命經驗的影響，走過自我療癒的旅程",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/618bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
       "id": "satir_org-606zhong",
       "title": "親密關係進階 - 開創愛與自由的親密",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/606zhong",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-619bei",
+      "title": "成長之旅三：【與人和諧】增進關係中的愛與親近",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/619bei",
       "status": "ok",
       "http": 200,
       "note": ""
