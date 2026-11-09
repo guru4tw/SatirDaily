@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-11-08",
-  "total": 57,
-  "ok": 57,
+  "checked_at": "2026-11-09",
+  "total": 54,
+  "ok": 54,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -295,37 +295,10 @@
       "note": ""
     },
     {
-      "id": "satir_org-557-558-559he-bao",
-      "title": "個人成長之旅系列課程（三堂課程合報）",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/557-558-559he-bao",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
       "id": "shiuhli-1073",
       "title": "【線上直播講座】做自己世界的主角～新薩提爾之面貌舞會",
       "source": "shiuhli",
       "url": "https://www.shiuhli.org.tw/course/TP/1073",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-583bei",
-      "title": "讓愛自由流動、尊重與靠近—前青春期親子關係連結工作坊",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/583bei",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-559bei",
-      "title": "個人成長之旅三：【與人和諧】增進關係中的愛與親近",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/559bei",
       "status": "ok",
       "http": 200,
       "note": ""
