@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-11-11",
-  "total": 54,
-  "ok": 54,
+  "checked_at": "2026-11-12",
+  "total": 63,
+  "ok": 63,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -430,10 +430,46 @@
       "note": ""
     },
     {
+      "id": "satir_org-620zhu",
+      "title": "薩提爾深度學習之旅—從滋養自己到陪伴他人(新竹場-第二屆)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/620zhu",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-609bei",
+      "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（台北初階）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/609bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-610hua",
+      "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（花蓮初階）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/610hua",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
       "id": "satir_org-618bei",
       "title": "成長之旅二：【探源與療癒】探索生命經驗的影響，走過自我療癒的旅程",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/618bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-595bei-tui",
+      "title": "「媽咪充電站」--薩提爾模式自我關照與復能團體--(假日班)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/595bei-tui",
       "status": "ok",
       "http": 200,
       "note": ""
@@ -475,6 +511,42 @@
       "note": ""
     },
     {
+      "id": "satir_org-611bei",
+      "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（台北進階）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/611bei",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-612hua",
+      "title": "看見裂縫中的光--薩提爾模式自我療癒工作坊（花蓮進階）",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/612hua",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-603bei-tui",
+      "title": "【練習靠近愛】— 男性敘說與關係連結工作坊",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/603bei-tui",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-596bei-tui",
+      "title": "「媽咪充電站」--薩提爾模式自我關照與復能團體--(平日班)",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/596bei-tui",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
       "id": "satir_org-608zhong",
       "title": "薩提爾學習沙龍 - 內在冰山的運用",
       "source": "satir_org",
@@ -488,6 +560,15 @@
       "title": "家庭溯源－回到初始的愛",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/607zhong",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "satir_org-604bei-tui",
+      "title": "「溫柔安放自己」~薩提爾模式陪伴情緒",
+      "source": "satir_org",
+      "url": "https://www.satir.org.tw/schedule/604bei-tui",
       "status": "ok",
       "http": 200,
       "note": ""
