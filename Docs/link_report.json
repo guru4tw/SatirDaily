@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-11-16",
-  "total": 72,
-  "ok": 72,
+  "checked_at": "2026-11-17",
+  "total": 71,
+  "ok": 71,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -326,15 +326,6 @@
       "title": "薩提爾輕鬆入門體驗工作坊－與我同行～愛與自由",
       "source": "shiuhli",
       "url": "https://www.shiuhli.org.tw/course/TP/1115",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-573zhong",
-      "title": "親密關係工作坊－愛與連結，攜手在關係中成長",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/573zhong",
       "status": "ok",
       "http": 200,
       "note": ""
