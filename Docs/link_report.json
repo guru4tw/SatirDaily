@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-11-19",
-  "total": 71,
-  "ok": 71,
+  "checked_at": "2026-11-20",
+  "total": 72,
+  "ok": 72,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -380,6 +380,15 @@
       "title": "我想要愛你，而不抓緊你～親職互持成長團體",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/600zhu",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1133",
+      "title": "從自我覺察到發揮影響力工作坊（冬季班）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1133",
       "status": "ok",
       "http": 200,
       "note": ""
