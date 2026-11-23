@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-11-22",
-  "total": 72,
-  "ok": 72,
+  "checked_at": "2026-11-23",
+  "total": 70,
+  "ok": 70,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -308,24 +308,6 @@
       "title": "薩提爾教練模式工作坊（冬季班）",
       "source": "shiuhli",
       "url": "https://www.shiuhli.org.tw/course/TP/1049",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "satir_org-577zhu",
-      "title": "尋根之旅 — 探索與體驗「原生家庭」的豐厚",
-      "source": "satir_org",
-      "url": "https://www.satir.org.tw/schedule/577zhu",
-      "status": "ok",
-      "http": 200,
-      "note": ""
-    },
-    {
-      "id": "shiuhli-1115",
-      "title": "薩提爾輕鬆入門體驗工作坊－與我同行～愛與自由",
-      "source": "shiuhli",
-      "url": "https://www.shiuhli.org.tw/course/TP/1115",
       "status": "ok",
       "http": 200,
       "note": ""
