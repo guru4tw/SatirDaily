@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-11-25",
-  "total": 70,
-  "ok": 70,
+  "checked_at": "2026-11-26",
+  "total": 73,
+  "ok": 73,
   "broken": 0,
   "skipped": 0,
   "broken_list": [],
@@ -389,6 +389,33 @@
       "title": "【SEL教室 - 系列1】Happy teacher，Happy learner－融入式SEL × 薩提爾模式 線上課程",
       "source": "satir_org",
       "url": "https://www.satir.org.tw/schedule/597xian-shang",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1170",
+      "title": "薩提爾模式教師自我關愛工作坊（新北場）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1170",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1171",
+      "title": "薩提爾模式教師自我關愛工作坊（屏東場）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1171",
+      "status": "ok",
+      "http": 200,
+      "note": ""
+    },
+    {
+      "id": "shiuhli-1172",
+      "title": "薩提爾模式教師自我關愛工作坊（台中場）",
+      "source": "shiuhli",
+      "url": "https://www.shiuhli.org.tw/course/TP/1172",
       "status": "ok",
       "http": 200,
       "note": ""
